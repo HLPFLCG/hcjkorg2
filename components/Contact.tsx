@@ -23,7 +23,7 @@ export default function Contact() {
             Email Us
           </a>
           <a
-            href="tel:+1234567890"
+            href="tel:+16163133438"
             className="btn btn-secondary text-lg shadow-medium"
           >
             Call Now
@@ -46,13 +46,13 @@ export default function Contact() {
             <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
               <strong className="text-black text-lg">Phone:</strong>
               <a href="tel:+1234567890" className="text-merlot hover:text-merlot-dark transition-colors">
-                +1 (234) 567-8900
+                +1 (616) 313-3484
               </a>
             </p>
             <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
               <strong className="text-black text-lg">Instagram:</strong>
               <a
-                href="https://www.instagram.com/hcjkcollection"
+                href="https://www.instagram.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-merlot hover:text-merlot-dark transition-colors"

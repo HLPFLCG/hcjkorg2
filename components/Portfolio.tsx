@@ -7,32 +7,32 @@ const portfolioItems = [
   {
     title: 'Scenic Sunset',
     category: 'Landscape',
-    image: 'https://hcjk.org/assets/images/webp/nightime-peninsula.webp',
+    image: "image/nightime-peninsula.webp",
   },
   {
     title: 'Window Scene',
     category: 'Still Life',
-    image: 'https://hcjk.org/assets/images/webp/window-with-curtain.webp',
+    image: "window-with-curtain.webp",
   },
   {
     title: 'Natural Beauty',
     category: 'Landscape',
-    image: 'https://hcjk.org/assets/images/webp/beach-greenery.webp',
+    image: "image/beach-greenery.webp",
   },
   {
     title: 'Yearbook Portrait',
     category: 'Portrait',
-    image: 'https://hcjk.org/assets/images/webp/brother20.webp',
+    image: "image/brother20.webp",
   },
   {
     title: 'Star Detail',
     category: 'Macro',
-    image: 'https://hcjk.org/assets/images/webp/star.webp',
+    image: "image/star.webp",
   },
   {
     title: 'Countryside',
     category: 'Landscape',
-    image: 'https://hcjk.org/assets/images/webp/clay-roof-house-panoramic.webp',
+    image: "image/clay-roof-house-panoramic.webp",
   },
 ];
 

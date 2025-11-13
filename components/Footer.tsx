@@ -113,7 +113,7 @@ export default function Footer() {
                   href="mailto:contact@hcjk.org"
                   className="text-beige-light hover:text-merlot transition-colors"
                 >
-                  founder@hcjk.org
+                  contact@hcjk.org
                 </a>
               </li>
               <li>
@@ -126,7 +126,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/hcjkcollection"
+                  href="https://www.instagram.com/hcjk_collection"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-beige-light hover:text-merlot transition-colors"
@@ -141,7 +141,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-beige-dark/20 pt-10 text-center">
           <p className="font-lato text-base text-beige-dark">
-            &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with ♥ for timeless photography
+            &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with love from HLPFL
           </p>
         </div>
       </div>

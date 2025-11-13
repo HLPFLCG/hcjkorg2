@@ -10,7 +10,7 @@ export default function About() {
           {/* Text Content */}
           <div className="space-y-8">
             <h2 className="font-playfair heading-xl font-bold text-black">
-              Hi, I&apos;m <span className="text-merlot">HCJK</span>
+              Hi, I&apos;m <span className="text-merlot">Heather</span>
             </h2>
             
             <p className="text-lead text-gray-700">
@@ -58,7 +58,7 @@ export default function About() {
           {/* Image */}
           <div className="relative h-[600px] md:h-[700px] lg:h-[800px] rounded-lg overflow-hidden shadow-strong">
             <Image
-              src="https://hcjk.org/assets/images/webp/emma-child1.webp"
+              src="image/animal?"
               alt="HCJK Photography - Professional Portrait"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
