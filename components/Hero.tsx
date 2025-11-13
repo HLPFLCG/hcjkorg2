@@ -1,26 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: 'url(/big-mountain.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/public/big-mountain.webp"
-          alt="HCJK Photography Hero"
-          fill
-          className="object-cover"
-          priority
-          quality={100}
-        />
-      </div>
-      
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/25 z-10" />
 
@@ -48,13 +41,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
           <Link
             href="#portfolio"
-            className="btn btn-secondary text-xl px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-merlot shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+            className="btn btn-primary text-xl px-16 py-7 shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
           >
             View Portfolio
           </Link>
           <Link
             href="#contact"
-            className="btn btn-primary text-xl px-16 py-7 shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+            className="btn btn-secondary text-xl px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-merlot shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
           >
             Get in Touch
           </Link>
