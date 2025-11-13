@@ -1,11 +1,10 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import Portfolio from '@/components/Portfolio';
-
+import AboutTeaser from '@/components/AboutTeaser';
+import ServicesTeaser from '@/components/ServicesTeaser';
+import PortfolioTeaser from '@/components/PortfolioTeaser';
 import InstagramFeed from '@/components/InstagramFeed';
-import Contact from '@/components/Contact';
+import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -14,11 +13,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Portfolio />
+        <AboutTeaser />
+        <ServicesTeaser />
+        <PortfolioTeaser />
         <InstagramFeed />
-        <Contact />
+        <ContactCTA />
       </main>
       <Footer />
     </>

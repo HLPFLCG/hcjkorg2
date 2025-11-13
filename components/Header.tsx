@@ -18,11 +18,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#portfolio', label: 'Portfolio' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -36,9 +36,9 @@ export default function Header() {
       <nav className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="#hero" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo/hcjk-logo-background.png" // Correct path, starting from the root
+              src="/images/logo/hcjk-logo-background.png"
               alt="HCJK Collection Logo"
               width={100}
               height={100}
