@@ -31,7 +31,7 @@ export default function PortfolioTeaser() {
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="relative aspect-[16/10] rounded-lg overflow-hidden cursor-pointer group shadow-strong hover:shadow-2xl transition-all duration-500"
+              className="relative 'aspect16/10' 'rounded-lg overflow-hidden cursor-pointer group shadow-strong hover:shadow-2xl transition-all duration-500"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -44,7 +44,7 @@ export default function PortfolioTeaser() {
                 priority={index < 2}
               />
               <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
+                className={`absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
                   hoveredIndex === index ? 'opacity-100' : 'opacity-0'
                 }`}
               >

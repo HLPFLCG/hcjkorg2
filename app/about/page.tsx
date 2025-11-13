@@ -29,7 +29,7 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 {/* Image */}
                 <div className="relative">
-                  <div className="aspect-[3/4] relative rounded-lg overflow-hidden shadow-2xl">
+                  <div className="aspect-3/4 relative rounded-lg overflow-hidden shadow-2xl">
                     <Image
                       src="/emma-child1.webp"
                       alt="Heather - HCJK Collection Photographer"
@@ -146,7 +146,7 @@ export default function AboutPage() {
                   className="group relative overflow-hidden rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-500"
                 >
                   {/* Background Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                  <div className="relative aspect-16/10 overflow-hidden">
                     <Image
                       src={value.image}
                       alt={value.title}
@@ -155,7 +155,7 @@ export default function AboutPage() {
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-merlot/95 via-merlot/70 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-merlot/95 via-merlot/70 to-transparent" />
                   </div>
                   
                   {/* Content */}
@@ -197,7 +197,7 @@ export default function AboutPage() {
                   'Proficient in advanced post-processing and retouching',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-merlot rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-merlot rounded-full flex items-center justify-center shrink-0 mt-1">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>

@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 
 // Array of hero images - add your best images here
 const heroImages = [
-  '/big-mountain.webp',
-  '/nightime-peninsula.webp',
-  '/beach-greenery.webp',
-  '/clay-roof-house-panoramic.webp',
-  '/flags.webp',
-  '/panoramic-river-mountains-wow-this-is-gorgeous.webp',
-  '/sunset1.webp',
+  '/public/images/big-mountain.webp',
+  '/public/images/nightime-peninsula.webp',
+  '/public/images/beach-greenery.webp',
+  '/public/images/clay-roof-house-panoramic.webp',
+  '/public/images/flags.webp',
+  '/public/images/panoramic-river-mountains-wow-this-is-gorgeous.webp',
+  '/public/images/sunset1.webp',
 ];
 
 export default function Hero() {

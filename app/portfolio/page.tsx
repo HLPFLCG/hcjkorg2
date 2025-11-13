@@ -108,7 +108,7 @@ export default function PortfolioPage() {
               {filteredItems.map((item, index) => (
                 <div
                   key={item.id}
-                  className={`relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer group shadow-strong hover:shadow-2xl transition-all duration-500 ${
+                  className={`relative aspect-4/3' rounded-2xl overflow-hidden cursor-pointer group shadow-strong hover:shadow-2xl transition-all duration-500 ${
                     isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ 
@@ -125,7 +125,7 @@ export default function PortfolioPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div
-                    className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
+                    className={`absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
                       hoveredId === item.id ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
