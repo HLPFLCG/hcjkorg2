@@ -8,13 +8,15 @@ export default function Loading() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
+    // Start fade out after 2.5 seconds
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 1500);
+    }, 2500);
 
+    // Remove loading screen after 3 seconds
     const removeTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -30,8 +32,10 @@ export default function Loading() {
         fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
     >
-      {/* Just the Logo - Clean and Simple */}
-      <div className="flex justify-center items-center">
+      {/* Logo with fade out animation */}
+      <div className={`flex justify-center items-center transition-opacity duration-500 ${
+        fadeOut ? 'opacity-0' : 'opacity-100'
+      }`}>
         <div className="relative w-48 h-48 animate-float">
           <Image
             src="/images/logo/hcjkstackednewsvg.svg"

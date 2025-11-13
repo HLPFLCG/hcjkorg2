@@ -6,22 +6,25 @@ import { useState } from 'react';
 
 const services = [
   {
+    number: '01',
     title: 'Wedding Photography',
-    description: 'Capturing the magic of your special day with elegance and artistry. From intimate ceremonies to grand celebrations.',
+    tagline: 'Your special day, captured forever',
+    description: 'Capturing the magic of your special day with elegance and artistry.',
     image: '/images/portfolio/portfolio-10.webp',
-    cta: 'Book Your Wedding',
   },
   {
+    number: '02',
     title: 'Portrait Photography',
-    description: 'Professional portraits that capture your unique personality and story. Timeless images you\'ll treasure forever.',
+    tagline: 'Timeless images of you',
+    description: 'Professional portraits that capture your unique personality.',
     image: '/images/portfolio/portfolio-20.webp',
-    cta: 'Schedule Session',
   },
   {
+    number: '03',
     title: 'Landscape & Nature',
-    description: 'Breathtaking scenes showcasing the beauty of our world. Perfect for art collectors and nature enthusiasts.',
+    tagline: 'The beauty of our world',
+    description: 'Breathtaking scenes perfect for art collectors.',
     image: '/images/portfolio/portfolio-30.webp',
-    cta: 'View Collection',
   },
 ];
 
@@ -37,27 +40,28 @@ export default function ServicesIcons() {
   };
 
   return (
-    <section id="services" className="section bg-[#F2EDE3] border-t-4 border-merlot py-32">
-      <div className="container max-w-[1600px]">
+    <section id="services" className="section bg-[#F2EDE3] border-t-4 border-merlot py-20">
+      <div className="container max-w-[1800px]">
         {/* Section Header */}
-        <div className="text-center mb-20 max-w-4xl mx-auto">
-          <h2 className="font-playfair text-6xl md:text-7xl font-bold text-black mb-8">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <h2 className="font-playfair text-6xl md:text-8xl font-bold text-black mb-6">
             My Services
           </h2>
           <p className="text-2xl md:text-3xl text-gray-700 leading-relaxed">
-            Professional photography services tailored to capture your unique story
+            Professional photography tailored to your story
           </p>
         </div>
 
-        {/* Desktop View - 3 Large Photo Cards */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        {/* Desktop View - MUCH LARGER Cards */}
+        <div className="hidden md:grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-strong hover:shadow-2xl transition-all duration-500"
+              href="/services"
+              className="group relative overflow-hidden rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-500 bg-white"
             >
-              {/* Service Image */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              {/* Large Service Image */}
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -66,34 +70,39 @@ export default function ServicesIcons() {
                   sizes="33vw"
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+                
+                {/* Number Badge */}
+                <div className="absolute top-6 left-6 w-16 h-16 bg-merlot rounded-full flex items-center justify-center">
+                  <span className="font-playfair text-2xl font-bold text-white">{service.number}</span>
+                </div>
               </div>
               
-              {/* Content Overlay */}
+              {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="font-playfair text-3xl lg:text-4xl font-bold mb-4 transform transition-transform duration-300 group-hover:-translate-y-2">
+                <p className="text-lg font-lato mb-2 text-beige-light">{service.tagline}</p>
+                <h3 className="font-playfair text-4xl font-bold mb-4 transform transition-transform duration-300 group-hover:-translate-y-2">
                   {service.title}
                 </h3>
-                <p className="text-lg lg:text-xl leading-relaxed mb-6 opacity-90">
+                <p className="text-xl leading-relaxed mb-6 opacity-90">
                   {service.description}
                 </p>
-                <Link
-                  href="/services"
-                  className="inline-block bg-white text-merlot font-lato font-semibold text-lg px-8 py-4 rounded-full hover:bg-merlot hover:text-white transition-all transform group-hover:-translate-y-1 w-fit"
-                >
-                  {service.cta}
-                </Link>
+                <div className="inline-flex items-center gap-2 text-lg font-semibold group-hover:gap-4 transition-all">
+                  Learn More
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Mobile View - Carousel with Large Images */}
-        <div className="md:hidden mb-16">
+        {/* Mobile View - Large Carousel */}
+        <div className="md:hidden mb-12">
           <div className="relative">
-            {/* Carousel Item */}
-            <div className="group relative overflow-hidden rounded-lg shadow-strong">
-              <div className="relative aspect-[3/4] overflow-hidden">
+            <Link href="/services" className="block group relative overflow-hidden rounded-2xl shadow-strong bg-white">
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={services[currentSlide].image}
                   alt={services[currentSlide].title}
@@ -101,24 +110,29 @@ export default function ServicesIcons() {
                   className="object-cover"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+                
+                <div className="absolute top-6 left-6 w-16 h-16 bg-merlot rounded-full flex items-center justify-center">
+                  <span className="font-playfair text-2xl font-bold text-white">{services[currentSlide].number}</span>
+                </div>
               </div>
               
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                <h3 className="font-playfair text-3xl font-bold mb-4">
+                <p className="text-lg font-lato mb-2 text-beige-light">{services[currentSlide].tagline}</p>
+                <h3 className="font-playfair text-4xl font-bold mb-4">
                   {services[currentSlide].title}
                 </h3>
-                <p className="text-lg leading-relaxed mb-6 opacity-90">
+                <p className="text-xl leading-relaxed mb-6 opacity-90">
                   {services[currentSlide].description}
                 </p>
-                <Link
-                  href="/services"
-                  className="inline-block bg-white text-merlot font-lato font-semibold text-lg px-8 py-4 rounded-full hover:bg-merlot hover:text-white transition-all w-fit"
-                >
-                  {services[currentSlide].cta}
-                </Link>
+                <div className="inline-flex items-center gap-2 text-lg font-semibold">
+                  Learn More
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
 
             {/* Navigation Arrows */}
             <button
@@ -140,7 +154,7 @@ export default function ServicesIcons() {
               </svg>
             </button>
 
-            {/* Dots Indicator */}
+            {/* Dots */}
             <div className="flex justify-center gap-3 mt-8">
               {services.map((_, index) => (
                 <button
@@ -156,28 +170,14 @@ export default function ServicesIcons() {
           </div>
         </div>
 
-        {/* Powerful CTA */}
-        <div className="text-center bg-white p-12 rounded-lg shadow-strong">
-          <h3 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-6">
-            Ready to Create Something Beautiful?
-          </h3>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Let's discuss your photography needs and bring your vision to life
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link
-              href="/services"
-              className="inline-block bg-merlot text-white font-lato font-semibold text-xl px-12 py-5 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-xl"
-            >
-              View All Services
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-block bg-transparent border-2 border-merlot text-merlot font-lato font-semibold text-xl px-12 py-5 rounded-full hover:bg-merlot hover:text-white transition-all transform hover:-translate-y-1 hover:shadow-xl"
-            >
-              Get in Touch
-            </Link>
-          </div>
+        {/* CTA */}
+        <div className="text-center">
+          <Link
+            href="/services"
+            className="inline-block bg-merlot text-white font-lato font-semibold text-2xl px-16 py-6 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-2xl"
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>
