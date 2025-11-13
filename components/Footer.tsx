@@ -22,7 +22,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/hcjkcollection"
+                href="https://www.instagram.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-merlot flex items-center justify-center hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-lg"
@@ -113,15 +113,15 @@ export default function Footer() {
                   href="mailto:contact@hcjk.org"
                   className="text-beige-light hover:text-merlot transition-colors"
                 >
-                  contact@hcjk.org
+                  founder@hcjk.org
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+6163133484"
                   className="text-beige-light hover:text-merlot transition-colors"
                 >
-                  +1 (234) 567-8900
+                  +1 (616) 313-3484
                 </a>
               </li>
               <li>
@@ -131,7 +131,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-beige-light hover:text-merlot transition-colors"
                 >
-                  @hcjkcollection
+                  @hcjkc_ollection
                 </a>
               </li>
             </ul>
