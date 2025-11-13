@@ -4,36 +4,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const portfolioItems = [
-  {
-    title: 'Scenic Sunset',
-    category: 'Landscape',
-    image: "public/nightime-peninsula.webp",
-  },
-  {
-    title: 'Window Scene',
-    category: 'Still Life',
-    image: "public/window-with-curtain.webp",
-  },
-  {
-    title: 'Natural Beauty',
-    category: 'Landscape',
-    image: "public/beach-greenery.webp",
-  },
-  {
-    title: 'Yearbook Portrait',
-    category: 'Portrait',
-    image: "public/brother20.webp",
-  },
-  {
-    title: 'Star Detail',
-    category: 'Macro',
-    image: "public/star.webp",
-  },
-  {
-    title: 'Countryside',
-    category: 'Landscape',
-    image: "image/clay-roof-house-panoramic.webp",
-  },
+  { title: 'Wedding Moment', category: 'Wedding', image: '/images/portfolio/portfolio-1.webp' },
+  { title: 'Portrait Session', category: 'Portrait', image: '/images/portfolio/portfolio-2.webp' },
+  { title: 'Natural Beauty', category: 'Landscape', image: '/images/portfolio/portfolio-3.webp' },
+  { title: 'Special Day', category: 'Wedding', image: '/images/portfolio/portfolio-4.webp' },
+  { title: 'Artistic Shot', category: 'Portrait', image: '/images/portfolio/portfolio-5.webp' },
+  { title: 'Scenic View', category: 'Landscape', image: '/images/portfolio/portfolio-6.webp' },
 ];
 
 export default function Portfolio() {
@@ -42,17 +18,12 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="section bg-white border-t-4 border-merlot">
       <div className="container">
-        {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="font-playfair heading-xl font-bold text-black mb-6">
-            Featured Work
-          </h2>
+          <h2 className="font-playfair heading-xl font-bold text-black mb-6">Featured Work</h2>
           <p className="text-lead text-gray-600 max-w-3xl mx-auto">
             A curated selection of recent photography showcasing diverse styles and subjects
           </p>
         </div>
-
-        {/* Portfolio Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {portfolioItems.map((item, index) => (
             <div
@@ -61,7 +32,6 @@ export default function Portfolio() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Image */}
               <Image
                 src={item.image}
                 alt={item.title}
@@ -69,8 +39,6 @@ export default function Portfolio() {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-
-              {/* Overlay */}
               <div
                 className={`absolute inset-0 bg-gradient-to-t from-merlot via-merlot/80 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
                   hoveredIndex === index ? 'opacity-100' : 'opacity-0'
@@ -79,22 +47,15 @@ export default function Portfolio() {
                 <h3 className="font-playfair text-3xl font-bold text-white mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   {item.title}
                 </h3>
-                <p className="font-lato text-base text-beige-light uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                <p className="font-lato text-lg text-beige-light transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                   {item.category}
                 </p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* CTA */}
         <div className="text-center mt-16">
-          <a
-            href="#contact"
-            className="btn btn-primary text-lg shadow-medium"
-          >
-            Book a Session
-          </a>
+          <a href="#contact" className="btn btn-primary text-lg shadow-medium">View Full Portfolio</a>
         </div>
       </div>
     </section>

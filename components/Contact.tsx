@@ -82,12 +82,12 @@ export default function Contact() {
           {/* Instagram Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80',
-              'https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=400&q=80',
-              'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&q=80',
-              'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&q=80',
-              'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80',
-              'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&q=80',
+              '/images/portfolio/portfolio-7.webp',
+              '/images/portfolio/portfolio-14.webp',
+              '/images/portfolio/portfolio-21.webp',
+              '/images/portfolio/portfolio-28.webp',
+              '/images/portfolio/portfolio-35.webp',
+              '/images/portfolio/portfolio-42.webp',
             ].map((image, index) => (
               <a
                 key={index}
