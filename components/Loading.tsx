@@ -26,7 +26,7 @@ export default function Loading() {
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-[#F2EDE3] via-[#faf8f3] to-[#F2EDE3] transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-gradient-to-br from-[#F2EDE3] via-[#f2ede3] to-[#F2EDE3] transition-opacity duration-500 ${
         fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
     >
