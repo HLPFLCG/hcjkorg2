@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo/hcjk-logo-background.png"
+              src="/images/logo/hcjkstackedproperwhite.png"
               alt="HCJK Collection Logo"
               width={100}
               height={100}
@@ -64,7 +64,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col space-y-1.5 z-[60] relative"
+            className="md:hidden flex flex-col space-y-1.5 'z-60' relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
