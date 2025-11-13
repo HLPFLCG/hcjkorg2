@@ -54,7 +54,7 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-16">
+        <div className="text-center mt-24">
           <a href="#contact" className="btn btn-primary text-lg shadow-medium">View Full Portfolio</a>
         </div>
       </div>

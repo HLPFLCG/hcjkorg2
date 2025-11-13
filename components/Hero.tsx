@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -9,15 +10,16 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/images/hero/hero-1.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero/hero-1.webp"
+          alt="HCJK Photography Hero"
+          fill
+          className="object-cover"
+          priority
+          quality={100}
+        />
+      </div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/25 z-10" />
