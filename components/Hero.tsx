@@ -47,7 +47,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#contact"
-            className="btn btn-secondary text-xl px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-merlot shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+            className="btn btn-primary text-xl px-16 py-7 shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
           >
             Get in Touch
           </Link>
