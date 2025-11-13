@@ -8,12 +8,10 @@ export default function Loading() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Start fade out after 1.5 seconds
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
     }, 1500);
 
-    // Remove loading screen after fade completes
     const removeTimer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -32,112 +30,32 @@ export default function Loading() {
         fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
     >
-      <div className="text-center">
-        {/* Elegant Logo Animation */}
-        <div className="flex justify-center items-center mb-12">
-          <div className="relative w-48 h-48">
-            <div className="absolute inset-0 rounded-full bg-merlot/5 animate-ping" style={{ animationDuration: '2s' }}></div>
-            <div className="relative w-full h-full flex items-center justify-center animate-float">
-              <Image
-                src="/images/logo/hcjkstacked.svg"
-                alt="HCJK Collection"
-                width={192}
-                height={192}
-                className="object-contain drop-shadow-2xl"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Elegant Text */}
-        <h2 className="font-playfair text-2xl md:text-3xl text-merlot mb-8 tracking-wide animate-fade-in">
-          HCJK Collection
-        </h2>
-
-        {/* Sophisticated Loading Dots */}
-        <div className="flex space-x-3 justify-center">
-          <div 
-            className="w-2.5 h-2.5 bg-merlot rounded-full animate-elegant-bounce" 
-            style={{ animationDelay: '0ms' }}
-          ></div>
-          <div 
-            className="w-2.5 h-2.5 bg-merlot rounded-full animate-elegant-bounce" 
-            style={{ animationDelay: '200ms' }}
-          ></div>
-          <div 
-            className="w-2.5 h-2.5 bg-merlot rounded-full animate-elegant-bounce" 
-            style={{ animationDelay: '400ms' }}
-          ></div>
-        </div>
-
-        {/* Subtle Loading Bar */}
-        <div className="mt-12 w-64 h-0.5 bg-merlot/10 rounded-full overflow-hidden mx-auto">
-          <div className="h-full bg-merlot rounded-full animate-loading-bar"></div>
+      {/* Just the Logo - Clean and Simple */}
+      <div className="flex justify-center items-center">
+        <div className="relative w-64 h-64 animate-float">
+          <Image
+            src="/images/logo/hcjkstacked.svg"
+            alt="HCJK Collection"
+            width={256}
+            height={256}
+            className="object-contain drop-shadow-2xl"
+            priority
+          />
         </div>
       </div>
 
       <style jsx>{`
         @keyframes float {
           0%, 100% {
-            transform: translateY(0px) scale(1);
+            transform: translateY(0px);
           }
           50% {
-            transform: translateY(-10px) scale(1.02);
-          }
-        }
-
-        @keyframes elegant-bounce {
-          0%, 100% {
-            transform: translateY(0);
-            opacity: 0.4;
-          }
-          50% {
-            transform: translateY(-12px);
-            opacity: 1;
-          }
-        }
-
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes loading-bar {
-          0% {
-            width: 0%;
-            margin-left: 0%;
-          }
-          50% {
-            width: 70%;
-            margin-left: 15%;
-          }
-          100% {
-            width: 0%;
-            margin-left: 100%;
+            transform: translateY(-10px);
           }
         }
 
         .animate-float {
           animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-elegant-bounce {
-          animation: elegant-bounce 1.4s ease-in-out infinite;
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out;
-        }
-
-        .animate-loading-bar {
-          animation: loading-bar 1.5s ease-in-out infinite;
         }
       `}</style>
     </div>

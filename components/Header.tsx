@@ -29,8 +29,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F2EDE3] shadow-lg py-4'
-          : 'bg-[#F2EDE3]/95 backdrop-blur-md py-8'
+          ? 'bg-[#F2EDE3] shadow-lg py-6'
+          : 'bg-[#F2EDE3]/95 backdrop-blur-md py-10'
       }`}
     >
       <nav className="container">
@@ -40,9 +40,9 @@ export default function Header() {
             <Image
               src="/images/logo/hcjkstacked.svg" // Correct path, starting from the root
               alt="HCJK Collection Logo"
-              width={80}
-              height={80}
-              className="h-20 w-auto transition-transform duration-300 hover:scale-105"
+              width={100}
+              height={100}
+              className="h-24 w-auto transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
