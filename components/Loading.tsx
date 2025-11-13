@@ -32,12 +32,12 @@ export default function Loading() {
     >
       {/* Just the Logo - Clean and Simple */}
       <div className="flex justify-center items-center">
-        <div className="relative w-64 h-64 animate-float">
+        <div className="relative w-48 h-48 animate-float">
           <Image
             src="/images/logo/hcjkstacked.svg"
             alt="HCJK Collection"
-            width={256}
-            height={256}
+            width={192}
+            height={192}
             className="object-contain drop-shadow-2xl"
             priority
           />
