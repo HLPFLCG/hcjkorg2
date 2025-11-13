@@ -157,7 +157,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t-2 border-merlot/30 bg-[#e8e6dc] py-6">
+      <div className="border-t-2 border-merlot/30 bg-[#e8e6dc] py-10">
         <div className="container max-w-[1800px]">
           <p className="font-lato text-base text-gray-600 text-center">
             &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with ❤️ by HLPFL
