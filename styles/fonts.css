@@ -1,0 +1,55 @@
+/* ============================================
+   HCJK Photography - Font Definitions
+   ============================================ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap');
+
+/* Eyesome Script Font (Custom) */
+/* Note: If you have the actual Eyesome Script font files, place them in /public/fonts/eyesome/ */
+/* For now, using Great Vibes as a beautiful script alternative */
+
+@font-face {
+  font-family: 'Eyesome Script';
+  src: local('Great Vibes'), local('GreatVibes-Regular');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alternative: If you have custom Eyesome font files, use this: */
+/*
+@font-face {
+  font-family: 'Eyesome Script';
+  src: url('/fonts/eyesome/eyesome-script.woff2') format('woff2'),
+       url('/fonts/eyesome/eyesome-script.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* Font Family Variables */
+:root {
+  --font-primary: 'Playfair Display', serif;
+  --font-secondary: 'Lato', sans-serif;
+  --font-decorative: 'Great Vibes', cursive;
+  --font-eyesome: 'Eyesome Script', 'Great Vibes', cursive;
+}
+
+/* Font Utility Classes */
+.font-playfair {
+  font-family: var(--font-primary);
+}
+
+.font-lato {
+  font-family: var(--font-secondary);
+}
+
+.font-great-vibes {
+  font-family: var(--font-decorative);
+}
+
+.font-eyesome {
+  font-family: var(--font-eyesome);
+}
