@@ -64,7 +64,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col space-y-1.5 z-50"
+            className="md:hidden flex flex-col space-y-1.5 z-[60] relative"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -88,23 +88,31 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden fixed top-32 left-0 right-0 bg-[#F2EDE3] shadow-xl transition-transform duration-300 ${
-            isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-40 ${
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+        <div
+          className={`md:hidden fixed top-0 left-0 right-0 bg-[#F2EDE3] shadow-2xl transition-transform duration-300 z-50 ${
+            isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
-          <ul className="flex flex-col space-y-8 p-10">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors block text-xl py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="pt-32 pb-8">
+            <ul className="flex flex-col space-y-8 px-10">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="font-lato font-semibold text-black hover:text-merlot transition-colors block text-xl py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
