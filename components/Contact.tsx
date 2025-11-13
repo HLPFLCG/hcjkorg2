@@ -45,7 +45,7 @@ export default function Contact() {
             </p>
             <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
               <strong className="text-black text-lg">Phone:</strong>
-              <a href="tel:+1234567890" className="text-merlot hover:text-merlot-dark transition-colors">
+              <a href="tel:+16163133484" className="text-merlot hover:text-merlot-dark transition-colors">
                 +1 (616) 313-3484
               </a>
             </p>
@@ -70,7 +70,7 @@ export default function Contact() {
               Follow on Instagram
             </h3>
             <a
-              href="https://www.instagram.com/hcjkcollection"
+              href="https://www.instagram.com/hcjk_collection"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lead text-merlot hover:text-merlot-dark transition-colors font-semibold"
@@ -91,7 +91,7 @@ export default function Contact() {
             ].map((image, index) => (
               <a
                 key={index}
-                href="https://www.instagram.com/hcjkcollection"
+                href="https://www.instagram.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative aspect-square overflow-hidden rounded-lg group shadow-soft hover:shadow-medium transition-all duration-300"

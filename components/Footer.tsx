@@ -33,7 +33,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.facebook.com/hcjkcollection"
+                href="https://www.facebook.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-merlot flex items-center justify-center hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-lg"
@@ -44,7 +44,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.pinterest.com/hcjkcollection"
+                href="https://www.pinterest.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-merlot flex items-center justify-center hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-lg"

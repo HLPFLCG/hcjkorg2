@@ -7,27 +7,27 @@ const portfolioItems = [
   {
     title: 'Scenic Sunset',
     category: 'Landscape',
-    image: "image/nightime-peninsula.webp",
+    image: "public/nightime-peninsula.webp",
   },
   {
     title: 'Window Scene',
     category: 'Still Life',
-    image: "window-with-curtain.webp",
+    image: "public/window-with-curtain.webp",
   },
   {
     title: 'Natural Beauty',
     category: 'Landscape',
-    image: "image/beach-greenery.webp",
+    image: "public/beach-greenery.webp",
   },
   {
     title: 'Yearbook Portrait',
     category: 'Portrait',
-    image: "image/brother20.webp",
+    image: "public/brother20.webp",
   },
   {
     title: 'Star Detail',
     category: 'Macro',
-    image: "image/star.webp",
+    image: "public/star.webp",
   },
   {
     title: 'Countryside',

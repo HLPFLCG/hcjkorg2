@@ -38,7 +38,7 @@ export default function Loading() {
           <div className="absolute inset-0 rounded-full bg-merlot/5 animate-ping" style={{ animationDuration: '2s' }}></div>
           <div className="relative w-full h-full animate-float">
             <Image
-              src="/images/HH.svg"
+              src="public/HH.svg"
               alt="HCJK Collection"
               fill
               className="object-contain drop-shadow-2xl"
