@@ -1,116 +1,111 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Professional photography services including wedding photography, portraits, landscapes, cityscapes, macro photography, and custom projects.',
+  description: 'Professional photography services including wedding photography, portraits, landscapes, and custom projects.',
 };
 
 const services = [
   {
     number: '01',
     title: 'Wedding Photography',
-    description: 'Your wedding day is one of the most important days of your life, and I am honored to be part of it. I specialize in capturing the magic, emotion, and beauty of your special day with elegance and artistry.',
+    tagline: 'Your special day, captured forever',
+    price: 'Starting at $3,500',
+    description: 'Your wedding day is one of the most important days of your life. I specialize in capturing the magic, emotion, and beauty with elegance and artistry.',
     features: [
-      'Full-day coverage from preparation to reception',
-      'Engagement session included',
-      'Second photographer available',
-      'High-resolution digital images',
-      'Online gallery for easy sharing',
-      'Print release for all images',
-      'Custom wedding albums available',
-      'Destination weddings welcome'
+      'Full-day coverage',
+      'Engagement session',
+      'High-resolution images',
+      'Online gallery',
+      'Print release',
+      'Custom albums available',
     ],
     image: '/images/portfolio/portfolio-10.webp',
-    details: 'From intimate ceremonies to grand celebrations, every moment is preserved beautifully with a blend of candid moments and artistic portraits. I work closely with couples to understand their vision and ensure that every precious moment is captured—from the quiet anticipation of getting ready to the joyous celebration on the dance floor.',
   },
   {
     number: '02',
     title: 'Portrait Photography',
-    description: 'Professional portrait sessions for families, children, seniors, and individuals. Natural, timeless images that capture your unique personality and story.',
+    tagline: 'Timeless images of you',
+    price: 'Starting at $500',
+    description: 'Professional portraits for families, children, seniors, and individuals. Natural, timeless images that capture your unique personality.',
     features: [
       'Family portraits',
       'Senior portraits',
-      'Children & newborn photography',
       'Professional headshots',
       'Maternity sessions',
-      'Individual portraits',
-      'Location or studio sessions',
-      'Wardrobe consultation included'
+      'Location or studio',
+      'Wardrobe consultation',
     ],
     image: '/images/portfolio/portfolio-20.webp',
-    details: 'Whether you need professional headshots for your business, want to capture your growing family, or celebrate a milestone like graduation, I create portraits that are both beautiful and authentic. My approach is relaxed and natural, helping you feel comfortable in front of the camera so your true personality shines through.',
   },
   {
     number: '03',
-    title: 'Landscape & Nature Photography',
-    description: 'Breathtaking landscape and nature photography showcasing the beauty of our world. Perfect for art collectors, interior designers, and nature enthusiasts.',
+    title: 'Landscape & Nature',
+    tagline: 'The beauty of our world',
+    price: 'Starting at $800',
+    description: 'Breathtaking landscape and nature photography. Perfect for art collectors, interior designers, and nature enthusiasts.',
     features: [
-      'Fine art landscape prints',
-      'Nature and wildlife photography',
-      'Seasonal collections',
-      'Limited edition prints available',
-      'Custom sizes and framing',
-      'Commercial licensing available',
-      'Location scouting services',
-      'Sunrise and sunset sessions'
+      'Fine art prints',
+      'Limited editions',
+      'Custom sizes',
+      'Framing available',
+      'Commercial licensing',
+      'Location scouting',
     ],
     image: '/images/portfolio/portfolio-30.webp',
-    details: 'From serene landscapes to vibrant wildlife, I create captivating images that transport viewers to beautiful places. Each photograph is carefully composed to showcase the natural beauty of the environment, whether it\'s a misty mountain morning, a golden sunset over the ocean, or the intricate details of a forest scene.',
   },
   {
     number: '04',
     title: 'Cityscape Photography',
-    description: 'Urban photography capturing the energy and architecture of city life. From skylines to street scenes, the city comes alive through the lens.',
+    tagline: 'Urban energy captured',
+    price: 'Starting at $800',
+    description: 'Urban photography capturing the energy and architecture of city life. From skylines to street scenes.',
     features: [
       'Architectural photography',
-      'Urban landscape prints',
+      'Urban landscapes',
       'Night photography',
-      'Street photography',
       'Aerial perspectives',
       'Time-lapse services',
-      'Commercial real estate photography',
-      'City tour photography sessions'
+      'Commercial projects',
     ],
     image: '/images/portfolio/portfolio-40.webp',
-    details: 'Cities have their own unique character and energy, and I love capturing the interplay of light, shadow, and architecture that makes each urban environment special. Whether it\'s the dramatic lines of modern buildings, the charm of historic neighborhoods, or the vibrant energy of city streets, I create images that celebrate urban life.',
   },
   {
     number: '05',
     title: 'Macro Photography',
-    description: 'Revealing the intricate details of the small world around us. Stunning close-up photography that showcases nature\'s hidden beauty.',
+    tagline: 'Details revealed',
+    price: 'Starting at $600',
+    description: 'Revealing the intricate details of the small world around us. Stunning close-up photography.',
     features: [
-      'Extreme close-up photography',
-      'Flower and plant details',
-      'Insect and wildlife macro',
-      'Texture and pattern studies',
-      'Product macro photography',
+      'Extreme close-ups',
+      'Nature details',
+      'Product photography',
+      'Texture studies',
+      'Fine art prints',
       'Scientific documentation',
-      'Fine art macro prints',
-      'Educational workshops available'
     ],
     image: '/images/portfolio/portfolio-50.webp',
-    details: 'The world of macro photography reveals details invisible to the naked eye. From the delicate structure of a flower petal to the intricate patterns on an insect\'s wing, I capture the extraordinary beauty found in the smallest subjects. Each image invites viewers to see the world from a new perspective.',
   },
   {
     number: '06',
     title: 'Custom Projects',
-    description: 'Specialized photography services tailored to your unique vision. Let\'s collaborate to bring your creative ideas to life.',
+    tagline: 'Your vision, realized',
+    price: 'Custom Quote',
+    description: 'Specialized photography services tailored to your unique vision. Let\'s collaborate to bring your ideas to life.',
     features: [
       'Commercial photography',
-      'Editorial photography',
+      'Editorial projects',
       'Event coverage',
-      'Corporate photography',
-      'Product photography',
       'Brand photography',
-      'Documentary projects',
-      'Artistic collaborations'
+      'Documentary work',
+      'Artistic collaborations',
     ],
     image: '/images/portfolio/portfolio-60.webp',
-    details: 'Every project is unique, and I love working with clients to create custom photography solutions. Whether you need images for your business, want to document a special event, or have a creative vision you\'d like to bring to life, I\'m here to help. Let\'s discuss your needs and create something extraordinary together.',
   },
 ];
 
@@ -120,217 +115,118 @@ export default function ServicesPage() {
       <Header />
       <main className="pt-32">
         {/* Hero Section */}
-        <section className="section bg-[#F2EDE3]">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h1 className="font-playfair text-6xl md:text-7xl font-bold text-black mb-8">
-                Photography <span className="text-merlot">Services</span>
-              </h1>
-              <p className="text-lead text-gray-700 leading-relaxed">
-                Professional photography services tailored to capture your unique story and vision
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          title="Services"
+          subtitle="Professional photography tailored to your story"
+          imagePath="/nightime-peninsula.webp"
+        />
 
-        {/* Services Sections */}
-        {services.map((service, index) => (
-          <section
-            key={index}
-            className={`section border-t-4 border-merlot ${
-              index % 2 === 0 ? 'bg-[#faf0e6]' : 'bg-[#F2EDE3]'
-            }`}
-          >
-            <div className="container">
-              <div className={`grid md:grid-cols-2 gap-16 lg:gap-24 items-center ${
-                index % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}>
-                {/* Image */}
-                <div className={`relative ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                  <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-2xl">
+        {/* Services Grid - E-commerce Style */}
+        <section className="section bg-[#F2EDE3] py-32">
+          <div className="container max-w-[1800px]">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                >
+                  {/* Service Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
+                    {/* Number Badge */}
+                    <div className="absolute top-6 left-6 w-16 h-16 bg-merlot rounded-full flex items-center justify-center shadow-lg">
+                      <span className="font-playfair text-2xl font-bold text-white">{service.number}</span>
+                    </div>
                   </div>
-                  <div className={`absolute -bottom-6 ${index % 2 === 1 ? '-left-6' : '-right-6'} w-48 h-48 bg-merlot/10 rounded-lg -z-10`} />
-                </div>
 
-                {/* Content */}
-                <div className={`space-y-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <div className="flex items-center gap-6">
-                    <span className="font-playfair text-6xl font-bold text-merlot/20">
-                      {service.number}
-                    </span>
-                    <h2 className="font-playfair heading-xl font-bold text-black">
+                  {/* Content */}
+                  <div className="p-8">
+                    <p className="text-merlot font-lato font-semibold text-lg mb-2">{service.tagline}</p>
+                    <h3 className="font-playfair text-3xl font-bold text-black mb-3">
                       {service.title}
-                    </h2>
-                  </div>
-                  
-                  <p className="text-lead text-gray-700">
-                    {service.description}
-                  </p>
-                  
-                  <p className="text-body text-gray-600 leading-relaxed">
-                    {service.details}
-                  </p>
-
-                  {/* Features List */}
-                  <div className="bg-white p-8 rounded-lg shadow-medium">
-                    <h3 className="font-playfair heading-sm font-bold text-black mb-6">
-                      What&apos;s Included:
                     </h3>
-                    <ul className="grid md:grid-cols-2 gap-4">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <span className="text-merlot text-xl leading-none mt-1">✓</span>
-                          <span className="text-body text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <p className="text-2xl font-bold text-merlot mb-4">{service.price}</p>
+                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
 
-                  <div className="pt-4">
+                    {/* Features */}
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <svg className="w-5 h-5 text-merlot flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
                     <Link
                       href="/contact"
-                      className="inline-block bg-merlot text-white font-lato font-semibold text-xl px-10 py-4 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-xl"
+                      className="block w-full bg-merlot text-white text-center font-lato font-semibold text-lg py-4 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1"
                     >
                       Book This Service
                     </Link>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-        ))}
-
-        {/* Booking Process */}
-        <section className="section bg-[#F2EDE3] border-t-4 border-merlot">
-          <div className="container">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="font-playfair heading-xl font-bold text-black text-center mb-16">
-                How It Works
-              </h2>
-              
-              <div className="grid md:grid-cols-4 gap-8">
-                {[
-                  {
-                    step: '01',
-                    title: 'Get in Touch',
-                    description: 'Contact me through the inquiry form or email to discuss your photography needs and vision.'
-                  },
-                  {
-                    step: '02',
-                    title: 'Consultation',
-                    description: 'We\'ll have a conversation about your project, timeline, and any specific requirements you have.'
-                  },
-                  {
-                    step: '03',
-                    title: 'Planning',
-                    description: 'I\'ll create a customized plan for your session, including location scouting and scheduling.'
-                  },
-                  {
-                    step: '04',
-                    title: 'Photo Session',
-                    description: 'On the day of your session, I\'ll capture beautiful images that tell your unique story.'
-                  },
-                ].map((step, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-20 h-20 bg-merlot rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="font-playfair text-3xl font-bold text-white">
-                        {step.step}
-                      </span>
-                    </div>
-                    <h3 className="font-playfair heading-sm font-bold text-black mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-body text-gray-600 leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="section bg-[#faf0e6] border-t-4 border-merlot">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="font-playfair heading-xl font-bold text-black text-center mb-16">
-                Frequently Asked Questions
-              </h2>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    question: 'How far in advance should I book?',
-                    answer: 'For weddings, I recommend booking 6-12 months in advance. For portrait sessions and other services, 2-4 weeks notice is typically sufficient, though I can sometimes accommodate shorter timelines.'
-                  },
-                  {
-                    question: 'Do you travel for photography sessions?',
-                    answer: 'Yes! I love traveling for photography sessions and destination weddings. Travel fees may apply depending on the location. Contact me to discuss your specific needs.'
-                  },
-                  {
-                    question: 'How long until I receive my photos?',
-                    answer: 'For portrait sessions, you can expect your edited images within 2-3 weeks. Wedding photography typically takes 4-6 weeks due to the larger number of images and detailed editing process.'
-                  },
-                  {
-                    question: 'Can I request specific shots or styles?',
-                    answer: 'Absolutely! I encourage clients to share their vision, inspiration photos, and must-have shots. This helps me understand your preferences and ensure we capture everything important to you.'
-                  },
-                  {
-                    question: 'What happens if the weather is bad?',
-                    answer: 'For outdoor sessions, we can reschedule if weather conditions are unfavorable. For weddings, I come prepared with backup plans and equipment to work in any weather conditions.'
-                  },
-                  {
-                    question: 'Do you offer prints and albums?',
-                    answer: 'Yes! I offer professional printing services, custom albums, and wall art. All digital packages include print release, so you can also print images on your own if you prefer.'
-                  },
-                ].map((faq, index) => (
-                  <div key={index} className="bg-white p-8 rounded-lg shadow-medium">
-                    <h3 className="font-playfair heading-sm font-bold text-black mb-4">
-                      {faq.question}
-                    </h3>
-                    <p className="text-body text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+        {/* How It Works */}
+        <section className="section bg-[#faf0e6] border-t-4 border-merlot py-32">
+          <div className="container max-w-[1400px]">
+            <h2 className="font-playfair text-6xl md:text-7xl font-bold text-black text-center mb-20">
+              How It Works
+            </h2>
+            
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                { step: '01', title: 'Get in Touch', description: 'Contact me to discuss your photography needs and vision.' },
+                { step: '02', title: 'Consultation', description: 'We\'ll discuss your project, timeline, and requirements.' },
+                { step: '03', title: 'Planning', description: 'I\'ll create a customized plan including location and scheduling.' },
+                { step: '04', title: 'Photo Session', description: 'I\'ll capture beautiful images that tell your story.' },
+              ].map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-24 h-24 bg-merlot rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <span className="font-playfair text-4xl font-bold text-white">{step.step}</span>
                   </div>
-                ))}
-              </div>
+                  <h3 className="font-playfair text-2xl font-bold text-black mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="section bg-[#F2EDE3] border-t-4 border-merlot">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-playfair heading-xl font-bold text-black mb-8">
-                Ready to Book Your Session?
-              </h2>
-              <p className="text-lead text-gray-700 mb-12 leading-relaxed">
-                Let&apos;s create beautiful memories together. Contact me today to discuss your photography needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link
-                  href="/contact"
-                  className="inline-block bg-merlot text-white font-lato font-semibold text-xl px-12 py-5 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-xl"
-                >
-                  Get in Touch
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className="inline-block bg-transparent border-2 border-merlot text-merlot font-lato font-semibold text-xl px-12 py-5 rounded-full hover:bg-merlot hover:text-white transition-all transform hover:-translate-y-1 hover:shadow-xl"
-                >
-                  View Portfolio
-                </Link>
-              </div>
-            </div>
+        <section className="section bg-[#F2EDE3] border-t-4 border-merlot py-32">
+          <div className="container max-w-4xl mx-auto text-center">
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold text-black mb-8">
+              Ready to Book Your Session?
+            </h2>
+            <p className="text-2xl text-gray-700 mb-12 leading-relaxed">
+              Let&apos;s create beautiful memories together.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-merlot text-white font-lato font-semibold text-2xl px-14 py-6 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-2xl"
+            >
+              Get in Touch
+            </Link>
           </div>
         </section>
       </main>
