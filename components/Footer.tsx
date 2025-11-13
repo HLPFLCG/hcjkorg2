@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-beige-light py-20">
+    <footer className="bg-black text-linen py-20">
       <div className="container">
         {/* Footer Content Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
@@ -67,7 +67,7 @@ export default function Footer() {
                 <li key={link}>
                   <Link
                     href={`#${link.toLowerCase()}`}
-                    className="text-beige-light hover:text-merlot transition-colors"
+                    className="text-linen hover:text-merlot transition-colors"
                   >
                     {link}
                   </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:contact@hcjk.org"
-                  className="text-beige-light hover:text-merlot transition-colors"
+                  className="text-linen hover:text-merlot transition-colors"
                 >
                   contact@hcjk.org
                 </a>
@@ -119,7 +119,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+6163133484"
-                  className="text-beige-light hover:text-merlot transition-colors"
+                  className="text-linen hover:text-merlot transition-colors"
                 >
                   +1 (616) 313-3484
                 </a>
@@ -129,7 +129,7 @@ export default function Footer() {
                   href="https://www.instagram.com/hcjk_collection"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-beige-light hover:text-merlot transition-colors"
+                  className="text-linen hover:text-merlot transition-colors"
                 >
                   @hcjk_collection
                 </a>

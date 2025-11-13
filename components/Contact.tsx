@@ -186,7 +186,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="text-merlot hover:text-merlot-dark transition-colors text-lg"
                   >
-                    @hcjkc_ollection
+                    @hcjk_collection
                   </a>
                 </div>
               </div>
@@ -197,13 +197,12 @@ export default function Contact() {
                 Business Hours
               </h4>
               <div className="space-y-2 text-gray-700">
-                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                <p><strong>Monday - Friday:</strong> 7:00 AM - 9:00 PM</p>
                 <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
-                <p><strong>Sunday:</strong> By Appointment</p>
               </div>
             </div>
 
-            <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-8">
+            <div className="bg-[#faf0e6] rounded-lg shadow-medium p-8">
               <h4 className="font-playfair text-2xl font-bold text-black mb-4">
                 Response Time
               </h4>
@@ -212,50 +211,6 @@ export default function Contact() {
                 please call us directly.
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Instagram Section */}
-        <div className="mt-32">
-          <div className="text-center mb-16">
-            <h3 className="font-playfair heading-lg font-bold text-black mb-4">
-              Follow on Instagram
-            </h3>
-            <a
-              href="https://www.instagram.com/hcjkcollection"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-lead text-merlot hover:text-merlot-dark transition-colors font-semibold"
-            >
-              @hcjkcollection
-            </a>
-          </div>
-
-          {/* Instagram Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              '/images/portfolio/portfolio-7.webp',
-              '/images/portfolio/portfolio-14.webp',
-              '/images/portfolio/portfolio-21.webp',
-              '/images/portfolio/portfolio-28.webp',
-              '/images/portfolio/portfolio-35.webp',
-              '/images/portfolio/portfolio-42.webp',
-            ].map((image, index) => (
-              <a
-                key={index}
-                href="https://www.instagram.com/hcjkcollection"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative aspect-square overflow-hidden rounded-lg group shadow-soft hover:shadow-medium transition-all duration-300"
-              >
-                <img
-                  src={image}
-                  alt={`Instagram post ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-              </a>
-            ))}
           </div>
         </div>
       </div>

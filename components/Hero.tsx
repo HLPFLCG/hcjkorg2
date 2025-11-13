@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/flags.webp"
+          src="/public/big-mountain.webp"
           alt="HCJK Photography Hero"
           fill
           className="object-cover"
