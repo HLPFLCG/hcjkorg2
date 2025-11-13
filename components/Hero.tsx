@@ -24,16 +24,16 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center px-8 max-w-6xl mx-auto py-20">
-        <h1 className="font-playfair heading-display font-bold text-white mb-8 drop-shadow-2xl tracking-tight">
+        <h1 className="font-playfair text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-6 drop-shadow-2xl tracking-tight">
           HCJK Collection
         </h1>
         
         {/* Eyesome Script Font for "Photography" */}
-        <p className="font-eyesome text-6xl md:text-7xl lg:text-8xl text-merlot mb-12 drop-shadow-2xl">
+        <p className="font-eyesome text-7xl md:text-8xl lg:text-9xl text-merlot mb-16 drop-shadow-2xl">
           Photography
         </p>
         
-        <p className="font-lato text-lead text-white mb-16 max-w-3xl mx-auto drop-shadow-lg leading-relaxed">
+        <p className="font-lato text-xl md:text-2xl lg:text-3xl text-white mb-20 max-w-4xl mx-auto drop-shadow-lg leading-relaxed">
           Capturing life&apos;s most precious moments with artistry, passion, and authenticity.
           <br className="hidden md:block" />
           Every image tells a story, every moment becomes art.
@@ -43,13 +43,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <Link
             href="#portfolio"
-            className="btn btn-primary text-lg px-10 py-5 shadow-strong"
+            className="btn btn-primary text-lg px-12 py-6 shadow-strong text-xl"
           >
             View Portfolio
           </Link>
           <Link
             href="#contact"
-            className="btn btn-secondary text-lg px-10 py-5 border-white text-white hover:bg-white hover:text-merlot shadow-strong"
+            className="btn btn-secondary text-lg px-12 py-6 border-white text-white hover:bg-white hover:text-merlot shadow-strong text-xl"
           >
             Get in Touch
           </Link>

@@ -40,7 +40,7 @@ export default function Portfolio() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="section bg-beige-light">
+    <section id="portfolio" className="section bg-white border-t-4 border-merlot">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-20">

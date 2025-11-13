@@ -29,8 +29,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-beige shadow-lg py-4'
-          : 'bg-beige/95 backdrop-blur-md py-6'
+          ? 'bg-[#F2EDE3] shadow-lg py-4'
+          : 'bg-[#F2EDE3]/95 backdrop-blur-md py-8'
       }`}
     >
       <nav className="container">
@@ -40,20 +40,20 @@ export default function Header() {
             <Image
               src="/images/logo.png"
               alt="HCJK Collection Logo"
-              width={60}
-              height={60}
-              className="h-14 w-auto transition-transform duration-300 hover:scale-105"
+              width={80}
+              height={80}
+              className="h-20 w-auto transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center space-x-10 lg:space-x-12">
+          <ul className="hidden md:flex items-center space-x-16 lg:space-x-20">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-lg"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-xl"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
@@ -88,7 +88,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden fixed top-24 left-0 right-0 bg-beige shadow-xl transition-transform duration-300 ${
+          className={`md:hidden fixed top-32 left-0 right-0 bg-[#F2EDE3] shadow-xl transition-transform duration-300 ${
             isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >

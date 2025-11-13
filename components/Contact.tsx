@@ -2,7 +2,7 @@
 
 export default function Contact() {
   return (
-    <section id="contact" className="section bg-beige">
+    <section id="contact" className="section bg-[#F2EDE3] border-t-4 border-merlot">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-20">

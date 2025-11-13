@@ -50,20 +50,20 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section bg-beige">
+    <section id="services" className="section bg-[#F2EDE3] border-t-4 border-merlot">
       <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="font-playfair heading-xl font-bold text-black mb-6">
+        <div className="text-center mb-24 max-w-4xl mx-auto">
+          <h2 className="font-playfair heading-xl font-bold text-black mb-8">
             My Services
           </h2>
-          <p className="text-lead text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lead text-gray-700 leading-relaxed">
             Professional photography services tailored to capture your unique story
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {services.map((service, index) => (
             <div
               key={index}
