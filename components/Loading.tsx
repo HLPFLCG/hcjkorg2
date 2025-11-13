@@ -34,7 +34,7 @@ export default function Loading() {
       <div className="flex justify-center items-center">
         <div className="relative w-48 h-48 animate-float">
           <Image
-            src="/images/logo/hcjk-logo-background.png"
+            src="/images/logo/hcjkhcjkstackednewsvg.svg"
             alt="HCJK Collection"
             width={192}
             height={192}
