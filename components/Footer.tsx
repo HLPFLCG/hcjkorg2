@@ -73,16 +73,31 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="font-lato space-y-4 text-xl">
-              {['Home', 'About', 'Services', 'Portfolio', 'Contact'].map((link) => (
-                <li key={link}>
-                  <Link
-                    href={`#${link.toLowerCase()}`}
-                    className="text-gray-700 hover:text-merlot transition-colors"
-                  >
-                    {link}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/" className="text-gray-700 hover:text-merlot transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-700 hover:text-merlot transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-700 hover:text-merlot transition-colors">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" className="text-gray-700 hover:text-merlot transition-colors">
+                  Portfolio
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-700 hover:text-merlot transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -102,7 +117,7 @@ export default function Footer() {
               ].map((service) => (
                 <li key={service}>
                   <Link
-                    href="#services"
+                    href="/services"
                     className="text-gray-700 hover:text-merlot transition-colors"
                   >
                     {service}
@@ -152,9 +167,20 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className="border-t-2 border-merlot/20 bg-beige-light py-8">
         <div className="container">
-          <p className="font-lato text-lg text-gray-600 text-center">
-            &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with love from HLPFL
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="font-lato text-lg text-gray-600 text-center md:text-left">
+              &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with love from HLPFL
+            </p>
+            <div className="flex gap-6 font-lato text-lg">
+              <Link href="/privacy" className="text-gray-600 hover:text-merlot transition-colors">
+                Privacy Policy
+              </Link>
+              <span className="text-gray-400">|</span>
+              <Link href="/terms" className="text-gray-600 hover:text-merlot transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
