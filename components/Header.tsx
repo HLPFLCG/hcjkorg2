@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo/hcjkstackedproperwhite.png"
+              src="/images/logo/hcjkstackednewsvg.svg"
               alt="HCJK Collection Logo"
               width={100}
               height={100}
