@@ -38,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="#hero" className="flex items-center">
             <Image
-              src="image/hcjkstacked.svg" // Correct path, starting from the root
+              src="/images/logo.png" // Correct path, starting from the root
               alt="HCJK Collection Logo"
               width={80}
               height={80}
@@ -48,7 +48,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center space-x-60 lg:space-x-48">
+          <ul className="hidden md:flex items-center space-x-20 lg:space-x-28">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -56,7 +56,7 @@ export default function Header() {
                   className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-xl py-2"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-5 w-5 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
                 </Link>
               </li>
             ))}
