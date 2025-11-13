@@ -79,7 +79,7 @@ export default function Services() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 {/* Number Overlay */}
-                <div className="absolute top-6 left-6 font-playfair text-7xl text-white font-bold opacity-80 drop-shadow-lg">
+                <div className="absolute top-6 left-6 font-playfair text-7xl text-white opacity-80 drop-shadow-lg">
                   {service.number}
                 </div>
               </div>

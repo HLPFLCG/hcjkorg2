@@ -48,7 +48,7 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-10">
+          <div className="bg-[#faf0e6] rounded-lg shadow-medium p-10">
             <h3 className="font-playfair heading-md font-bold text-black mb-8">
               Send Us a Message
             </h3>
@@ -91,7 +91,7 @@ export default function Contact() {
                   id="phone"
                   name="phone"
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors"
-                  placeholder="(123) 456-7890"
+                  placeholder="(616) 313-3484"
                 />
               </div>
 
@@ -181,18 +181,18 @@ export default function Contact() {
                 <div>
                   <h4 className="font-lato font-semibold text-black text-lg mb-2">Instagram</h4>
                   <a 
-                    href="https://www.instagram.com/hcjkcollection" 
+                    href="https://www.instagram.com/hcjk_collection" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-merlot hover:text-merlot-dark transition-colors text-lg"
                   >
-                    @hcjkcollection
+                    @hcjkc_ollection
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-8">
+            <div className="bg-[#faf0e6] rounded-lg shadow-medium p-8">
               <h4 className="font-playfair text-2xl font-bold text-black mb-4">
                 Business Hours
               </h4>

@@ -17,14 +17,14 @@ export default function InstagramFeed() {
   }, []);
 
   return (
-    <section className="section bg-[#f5f5dc] border-t-4 border-merlot">
+    <section className="section bg-[#faf0e6] border-t-4 border-merlot">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="font-playfair heading-xl font-bold text-black mb-6">
-            Latest from Instagram
+            See the HCJK Collection on Instagram
           </h2>
           <p className="text-lead text-gray-600 max-w-3xl mx-auto">
-            Follow along for daily inspiration and behind-the-scenes moments
+            Follow for daily inspiration, coffee, behind-the-scenes moments
           </p>
         </div>
         

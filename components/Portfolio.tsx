@@ -16,7 +16,7 @@ export default function Portfolio() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="section bg-[#f5f5dc] border-t-4 border-merlot">
+    <section id="portfolio" className="section bg-[#faf0e6] border-t-4 border-merlot">
       <div className="container">
         <div className="text-center mb-24 max-w-4xl mx-auto">
           <h2 className="font-playfair heading-xl font-bold text-black mb-8">Featured Work</h2>

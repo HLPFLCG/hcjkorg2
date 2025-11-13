@@ -131,7 +131,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-beige-light hover:text-merlot transition-colors"
                 >
-                  @hcjkc_ollection
+                  @hcjk_collection
                 </a>
               </li>
             </ul>

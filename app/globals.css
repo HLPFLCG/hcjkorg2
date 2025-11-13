@@ -24,7 +24,7 @@
      --color-background: var(--background);
      --color-foreground: var(--foreground);
      --color-beige: #F2EDE3;
-     --color-beige-light: #faf8f3;
+     --color-linen: #faf0e6
      --color-beige-dark: #e8e6dc;
      --color-merlot: #722f37;
      --color-merlot-dark: #5a2529;
@@ -80,7 +80,7 @@
    }
    
    ::-webkit-scrollbar-track {
-     background: var(--color-beige-light);
+     background: var(--color-linen);
    }
    
    ::-webkit-scrollbar-thumb {
@@ -218,7 +218,7 @@
    
    /* Professional cards */
    .card {
-     background: #f5f5dc;
+     background: #faf0e6;
      border-radius: 8px;
      overflow: hidden;
      transition: all 0.3s ease;
