@@ -1,0 +1,20 @@
+# Cloudflare Pages Configuration for HCJK Photography
+# This file is optional but provides additional configuration options
+
+name = "hcjk-photography"
+compatibility_date = "2024-11-13"
+
+# Pages configuration
+pages_build_output_dir = "out"
+
+# Environment variables (if needed)
+[env.production]
+# Add any production environment variables here
+
+[env.preview]
+# Add any preview environment variables here
+
+# Custom routes (optional)
+# [[routes]]
+# pattern = "/api/*"
+# custom_domain = true

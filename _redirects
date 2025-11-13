@@ -1,0 +1,17 @@
+# Cloudflare Pages Redirects Configuration
+# Optimized for HCJK Photography Website
+
+# Redirect www to non-www (or vice versa)
+# Uncomment the version you prefer:
+
+# Option 1: Redirect www to non-www
+# https://www.hcjk.org/* https://hcjk.org/:splat 301
+
+# Option 2: Redirect non-www to www
+# https://hcjk.org/* https://www.hcjk.org/:splat 301
+
+# 404 handling
+/* /404.html 404
+
+# SPA fallback (if needed in future)
+# /* /index.html 200
