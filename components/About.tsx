@@ -58,7 +58,7 @@ export default function About() {
           {/* Image */}
           <div className="relative h-[600px] md:h-[700px] lg:h-[800px] rounded-lg overflow-hidden shadow-strong">
             <Image
-              src="image/animal?.webp"
+              src="/images/about/about-1.webp"
               alt="HCJK Photography - Professional Portrait"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
