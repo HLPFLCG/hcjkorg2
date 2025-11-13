@@ -42,7 +42,7 @@ export default function Header() {
               alt="HCJK Collection Logo"
               width={100}
               height={100}
-              className="h-24 w-auto py-4 transition-transform duration-300 hover:scale-105"
+              className="h-24 w-auto py-4 transition-transform duration-300 hover:scale-0"
               priority
             />
           </Link>
