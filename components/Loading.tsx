@@ -34,16 +34,19 @@ export default function Loading() {
     >
       <div className="text-center">
         {/* Elegant Logo Animation */}
-        <div className="relative w-40 h-40 mx-auto mb-12">
-          <div className="absolute inset-0 rounded-full bg-merlot/5 animate-ping" style={{ animationDuration: '2s' }}></div>
-          <div className="relative w-full h-full animate-float">
-            <Image
-              src="/images/logo/hcjkstacked.svg"
-              alt="HCJK Collection"
-              fill
-              className="object-contain drop-shadow-2xl"
-              priority
-            />
+        <div className="flex justify-center items-center mb-12">
+          <div className="relative w-48 h-48">
+            <div className="absolute inset-0 rounded-full bg-merlot/5 animate-ping" style={{ animationDuration: '2s' }}></div>
+            <div className="relative w-full h-full flex items-center justify-center animate-float">
+              <Image
+                src="/images/logo/hcjkstacked.svg"
+                alt="HCJK Collection"
+                width={192}
+                height={192}
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+            </div>
           </div>
         </div>
 

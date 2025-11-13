@@ -12,7 +12,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'public/flags.webp',
+          backgroundImage: 'url(/images/hero/hero-1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -49,7 +49,7 @@ export default function Hero() {
           </Link>
           <Link
             href="#contact"
-            className="btn btn-secondary text-lg px-12 py-6 border-white text-white hover:bg-white hover:text-merlot shadow-strong text-xl"
+            className="btn btn-secondary text-lg px-12 py-6 border-white text-white hover:bg-[#f5f5dc] hover:text-merlot shadow-strong text-xl"
           >
             Get in Touch
           </Link>

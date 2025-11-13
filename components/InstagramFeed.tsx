@@ -17,7 +17,7 @@ export default function InstagramFeed() {
   }, []);
 
   return (
-    <section className="section bg-white border-t-4 border-merlot">
+    <section className="section bg-[#f5f5dc] border-t-4 border-merlot">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="font-playfair heading-xl font-bold text-black mb-6">
