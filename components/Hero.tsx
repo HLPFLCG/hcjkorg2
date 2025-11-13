@@ -1,14 +1,41 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+// Array of hero images - add your best images here
+const heroImages = [
+  '/big-mountain.webp',
+  '/nightime-peninsula.webp',
+  '/beach-greenery.webp',
+  '/clay-roof-house-panoramic.webp',
+  '/flags.webp',
+  '/panoramic-river-mountains-wow-this-is-gorgeous.webp',
+  '/sunset1.webp',
+];
 
 export default function Hero() {
+  const [currentImage, setCurrentImage] = useState('');
+
+  useEffect(() => {
+    // Get day of year to rotate image daily
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+    
+    // Select image based on day of year
+    const imageIndex = dayOfYear % heroImages.length;
+    setCurrentImage(heroImages[imageIndex]);
+  }, []);
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: 'url(/big-mountain.webp)',
+        backgroundImage: currentImage ? `url(${currentImage})` : 'url(/big-mountain.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -40,14 +67,14 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
           <Link
-            href="#portfolio"
+            href="/portfolio"
             className="btn btn-primary text-xl px-16 py-7 shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
           >
             View Portfolio
           </Link>
           <Link
-            href="#contact"
-            className="btn btn-primary text-xl px-16 py-7 shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+            href="/contact"
+            className="btn btn-secondary text-xl px-16 py-7 border-2 border-white text-white hover:bg-white hover:text-merlot shadow-strong hover:shadow-2xl transform hover:-translate-y-1 transition-all"
           >
             Get in Touch
           </Link>
