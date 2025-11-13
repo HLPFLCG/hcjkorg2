@@ -20,19 +20,6 @@
      --foreground: #1a1a1a;
    }
    
-   @theme inline {
-     --color-background: var(--background);
-     --color-foreground: var(--foreground);
-     --color-beige: #F2EDE3;
-     --color-linen: #faf0e6;
-     --color-beige-dark: #e8e6dc;
-     --color-merlot: #722f37;
-     --color-merlot-dark: #5a2529;
-     --color-black: #1a1a1a;
-     --font-sans: var(--font-lato);
-     --font-serif: var(--font-playfair);
-   }
-   
    /* Base styles */
    * {
      margin: 0;
