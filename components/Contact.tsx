@@ -1,6 +1,38 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function Contact() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xblqjywk', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        form.reset();
+        setTimeout(() => setFormStatus('idle'), 5000);
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="section bg-[#F2EDE3] border-t-4 border-merlot">
       <div className="container">
@@ -14,63 +46,183 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Contact Buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
-          <a
-            href="mailto:contact@hcjk.org"
-            className="btn btn-primary text-lg shadow-medium"
-          >
-            Email Us
-          </a>
-          <a
-            href="tel:+16163133438"
-            className="btn btn-secondary text-lg shadow-medium"
-          >
-            Call Now
-          </a>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+          {/* Contact Form */}
+          <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-10">
+            <h3 className="font-playfair heading-md font-bold text-black mb-8">
+              Send Us a Message
+            </h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block font-lato font-semibold text-black mb-2">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
 
-        {/* Contact Information */}
-        <div className="max-w-3xl mx-auto text-center space-y-6 mb-24">
-          <h3 className="font-playfair heading-md font-bold text-black mb-8">
-            Get in Touch
-          </h3>
-          
-          <div className="space-y-5 text-body">
-            <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
-              <strong className="text-black text-lg">Email:</strong>
-              <a href="mailto:contact@hcjk.org" className="text-merlot hover:text-merlot-dark transition-colors">
-                contact@hcjk.org
-              </a>
-            </p>
-            <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
-              <strong className="text-black text-lg">Phone:</strong>
-              <a href="tel:+16163133484" className="text-merlot hover:text-merlot-dark transition-colors">
-                +1 (616) 313-3484
-              </a>
-            </p>
-            <p className="flex flex-col sm:flex-row items-center justify-center gap-2">
-              <strong className="text-black text-lg">Instagram:</strong>
-              <a
-                href="https://www.instagram.com/hcjk_collection"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-merlot hover:text-merlot-dark transition-colors"
+              <div>
+                <label htmlFor="email" className="block font-lato font-semibold text-black mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block font-lato font-semibold text-black mb-2">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors"
+                  placeholder="(123) 456-7890"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="service" className="block font-lato font-semibold text-black mb-2">
+                  Service Interested In
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors"
+                >
+                  <option value="">Select a service</option>
+                  <option value="wedding">Wedding Photography</option>
+                  <option value="portrait">Portrait Photography</option>
+                  <option value="landscape">Landscape & Nature</option>
+                  <option value="event">Event Photography</option>
+                  <option value="fine-art">Fine Art Photography</option>
+                  <option value="custom">Custom Project</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block font-lato font-semibold text-black mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-merlot focus:outline-none transition-colors resize-none"
+                  placeholder="Tell us about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={formStatus === 'submitting'}
+                className="w-full btn btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                @hcjkcollection
-              </a>
-            </p>
+                {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
+              </button>
+
+              {formStatus === 'success' && (
+                <div className="bg-green-100 border-2 border-green-500 text-green-700 px-4 py-3 rounded-lg">
+                  Thank you! Your message has been sent successfully.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div className="bg-red-100 border-2 border-red-500 text-red-700 px-4 py-3 rounded-lg">
+                  Oops! Something went wrong. Please try again or email us directly.
+                </div>
+              )}
+            </form>
+          </div>
+
+          {/* Contact Information */}
+          <div className="space-y-10">
+            <div>
+              <h3 className="font-playfair heading-md font-bold text-black mb-8">
+                Contact Information
+              </h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-lato font-semibold text-black text-lg mb-2">Email</h4>
+                  <a 
+                    href="mailto:contact@hcjk.org" 
+                    className="text-merlot hover:text-merlot-dark transition-colors text-lg"
+                  >
+                    contact@hcjk.org
+                  </a>
+                </div>
+
+                <div>
+                  <h4 className="font-lato font-semibold text-black text-lg mb-2">Phone</h4>
+                  <a 
+                    href="tel:+16163133484" 
+                    className="text-merlot hover:text-merlot-dark transition-colors text-lg"
+                  >
+                    +1 (616) 313-3484
+                  </a>
+                </div>
+
+                <div>
+                  <h4 className="font-lato font-semibold text-black text-lg mb-2">Instagram</h4>
+                  <a 
+                    href="https://www.instagram.com/hcjkcollection" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-merlot hover:text-merlot-dark transition-colors text-lg"
+                  >
+                    @hcjkcollection
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-8">
+              <h4 className="font-playfair text-2xl font-bold text-black mb-4">
+                Business Hours
+              </h4>
+              <div className="space-y-2 text-gray-700">
+                <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+                <p><strong>Sunday:</strong> By Appointment</p>
+              </div>
+            </div>
+
+            <div className="bg-[#f5f5dc] rounded-lg shadow-medium p-8">
+              <h4 className="font-playfair text-2xl font-bold text-black mb-4">
+                Response Time
+              </h4>
+              <p className="text-gray-700">
+                We typically respond to inquiries within 24-48 hours. For urgent requests, 
+                please call us directly.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Instagram Section */}
-        <div className="mt-24">
+        <div className="mt-32">
           <div className="text-center mb-16">
             <h3 className="font-playfair heading-lg font-bold text-black mb-4">
               Follow on Instagram
             </h3>
             <a
-              href="https://www.instagram.com/hcjk_collection"
+              href="https://www.instagram.com/hcjkcollection"
               target="_blank"
               rel="noopener noreferrer"
               className="text-lead text-merlot hover:text-merlot-dark transition-colors font-semibold"
@@ -91,7 +243,7 @@ export default function Contact() {
             ].map((image, index) => (
               <a
                 key={index}
-                href="https://www.instagram.com/hcjk_collection"
+                href="https://www.instagram.com/hcjkcollection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative aspect-square overflow-hidden rounded-lg group shadow-soft hover:shadow-medium transition-all duration-300"
