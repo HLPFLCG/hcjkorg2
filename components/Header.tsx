@@ -29,31 +29,31 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-beige shadow-md'
-          : 'bg-beige/95 backdrop-blur-md'
+          ? 'bg-beige shadow-lg py-4'
+          : 'bg-beige/95 backdrop-blur-md py-6'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="#hero" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="HCJK Collection Logo"
-              width={50}
-              height={50}
-              className="h-12 w-auto"
+              width={60}
+              height={60}
+              className="h-14 w-auto transition-transform duration-300 hover:scale-105"
               priority
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center space-x-8">
+          <ul className="hidden md:flex items-center space-x-10 lg:space-x-12">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-lg"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
@@ -64,23 +64,23 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col space-y-1 z-50"
+            className="md:hidden flex flex-col space-y-1.5 z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+              className={`block w-7 h-0.5 bg-black transition-transform duration-300 ${
+                isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
               }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-black transition-opacity duration-300 ${
+              className={`block w-7 h-0.5 bg-black transition-opacity duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-6 h-0.5 bg-black transition-transform duration-300 ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+              className={`block w-7 h-0.5 bg-black transition-transform duration-300 ${
+                isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
               }`}
             />
           </button>
@@ -88,16 +88,16 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden fixed top-20 left-0 right-0 bg-beige shadow-lg transition-transform duration-300 ${
+          className={`md:hidden fixed top-24 left-0 right-0 bg-beige shadow-xl transition-transform duration-300 ${
             isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
-          <ul className="flex flex-col space-y-4 p-6">
+          <ul className="flex flex-col space-y-6 p-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors block"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors block text-xl"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

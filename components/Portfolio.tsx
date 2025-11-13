@@ -40,24 +40,24 @@ export default function Portfolio() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="py-20 bg-beige-light">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="section bg-beige-light">
+      <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
+        <div className="text-center mb-20">
+          <h2 className="font-playfair heading-xl font-bold text-black mb-6">
             Featured Work
           </h2>
-          <p className="font-lato text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lead text-gray-600 max-w-3xl mx-auto">
             A curated selection of recent photography showcasing diverse styles and subjects
           </p>
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {portfolioItems.map((item, index) => (
             <div
               key={index}
-              className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group"
+              className="relative aspect-[4/3] rounded-lg overflow-hidden cursor-pointer group shadow-medium hover:shadow-strong transition-all duration-300"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -66,20 +66,20 @@ export default function Portfolio() {
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
 
               {/* Overlay */}
               <div
-                className={`absolute inset-0 bg-merlot/90 flex flex-col items-center justify-center transition-opacity duration-300 ${
+                className={`absolute inset-0 bg-gradient-to-t from-merlot via-merlot/80 to-transparent flex flex-col items-center justify-center transition-opacity duration-300 ${
                   hoveredIndex === index ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <h3 className="font-playfair text-2xl font-bold text-white mb-2">
+                <h3 className="font-playfair text-3xl font-bold text-white mb-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   {item.title}
                 </h3>
-                <p className="font-lato text-sm text-beige-light uppercase tracking-wider">
+                <p className="font-lato text-base text-beige-light uppercase tracking-widest transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                   {item.category}
                 </p>
               </div>
@@ -88,10 +88,10 @@ export default function Portfolio() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <a
             href="#contact"
-            className="inline-block px-8 py-4 bg-merlot text-white font-semibold rounded hover:bg-merlot-dark transform hover:-translate-y-1 transition-all duration-300 shadow-lg"
+            className="btn btn-primary text-lg shadow-medium"
           >
             Book a Session
           </a>

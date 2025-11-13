@@ -50,52 +50,54 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 bg-beige">
-      <div className="container mx-auto px-6">
+    <section id="services" className="section bg-beige">
+      <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-black mb-4">
+        <div className="text-center mb-20">
+          <h2 className="font-playfair heading-xl font-bold text-black mb-6">
             My Services
           </h2>
-          <p className="font-lato text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lead text-gray-600 max-w-3xl mx-auto">
             Professional photography services tailored to capture your unique story
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+              className="card group"
             >
               {/* Service Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
+                {/* Number Overlay */}
+                <div className="absolute top-6 left-6 font-playfair text-7xl text-white font-bold opacity-80 drop-shadow-lg">
+                  {service.number}
+                </div>
               </div>
 
               {/* Service Content */}
-              <div className="p-6">
-                <div className="font-playfair text-5xl text-merlot opacity-30 mb-2">
-                  {service.number}
-                </div>
-                <h3 className="font-playfair text-2xl font-bold text-black mb-3">
+              <div className="p-8">
+                <h3 className="font-playfair heading-md font-bold text-black mb-4">
                   {service.title}
                 </h3>
-                <p className="font-lato text-gray-600 mb-4 leading-relaxed">
+                <p className="text-body text-gray-600 mb-6">
                   {service.description}
                 </p>
                 <Link
                   href="#contact"
-                  className="inline-block font-lato font-semibold text-merlot hover:underline transition-all"
+                  className="inline-flex items-center gap-2 font-lato font-semibold text-merlot hover:text-merlot-dark transition-colors text-lg group"
                 >
-                  {service.cta} →
+                  {service.cta}
+                  <span className="transform group-hover:translate-x-2 transition-transform">→</span>
                 </Link>
               </div>
             </div>
