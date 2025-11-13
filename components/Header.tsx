@@ -48,12 +48,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center space-x-16 lg:space-x-20">
+          <ul className="hidden md:flex items-center space-x-20 lg:space-x-28">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-xl"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-xl py-2"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
@@ -92,12 +92,12 @@ export default function Header() {
             isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
-          <ul className="flex flex-col space-y-6 p-8">
+          <ul className="flex flex-col space-y-8 p-10">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors block text-xl"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors block text-xl py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
