@@ -48,12 +48,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-12 lg:gap-20">
+          <ul className="hidden md:flex items-center gap-8 lg:gap-12 ipad:gap-6">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-2xl py-3 px-4"
+                  className="font-lato font-semibold text-black hover:text-merlot transition-colors relative group text-xl md:text-2xl py-3 px-2 lg:px-4"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-merlot transition-all duration-300 group-hover:w-full" />
@@ -64,9 +64,10 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col space-y-1.5 'z-60' relative"
+            className="md:hidden flex flex-col space-y-1.5 'z-60' relative p-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
+            style={{ minHeight: '44px', minWidth: '44px' }}
           >
             <span
               className={`block w-7 h-0.5 bg-black transition-transform duration-300 ${

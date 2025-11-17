@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'ipad': {'min': '768px', 'max': '1024px'},
+      },
       colors: {
         beige: {
           DEFAULT: '#f5f5dc',
