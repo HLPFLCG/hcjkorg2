@@ -1,6 +1,6 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import PageHero from '@/components/PageHero';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import EnhancedPageHero from '@/components/ui/EnhancedPageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -16,10 +16,10 @@ export default function AboutPage() {
       <Header />
       <main className="pt-32">
         {/* Hero Section with Photo */}
-        <PageHero
+        <EnhancedPageHero
           title="About Me"
           subtitle="Capturing life's moments with artistry and passion"
-          imagePath="/big-mountain.webp"
+          pageType="about"
         />
 
         {/* Main About Section with Merlot Box */}

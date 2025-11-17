@@ -1,10 +1,10 @@
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import PortfolioTeaser from '@/components/PortfolioTeaser';
-import AboutTeaser from '@/components/AboutTeaser';
-import ServicesIcons from '@/components/ServicesIcons';
-import InstagramFeed from '@/components/InstagramFeed';
-import Footer from '@/components/Footer';
+import Header from '@/components/layout/Header';
+import Hero from '@/components/sections/Hero';
+import PortfolioTeaser from '@/components/sections/PortfolioTeaser';
+import AboutTeaser from '@/components/sections/AboutTeaser';
+import ServicesIcons from '@/components/sections/ServicesIcons';
+import InstagramFeed from '@/components/sections/InstagramFeed';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (

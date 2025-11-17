@@ -1,6 +1,6 @@
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import PageHero from '@/components/PageHero';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import EnhancedPageHero from '@/components/ui/EnhancedPageHero';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -115,23 +115,23 @@ export default function ServicesPage() {
       <Header />
       <main className="pt-32">
         {/* Hero Section */}
-        <PageHero
+        <EnhancedPageHero
           title="Services"
           subtitle="Professional photography tailored to your story"
-          imagePath="/nightime-peninsula.webp"
+          pageType="services"
         />
 
         {/* Services Grid - E-commerce Style */}
         <section className="section bg-[#F2EDE3] py-32">
           <div className="container max-w-[1800px]">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
               {services.map((service, index) => (
                 <div
                   key={index}
                   className="group bg-white rounded-2xl overflow-hidden shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                 >
                   {/* Service Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}

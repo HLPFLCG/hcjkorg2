@@ -9,11 +9,11 @@ export default function Footer() {
   return (
     <footer className="bg-[#F2EDE3] border-t-4 border-merlot">
       {/* Main Footer Content - 4 Quadrants */}
-      <div className="container py-16 max-w-[1800px]">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+      <div className="content-wrapper py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 xl:gap-16">
           
           {/* Quadrant 1: Logo */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start lg:items-center xl:items-start">
             <Image
               src="/images/logo/hcjkstackednewsvg.svg"
               alt="HCJK Collection Logo"
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           {/* Quadrant 2: Services */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left lg:text-center xl:text-left">
             <h3 className="font-playfair text-2xl font-bold text-black mb-6 pb-2 border-b-2 border-merlot inline-block">
               Services
             </h3>
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
 
           {/* Quadrant 3: Website Links */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left lg:text-center xl:text-left">
             <h3 className="font-playfair text-2xl font-bold text-black mb-6 pb-2 border-b-2 border-merlot inline-block">
               Navigate
             </h3>
@@ -111,7 +111,7 @@ export default function Footer() {
           </div>
 
           {/* Quadrant 4: Contact */}
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left lg:text-center xl:text-left">
             <h3 className="font-playfair text-2xl font-bold text-black mb-6 pb-2 border-b-2 border-merlot inline-block">
               Contact
             </h3>
@@ -158,7 +158,7 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="border-t-2 border-merlot/30 bg-[#e8e6dc] py-10">
-        <div className="container max-w-[1800px]">
+        <div className="content-wrapper">
           <p className="font-lato text-base text-gray-600 text-center">
             &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with ❤️ by HLPFL
           </p>

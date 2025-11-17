@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato, Great_Vibes } from "next/font/google";
 import "./globals.css";
-import Loading from "../components/Loading";
+import Loading from "../components/ui/Loading";
 import Script from "next/script";
 
 const playfair = Playfair_Display({

@@ -1,9 +1,9 @@
 'use client';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/PageHero';
-import ContactForm from '@/components/ContactForm';
+import ContactForm from '@/components/forms/ContactForm';
 import { useState } from 'react';
 
 export default function ContactPage() {
