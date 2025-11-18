@@ -1,7 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import EnhancedPageHero from '@/components/ui/EnhancedPageHero';
-import Image from 'next/image';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -122,9 +122,9 @@ export default function ServicesPage() {
         />
 
         {/* Services Grid - E-commerce Style */}
-        <section className="section bg-[#F2EDE3] py-32">
+        <section className="section-spacious bg-[#F2EDE3]">
           <div className="container max-w-[1800px]">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-spacing-spacious">
               {services.map((service, index) => (
                 <div
                   key={index}
@@ -132,12 +132,15 @@ export default function ServicesPage() {
                 >
                   {/* Service Image */}
                   <div className="relative aspect-[16/9] overflow-hidden">
-                    <Image
+                    <OptimizedImage
                       src={service.image}
                       alt={service.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={85}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                     {/* Number Badge */}
                     <div className="absolute top-6 left-6 w-16 h-16 bg-merlot rounded-full flex items-center justify-center shadow-lg">
@@ -146,18 +149,18 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-8">
-                    <p className="text-merlot font-lato font-semibold text-lg mb-2">{service.tagline}</p>
-                    <h3 className="font-playfair text-3xl font-bold text-black mb-3">
+                  <div className="p-6 md:p-8 card-spacing">
+                    <p className="text-merlot font-lato font-semibold text-base md:text-lg mb-2">{service.tagline}</p>
+                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-black mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-2xl font-bold text-merlot mb-4">{service.price}</p>
-                    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                    <p className="text-xl md:text-2xl font-bold text-merlot mb-4">{service.price}</p>
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
                       {service.description}
                     </p>
 
                     {/* Features */}
-                    <div className="space-y-3 mb-6">
+                    <div className="vr-standard mb-6">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <svg className="w-5 h-5 text-merlot flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,7 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import EnhancedPageHero from '@/components/ui/EnhancedPageHero';
-import OptimizedImage from '@/components/ui/OptimizedImage';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -22,58 +22,55 @@ export default function AboutPage() {
           pageType="about"
         />
 
-        {/* Main About Section with Merlot Box - Improved Spacing */}
+        {/* Main About Section with Merlot Box */}
         <section className="section-standard bg-[#F2EDE3]">
-          <div className="content-wrapper max-w-[1600px]">
-            <div className="relative bg-merlot/50 backdrop-blur-sm rounded-2xl card-spacing shadow-2xl">
-              <div className="grid md:grid-cols-2 grid-spacing-spacious items-center">
-                {/* Image - Enhanced spacing */}
-                <div className="relative image-container-spacing">
-                  <div className="aspect-3/4 relative rounded-lg overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300">
-                    <OptimizedImage
+          <div className="container max-w-[1600px]">
+            <div className="relative bg-merlot/50 backdrop-blur-sm rounded-2xl p-12 md:p-16 shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                {/* Image */}
+                <div className="relative">
+                  <div className="aspect-3/4 relative rounded-lg overflow-hidden shadow-2xl">
+                    <Image
                       src="/emma-child1.webp"
                       alt="Heather - HCJK Collection Photographer"
                       fill
-                      priority={true}
+                      className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      quality={90}
                     />
                   </div>
                 </div>
 
-                {/* Text Content - Better vertical rhythm */}
-                <div className="vr-spacious text-white">
-                  <h2 className="font-playfair heading-lg md:heading-xl font-bold leading-tight mb-8">
+                {/* Text Content */}
+                <div className="space-y-8 text-white">
+                  <h2 className="font-playfair text-5xl md:text-6xl font-bold leading-tight">
                     Hi, I&apos;m <span className="text-beige">Heather</span>
                   </h2>
                   
-                  <div className="vr-standard">
-                    <p className="text-lead md:text-xl leading-relaxed text-block-spacing">
-                      I am a photographic artist who contributes to the visual world with a unique perspective. 
-                      I have the ability to blend aesthetics with emotional depth in every frame I capture, 
-                      transforming memories into timeless artistic pieces.
-                    </p>
-                    
-                    <p className="text-body md:text-lg leading-relaxed opacity-90">
-                      HCJK Photography captures life&apos;s most precious moments with artistry, passion, and authenticity. 
-                      I specialize in creating timeless imagery that tells your unique story through professional 
-                      wedding photography, portrait sessions, and fine art photography.
-                    </p>
-                  </div>
+                  <p className="text-2xl md:text-3xl leading-relaxed">
+                    I am a photographic artist who contributes to the visual world with a unique perspective. 
+                    I have the ability to blend aesthetics with emotional depth in every frame I capture, 
+                    transforming memories into timeless artistic pieces.
+                  </p>
+                  
+                  <p className="text-xl md:text-2xl leading-relaxed opacity-90">
+                    HCJK Photography captures life&apos;s most precious moments with artistry, passion, and authenticity. 
+                    I specialize in creating timeless imagery that tells your unique story through professional 
+                    wedding photography, portrait sessions, and fine art photography.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Photography Philosophy - Improved spacing */}
-        <section className="section-spacious bg-[#faf0e6] border-t-4 border-merlot">
-          <div className="content-wrapper max-w-[1600px]">
-            <h2 className="font-playfair heading-xl md:heading-display font-bold text-black text-center mb-16">
+        {/* Photography Philosophy - Punchy with Animations */}
+        <section className="section bg-[#faf0e6] border-t-4 border-merlot py-32">
+          <div className="container max-w-[1600px]">
+            <h2 className="font-playfair text-6xl md:text-7xl font-bold text-black text-center mb-20">
               My Philosophy
             </h2>
             
-            <div className="grid md:grid-cols-3 grid-spacing-standard">
+            <div className="grid md:grid-cols-3 gap-12">
               {[
                 {
                   title: 'Authentic Moments',
@@ -96,16 +93,16 @@ export default function AboutPage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="group bg-white p-8 md:p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group bg-white p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                   style={{ animationDelay: `${item.delay}ms` }}
                 >
-                  <div className="text-5xl md:text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <h3 className="font-playfair text-2xl md:text-3xl font-bold text-merlot mb-6">
+                  <h3 className="font-playfair text-3xl font-bold text-merlot mb-6">
                     {item.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                  <p className="text-xl text-gray-700 leading-relaxed">
                     {item.text}
                   </p>
                 </div>
@@ -114,14 +111,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Core Values - Better image-text spacing */}
-        <section className="section-spacious bg-[#F2EDE3] border-t-4 border-merlot">
-          <div className="content-wrapper max-w-[1600px]">
-            <h2 className="font-playfair heading-xl md:heading-display font-bold text-black text-center mb-16">
+        {/* Core Values - POWERFUL Cards */}
+        <section className="section bg-[#F2EDE3] border-t-4 border-merlot py-32">
+          <div className="container max-w-[1600px]">
+            <h2 className="font-playfair text-6xl md:text-7xl font-bold text-black text-center mb-20">
               Core Values
             </h2>
             
-            <div className="grid md:grid-cols-2 grid-spacing-spacious">
+            <div className="grid md:grid-cols-2 gap-12">
               {[
                 {
                   title: 'Authenticity',
@@ -148,28 +145,25 @@ export default function AboutPage() {
                   key={index}
                   className="group relative overflow-hidden rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-500"
                 >
-                  {/* Background Image - Enhanced spacing */}
+                  {/* Background Image */}
                   <div className="relative aspect-16/10 overflow-hidden">
-                    <OptimizedImage
+                    <Image
                       src={value.image}
                       alt={value.title}
                       fill
-                      className="transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      quality={85}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-merlot/95 via-merlot/70 to-transparent" />
                   </div>
                   
-                  {/* Content - Better spacing */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 text-white">
-                    <h3 className="font-playfair text-3xl md:text-4xl font-bold mb-4 transform transition-transform duration-300 group-hover:-translate-y-2">
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col justify-end p-10 text-white">
+                    <h3 className="font-playfair text-4xl md:text-5xl font-bold mb-4 transform transition-transform duration-300 group-hover:-translate-y-2">
                       {value.title}
                     </h3>
-                    <p className="text-lg md:text-xl leading-relaxed opacity-90">
+                    <p className="text-xl leading-relaxed opacity-90">
                       {value.description}
                     </p>
                   </div>
@@ -179,23 +173,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Experience & Expertise - Improved spacing */}
-        <section className="section-spacious bg-[#faf0e6] border-t-4 border-merlot">
-          <div className="content-wrapper max-w-[1400px]">
-            <h2 className="font-playfair heading-xl md:heading-display font-bold text-black text-center mb-16">
+        {/* Experience & Expertise */}
+        <section className="section bg-[#faf0e6] border-t-4 border-merlot py-32">
+          <div className="container max-w-[1400px]">
+            <h2 className="font-playfair text-6xl md:text-7xl font-bold text-black text-center mb-20">
               Experience & Expertise
             </h2>
             
-            <div className="bg-white p-8 md:p-12 lg:p-16 rounded-2xl shadow-strong">
-              <h3 className="font-playfair text-3xl md:text-4xl font-bold text-merlot mb-8">
+            <div className="bg-white p-12 md:p-16 rounded-2xl shadow-strong">
+              <h3 className="font-playfair text-4xl font-bold text-merlot mb-8">
                 Professional Background
               </h3>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-2xl text-gray-700 leading-relaxed mb-8">
                 With years of experience in professional photography, I have honed my craft across multiple disciplines. 
                 From intimate wedding ceremonies to large-scale events, from individual portraits to expansive landscapes, 
                 my diverse portfolio reflects a deep understanding of light, composition, and storytelling.
               </p>
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6 mt-8">
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
                 {[
                   'Specialized training in wedding and portrait photography',
                   'Extensive experience with both digital and film photography',
@@ -203,12 +197,12 @@ export default function AboutPage() {
                   'Proficient in advanced post-processing and retouching',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-6 h-6 md:w-8 md:h-8 bg-merlot rounded-full flex items-center justify-center shrink-0 mt-1">
-                      <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-8 h-8 bg-merlot rounded-full flex items-center justify-center shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-base md:text-lg text-gray-700">{item}</span>
+                    <span className="text-xl text-gray-700">{item}</span>
                   </div>
                 ))}
               </div>
@@ -216,25 +210,25 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA Section - Enhanced spacing */}
-        <section className="section-spacious bg-[#F2EDE3] border-t-4 border-merlot">
-          <div className="content-wrapper max-w-4xl text-center">
-            <h2 className="font-playfair heading-lg md:heading-xl font-bold text-black mb-8">
+        {/* CTA Section */}
+        <section className="section bg-[#F2EDE3] border-t-4 border-merlot py-32">
+          <div className="container max-w-4xl mx-auto text-center">
+            <h2 className="font-playfair text-5xl md:text-6xl font-bold text-black mb-8">
               Let&apos;s Create Something Beautiful Together
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed space-responsive">
+            <p className="text-2xl text-gray-700 mb-12 leading-relaxed">
               Ready to capture your story? I&apos;d love to hear about your vision.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/contact"
-                className="btn btn-primary text-lg md:text-xl px-12 md:px-14 py-5 md:py-6 shadow-strong hover:shadow-2xl"
+                className="inline-block bg-merlot text-white font-lato font-semibold text-2xl px-14 py-6 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-2xl"
               >
                 Get in Touch
               </Link>
               <Link
                 href="/portfolio"
-                className="btn btn-secondary text-lg md:text-xl px-12 md:px-14 py-5 md:py-6 border-2 border-merlot text-merlot hover:bg-merlot hover:text-white shadow-strong hover:shadow-2xl"
+                className="inline-block bg-transparent border-2 border-merlot text-merlot font-lato font-semibold text-2xl px-14 py-6 rounded-full hover:bg-merlot hover:text-white transition-all transform hover:-translate-y-1 hover:shadow-2xl"
               >
                 View My Work
               </Link>

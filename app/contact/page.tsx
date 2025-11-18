@@ -48,9 +48,9 @@ export default function ContactPage() {
         />
 
         {/* Business Info Cards */}
-        <section className="section bg-[#F2EDE3] py-20">
+        <section className="section-standard bg-[#F2EDE3]">
           <div className="container max-w-[1400px]">
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 grid-spacing-standard mb-16">
               {/* Email Card */}
               <a
                 href="mailto:contact@hcjk.org"
@@ -119,8 +119,8 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="section bg-[#faf0e6] border-t-4 border-merlot py-32">
-          <div className="container max-w-[1000px]">
+        <section className="section-spacious bg-[#faf0e6] border-t-4 border-merlot">
+          <div className="content-wrapper max-w-[1000px]">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-5xl md:text-6xl font-bold text-black mb-6">
                 Send Me a Message
@@ -137,8 +137,8 @@ export default function ContactPage() {
         </section>
 
         {/* Interactive FAQ Section */}
-        <section className="section bg-[#F2EDE3] border-t-4 border-merlot py-32">
-          <div className="container max-w-[1000px]">
+        <section className="section-spacious bg-[#F2EDE3] border-t-4 border-merlot">
+          <div className="content-wrapper max-w-[1000px]">
             <h2 className="font-playfair text-5xl md:text-6xl font-bold text-black text-center mb-16">
               Frequently Asked Questions
             </h2>
