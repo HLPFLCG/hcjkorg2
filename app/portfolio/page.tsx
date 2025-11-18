@@ -112,14 +112,14 @@ export default function PortfolioPage() {
         </div>
 
         {/* Full-Page Image Grid */}
-        <section className="min-h-screen bg-[#faf0e6] section-standard">
+        <section className="min-h-screen bg-gradient-to-br from-[#faf0e6] to-[#f5f5f0] section-standard">
           <div className="content-wrapper px-4 md:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-spacing-tight">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-spacing-tight auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px]">
               {filteredItems.map((item, index) => (
                 <Link
                   key={item.id}
                   href={`/portfolio/${item.id}`}
-                  className={`group relative block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 ${
+                  className={`group relative block overflow-hidden rounded-xl shadow-xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-3 hover:scale-105 ${
                     isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ 

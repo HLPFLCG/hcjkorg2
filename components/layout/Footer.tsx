@@ -9,8 +9,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#F2EDE3] border-t-4 border-merlot">
       {/* Main Footer Content - 4 Quadrants */}
-      <div className="content-wrapper py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 xl:gap-16">
+      <div className="content-wrapper py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
           
           {/* Quadrant 1: Logo */}
           <div className="flex flex-col items-center md:items-start lg:items-center xl:items-start">
@@ -157,7 +157,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t-2 border-merlot/30 bg-[#e8e6dc] py-10">
+      <div className="border-t-2 border-merlot/30 bg-[#e8e6dc] py-6">
         <div className="content-wrapper">
           <p className="font-lato text-base text-gray-600 text-center">
             &copy; {currentYear} HCJK Collection. All rights reserved. | Designed with ❤️ by HLPFL

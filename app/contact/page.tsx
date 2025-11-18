@@ -49,12 +49,12 @@ export default function ContactPage() {
 
         {/* Business Info Cards */}
         <section className="section-standard bg-[#F2EDE3]">
-          <div className="container max-w-[1400px]">
+          <div className="content-wrapper max-w-[1400px]">
             <div className="grid md:grid-cols-3 grid-spacing-standard mb-16">
               {/* Email Card */}
               <a
                 href="mailto:contact@hcjk.org"
-                className="group bg-white p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center"
+                className="group bg-white p-8 md:p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center min-h-[250px] flex flex-col justify-center"
               >
                 <div className="w-20 h-20 bg-merlot rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function ContactPage() {
               {/* Phone Card */}
               <a
                 href="tel:+6163133484"
-                className="group bg-white p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center"
+                className="group bg-white p-8 md:p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center min-h-[250px] flex flex-col justify-center"
               >
                 <div className="w-20 h-20 bg-merlot rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 href="https://www.instagram.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center"
+                className="group bg-white p-8 md:p-10 rounded-2xl shadow-strong hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 text-center min-h-[250px] flex flex-col justify-center"
               >
                 <div className="w-20 h-20 bg-merlot rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">

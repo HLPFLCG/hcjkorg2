@@ -123,15 +123,15 @@ export default function ServicesPage() {
 
         {/* Services Grid - E-commerce Style */}
         <section className="section-spacious bg-[#F2EDE3]">
-          <div className="container max-w-[1800px]">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-spacing-spacious">
+          <div className="content-wrapper max-w-[2000px]">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 grid-spacing-spacious">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="group bg-white rounded-2xl overflow-hidden shadow-strong hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 min-h-[800px] md:min-h-[700px]"
                 >
                   {/* Service Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden h-[300px] md:h-[350px]">
                     <OptimizedImage
                       src={service.image}
                       alt={service.title}
@@ -143,38 +143,41 @@ export default function ServicesPage() {
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                     {/* Number Badge */}
-                    <div className="absolute top-6 left-6 w-16 h-16 bg-merlot rounded-full flex items-center justify-center shadow-lg">
-                      <span className="font-playfair text-2xl font-bold text-white">{service.number}</span>
+                    <div className="absolute top-6 left-6 w-20 h-20 bg-merlot rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                      <span className="font-playfair text-2xl md:text-3xl font-bold text-white">{service.number}</span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 md:p-8 card-spacing">
-                    <p className="text-merlot font-lato font-semibold text-base md:text-lg mb-2">{service.tagline}</p>
-                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-black mb-3">
+                  <div className="p-8 md:p-10 flex flex-col h-[calc(100%-300px)] md:h-[calc(100%-350px)]">
+                    <p className="text-merlot font-lato font-semibold text-lg md:text-xl mb-3">{service.tagline}</p>
+                    <h3 className="font-playfair text-3xl md:text-4xl font-bold text-black mb-4 leading-tight">
                       {service.title}
                     </h3>
-                    <p className="text-xl md:text-2xl font-bold text-merlot mb-4">{service.price}</p>
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                    <p className="text-2xl md:text-3xl font-bold text-merlot mb-6">{service.price}</p>
+                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                       {service.description}
                     </p>
 
                     {/* Features */}
-                    <div className="vr-standard mb-6">
-                      {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-3">
-                          <svg className="w-5 h-5 text-merlot flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                    <div className="mb-8">
+                      <h4 className="font-lato font-semibold text-lg md:text-xl text-black mb-4">What's Included:</h4>
+                      <div className="grid md:grid-cols-2 gap-3 md:gap-4">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <svg className="w-5 h-5 text-merlot flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="text-base md:text-lg text-gray-700 leading-tight">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
                     {/* CTA Button */}
                     <Link
                       href="/contact"
-                      className="block w-full bg-merlot text-white text-center font-lato font-semibold text-lg py-4 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1"
+                      className="block w-full bg-merlot text-white text-center font-lato font-semibold text-xl py-5 rounded-full hover:bg-merlot-dark transition-all transform hover:-translate-y-1 hover:shadow-xl"
                     >
                       Book This Service
                     </Link>
