@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Playfair_Display, Roboto } from "next/font/google"
+import { Cormorant_Garamond, Open_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
@@ -8,15 +8,16 @@ import SoundEffects from "@/components/sound-effects"
 import SafariThemeColor from "@/components/safari-theme-color"
 
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
 })
 
-const roboto = Roboto({
-  weight: ["300", "400", "500"],
+const openSans = Open_Sans({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"], 
-  variable: "--font-roboto",
+  variable: "--font-opensans",
 })
 
 
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={playfair.variable} suppressHydrationWarning>
+    <html lang="en" className={`${cormorant.variable} ${openSans.variable}`} suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SafariThemeColor />
