@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "HCJK Collection - Professional photography portfolio showcasing stunning visual stories from around the world.",
   // Set initial theme-color meta tag for iOS Safari
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: light)', color: '#f2ede3' },
     { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
 }
