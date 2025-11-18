@@ -1,0 +1,23 @@
+name = "hcjk-org"
+compatibility_date = "2024-11-18"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "hcjk-org"
+routes = [
+  { pattern = "hcjk.org/*", zone_name = "hcjk.org" }
+]
+
+[env.staging]
+name = "hcjk-org-staging"
+
+# Build configuration
+[build]
+command = "npm run build:cloudflare"
+cwd = "."
+watch_dir = "./out"
+
+# Pages configuration
+[env.production.pages]
+project_name = "hcjk-org"
+production_branch = "main"

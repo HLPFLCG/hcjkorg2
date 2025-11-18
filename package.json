@@ -13,7 +13,8 @@
     "predev": "ts-node scripts/validate-images.ts",
     "prebuild": "ts-node scripts/validate-images.ts",
     "deploy:local": "node scripts/deploy.js",
-    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy ./out --project-name=hcjk-org"
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy ./out --project-name=hcjk-org",
+    "build:cf": "npm install --legacy-peer-deps && npm run build:cloudflare"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
