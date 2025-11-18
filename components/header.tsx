@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ThemeToggle } from "./theme-toggle"
-import Image from "next/image"
+import Logo from "./logo"
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Portfolio", href: "/showcase" },
-  { name: "Services", href: "/about" },
+  { name: "Showcase", href: "/showcase" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -69,24 +69,20 @@ export default function Header() {
         <div className="flex justify-between items-center h-full">
           {/* Logo and Brand */}
           <div className="flex-shrink-0 flex items-center gap-3">
+            {/* <Logo /> */}
             <Link
               href="/"
-              className={`duration-300w-10 h-10 flex items-center justify-center rounded-full bg-background/90 text-primary transition-colors ${
+              className={`font-old-london p-3 text-2xl  duration-300w-10 h-10 flex items-center justify-center rounded-full bg-background/90 text-primary transition-colors ${
                 isScrolled || pathname !== "/" ? "text-primary" : "text-primary"
               }`}
             >
-              <Image
-                src="/images/logo/hcjkstacked.svg"
-                alt="HCJK Collection"
-                width={32}
-                height={32}
-                className="w-8 h-8"
-              />
+              X100
             </Link>
           </div>
+        
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 items-center p-3 duration-300w-10 h-10 flex items-center justify-center rounded-full bg-background/90 text-primary transition-colors">
+          <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 items-center p-3 text-2xl  duration-300w-10 h-10 flex items-center justify-center rounded-full bg-background/90 text-primary transition-colors">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -148,7 +144,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block px-4 py-3 text-3xl font-bold ${
+                  className={`block px-4 py-3 text-3xl font-old-london ${
                     pathname === item.href ? "text-primary font-medium" : "text-foreground hover:text-primary/80"
                   }`}
                   onClick={() => setIsMenuOpen(false)}

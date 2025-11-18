@@ -40,7 +40,7 @@ export function HeroGalleryScroll() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          X100
+          HCJK Collection
         </motion.h1>
         <motion.p
           className="my-6 max-w-xl text-primary "
@@ -48,7 +48,7 @@ export function HeroGalleryScroll() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-           A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.        </motion.p>
+           A professional photography portfolio showcasing visual stories and creative moments.        </motion.p>
         <div className="flex items-center flex-col md:flex-row justify-center gap-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
