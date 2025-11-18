@@ -27,7 +27,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3 mb-4">
-            {/* <Logo /> */}
+            <Logo />
             <Link href="/" className="font-old-london text-2xl font-bold inline-block text-foreground">
               HCJK
             </Link>

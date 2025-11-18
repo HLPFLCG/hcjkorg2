@@ -13,6 +13,11 @@ const IMAGES = [
   "/newwebsiteimages/emma-child1.webp",
   "/newwebsiteimages/jungle1.webp",
   "/newwebsiteimages/flower-close-up.webp",
+  "/newwebsiteimages/coastal1.webp",
+  "/newwebsiteimages/brother22.webp",
+  "/newwebsiteimages/trees-1.webp",
+  "/newwebsiteimages/sunset1.webp",
+  "/newwebsiteimages/church.webp",
 ]
 
 export function HeroGalleryScroll() {

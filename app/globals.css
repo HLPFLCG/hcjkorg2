@@ -230,3 +230,59 @@ body.sounds-muted a {
     color-scheme: dark;
   }
 }
+  /* Merlot color utilities */
+  .text-merlot {
+    color: hsl(350, 45%, 20%);
+  }
+  
+  .bg-merlot {
+    background-color: hsl(350, 45%, 20%);
+  }
+  
+  .hover\:bg-merlot:hover {
+    background-color: hsl(350, 45%, 25%);
+  }
+  
+  .border-merlot {
+    border-color: hsl(350, 45%, 20%);
+  }
+  
+  .ring-merlot {
+    --tw-ring-color: hsl(350, 45%, 25%);
+  }
+  
+  .text-off-white {
+    color: hsl(45, 28%, 88%);
+  }
+  
+  .bg-off-white {
+    background-color: hsl(45, 28%, 88%);
+  }
+  
+  .dark .text-merlot {
+    color: hsl(350, 45%, 25%);
+  }
+  
+  .dark .bg-merlot {
+    background-color: hsl(350, 45%, 20%);
+  }
+  
+  .dark .hover\:bg-merlot:hover {
+    background-color: hsl(350, 45%, 30%);
+  }
+  
+  .dark .border-merlot {
+    border-color: hsl(350, 45%, 25%);
+  }
+  
+  .dark .ring-merlot {
+    --tw-ring-color: hsl(350, 45%, 30%);
+  }
+  
+  .dark .text-off-white {
+    color: hsl(45, 28%, 88%);
+  }
+  
+  .dark .bg-off-white {
+    background-color: hsl(45, 28%, 88%);
+  }
