@@ -6,6 +6,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import SoundEffects from "@/components/sound-effects"
 import SafariThemeColor from "@/components/safari-theme-color"
+import { ErrorBoundary } from "@/components/error-boundary"
 
 
 const cormorant = Cormorant_Garamond({
@@ -47,11 +48,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${cormorant.variable} ${openSans.variable}`} suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ErrorBoundary>
           <SafariThemeColor />
           <SoundEffects />
           <Header />
           <main>{children}</main>
           <Footer />
+            </ErrorBoundary>
         </ThemeProvider>
       </body>
     </html>

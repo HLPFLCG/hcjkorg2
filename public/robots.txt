@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hlpflcg.github.io/hcjkorg2/sitemap.xml
+
+# Crawl-delay to be respectful
+Crawl-delay: 1
+
+# Disallow certain paths if needed
+# Disallow: /api/
+# Disallow: /admin/
