@@ -1,52 +1,81 @@
 import type { Collection, Photo } from "./types"
 
-// Collection format mapping
-const collectionFormats: Record<string, string> = {
-  'bali': 'jpeg',
-  'morocco': 'webp',
-  'tokyo': 'jpg',
-  'new-zealand': 'jpg',
-  'iceland': 'jpg',
-  'urban-portraits': 'jpg'
-} as const
-
-// Collection folder name mapping (for case sensitivity)
-const collectionFolders: Record<string, string> = {
-  'bali': 'Bali',
-  'morocco': 'Morocco',
-  'tokyo': 'Tokyo',
-  'new-zealand': 'new zealand',
-  'iceland': 'Iceland',
-  'urban-portraits': 'Urban Portraits'
-} as const
-
-// Collection image counts and formats
-const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'bali': { 
-    count: 16,
-    formats: ['jpeg', 'jpg']
+// New website images collection mapping
+const newWebsiteCollections = {
+  'landscapes': {
+    title: "Dramatic Landscapes",
+    description: "Breathtaking natural scenery from around the world",
+    images: [
+      'big-mountain.webp', 'mountains1.webp', 'mountains2.webp', 'trees-1.webp',
+      'trees-and-mountains.webp', 'willow-tree-i-think.webp', 'overview-waterfall.webp',
+      'waterfall-1.webp', 'waterfall-closer.webp', 'waterfall-full-image.webp',
+      'big-rock-full.webp', 'big-rock-left.webp', 'bigrock1.webp',
+      'coastal1.webp', 'nightime-peninsula.webp', 'nightime-peninsula-2.webp'
+    ]
   },
-  'morocco': { 
-    count: 21,
-    formats: ['webp']
+  'urban-architecture': {
+    title: "Urban Architecture",
+    description: "Cityscapes and architectural photography",
+    images: [
+      'church.webp', 'clay-roof-house-panoramic.webp', 'top-of-cool-building.webp',
+      'flags.webp', 'hispanic-street-market-with-flags.webp', 'red-bike-house-road.webp',
+      'road1.webp', 'street-food.webp', 'vespa-road-hispanic.webp',
+      'wall-graffiti-flower.webp', 'sepia-public-house.webp', 'public-house-2nd-floor.webp'
+    ]
   },
-  'tokyo': { 
-    count: 20,
-    formats: ['jpg']
+  'tropical-nature': {
+    title: "Tropical Nature",
+    description: "Exotic flora and tropical environments",
+    images: [
+      'jungle1.webp', 'jungle2.webp', 'river-rainforest-tropical.webp',
+      'tropical-tops-of-trees.webp', 'fall-leaves.webp', 'green-plant-closeup.webp',
+      'moss.webp', 'palm-tree-bw.webp', 'palm-trees-with-colors-and-paper.webp',
+      'flower-close-up.webp', 'flower-close-up-2.webp', 'flower-close-up-3.webp',
+      'flower-close-up-4.webp', 'flower-closeup-bw.webp', 'pink-flowers-closeup.webp',
+      'purple-flowers.webp', 'red-flowers.webp', 'white-flowers.webp'
+    ]
   },
-  'new-zealand': { 
-    count: 18,
-    formats: ['jpg']
+  'portraits': {
+    title: "Portraits",
+    description: "People and portrait photography",
+    images: [
+      'emma-child1.webp', 'emma-child2.webp', 'emma-child3.webp', 'emma-child4.webp',
+      'emma-child5.webp', 'emma-child6.webp', 'emma-child7.webp', 'emma-child8.webp',
+      'emma-child9.webp', 'emma-child10.webp', 'emma-child11.webp', 'emma-child12.webp',
+      'brother1.webp', 'brother3bw.webp', 'brother4bw.webp', 'brother5bw.webp',
+      'brother7.webp', 'brother8.webp', 'brother9.webp', 'brother21bw.webp',
+      'brother22.webp', 'brother28.webp', 'brother29.webp', 'brother30.webp'
+    ]
   },
-  'iceland': { 
-    count: 14,
-    formats: ['jpg']
+  'animals-wildlife': {
+    title: "Animals & Wildlife",
+    description: "Animal photography and nature subjects",
+    images: [
+      'cat.webp', 'cat2.webp', 'dog-bw.webp', 'cow.webp',
+      'animal?.webp', 'animal?2.webp', 'lizard.webp', 'swampape.webp',
+      'spider-in-spiderweb.webp', 'spider-in-web2.webp'
+    ]
   },
-  'urban-portraits': { 
-    count: 16,
-    formats: ['jpg']
+  'water-seascapes': {
+    title: "Water & Seascapes",
+    description: "Ocean, rivers and water photography",
+    images: [
+      'big-rock-boat-2-i-think.webp', 'big-rock-ocean-boat.webp', 'big-rock-ocean3.webp',
+      'back-of-boat.webp', 'boat-closeup.webp', 'boat.webp', 'full-fock-and-boat.webp',
+      'trail-into-ocean.webp', 'two-rocks.webp', 'friend-lake.webp',
+      'pretty-waterfall.webp', 'panoramic-river-mountains-wow-this-is-gorgeous.webp'
+    ]
   }
 } as const
+
+// Aspect ratios for different image types
+const aspectRatios = [
+  { width: 1800, height: 1200 }, // 3:2
+  { width: 1800, height: 1350 }, // 4:3
+  { width: 1800, height: 1080 }, // 16:9
+  { width: 1200, height: 1800 }, // 2:3 (portrait)
+  { width: 1600, height: 1600 }, // 1:1 (square)
+] as const
 
 // Common metadata for photos
 const defaultMetadata = {
@@ -59,120 +88,106 @@ const defaultMetadata = {
   takenAt: new Date().toISOString().split("T")[0],
 } as const
 
-// Aspect ratios for different image types
-const aspectRatios = [
-  { width: 1800, height: 1200 }, // 3:2
-  { width: 1800, height: 1350 }, // 4:3
-  { width: 1800, height: 1080 }, // 16:9
-  { width: 1200, height: 1800 }, // 2:3 (portrait)
-] as const
-
 // Function to get images for a collection
 function getCollectionImages(collectionSlug: string): Photo[] {
-  // Get the proper folder name from our mapping instead of generating it
-  const folderName = collectionFolders[collectionSlug]
-  if (!folderName) return []
+  const collection = newWebsiteCollections[collectionSlug as keyof typeof newWebsiteCollections]
+  if (!collection) return []
 
-  const collectionInfo = collectionImages[collectionSlug]
-  if (!collectionInfo) return []
-  
-  return Array.from({ length: collectionInfo.count }, (_, i) => {
-    const index = i + 1
-    const format = collectionSlug === 'bali' && index >= 10 && index <= 15 ? 'jpg' : collectionFormats[collectionSlug]
-    const imagePath = `/${folderName}/${collectionSlug}-${index}.${format}`
+  return collection.images.map((imageName, index) => {
     const dimensions = aspectRatios[index % aspectRatios.length]
-
+    
     return {
       id: `${collectionSlug}-${index}`,
-      src: imagePath,
+      src: `/newwebsiteimages/${imageName}`,
       width: dimensions.width,
       height: dimensions.height,
-      alt: `${collectionSlug} image ${index}`,
+      alt: `${collection.title} image ${index + 1}`,
       metadata: defaultMetadata,
     }
   })
 }
 
 // Function to get cover image path
-function getCoverImagePath(folderName: string): string {
-  const collectionSlug = folderName.toLowerCase().replace(' ', '-')
-  const format = collectionFormats[collectionSlug] || 'jpg'
-  return `/${folderName}/cover.${format}`
+function getCoverImagePath(collectionSlug: string): string {
+  const collection = newWebsiteCollections[collectionSlug as keyof typeof newWebsiteCollections]
+  if (!collection) return '/images/logo/hcjkstacked.svg'
+  
+  return `/newwebsiteimages/${collection.images[0]}`
 }
 
 // Collections data
 const collections: Collection[] = [
   {
     id: "1",
-    slug: "new-zealand",
-    title: "New Zealand Landscapes",
-    description: "Breathtaking landscapes from across New Zealand",
+    slug: "landscapes",
+    title: "Dramatic Landscapes",
+    description: "Breathtaking natural scenery from around the world",
     fullDescription:
-      "New Zealand offers some of the most diverse and dramatic landscapes in the world. From the snow-capped Southern Alps to the pristine beaches of the Coromandel Peninsula, this collection captures the raw beauty and majesty of Aotearoa.",
-    coverImage: getCoverImagePath("new zealand"),
-    tags: ["Nature", "Landscape", "Mountains"],
+      "From towering mountain peaks to serene waterfalls, this collection captures the raw beauty and majesty of natural landscapes. Each image tells a story of the earth's diverse and awe-inspiring environments.",
+    coverImage: getCoverImagePath("landscapes"),
+    tags: ["Nature", "Landscape", "Mountains", "Water"],
     featured: true,
-    photos: getCollectionImages("new-zealand"),
+    photos: getCollectionImages("landscapes"),
   },
   {
     id: "2",
-    slug: "tokyo",
-    title: "Japan: Urban & Traditional",
-    description: "The contrast between modern and traditional Japan",
+    slug: "portraits",
+    title: "Portrait Collection",
+    description: "Intimate portraits capturing human emotion and character",
     fullDescription:
-      "Japan presents a fascinating juxtaposition of ultramodern urban environments and serene traditional settings. This collection explores the visual dialogue between Tokyo's neon-lit streets and the tranquil temples of Kyoto, capturing Japan's unique cultural identity.",
-    coverImage: getCoverImagePath("Tokyo"),
-    tags: ["Urban", "Culture", "Architecture"],
+      "This collection explores the depth and diversity of human expression through intimate portraiture. Each photograph captures a moment of genuine emotion, revealing the unique character and stories of the subjects.",
+    coverImage: getCoverImagePath("portraits"),
+    tags: ["People", "Portrait", "Emotion", "Character"],
     featured: true,
-    photos: getCollectionImages("tokyo"),
+    photos: getCollectionImages("portraits"),
   },
   {
     id: "3",
-    slug: "bali",
-    title: "Bali: Island of the Gods",
-    description: "Tropical paradise and cultural heritage of Bali",
+    slug: "urban-architecture",
+    title: "Urban Architecture",
+    description: "The beauty of cityscapes and architectural design",
     fullDescription:
-      "Known as the Island of the Gods, Bali captivates with its dramatic landscapes, vibrant cultural heritage, and spiritual atmosphere. This collection documents the island's terraced rice fields, ancient temples, pristine beaches, and the warmth of Balinese people.",
-    coverImage: getCoverImagePath("Bali"),
-    tags: ["Tropical", "Culture", "Nature"],
+      "Exploring the intersection of human creativity and urban environments, this collection showcases the architectural marvels and cityscapes that define our modern world. From historic buildings to contemporary structures.",
+    coverImage: getCoverImagePath("urban-architecture"),
+    tags: ["Urban", "Architecture", "City", "Design"],
     featured: true,
-    photos: getCollectionImages("bali"),
+    photos: getCollectionImages("urban-architecture"),
   },
   {
     id: "4",
-    slug: "iceland",
-    title: "Iceland: Land of Fire and Ice",
-    description: "Dramatic landscapes of Iceland",
+    slug: "tropical-nature",
+    title: "Tropical Paradise",
+    description: "Vibrant tropical flora and exotic natural beauty",
     fullDescription:
-      "Iceland's otherworldly landscapes showcase nature's raw power and beauty. This collection captures the country's dramatic contrasts: steaming geothermal areas alongside massive glaciers, thundering waterfalls cutting through black lava fields, and the ethereal Northern Lights dancing above it all.",
-    coverImage: getCoverImagePath("Iceland"),
-    tags: ["Nature", "Landscape", "Winter"],
+      "Immerse yourself in the lush, vibrant world of tropical environments. This collection captures the intense colors, diverse plant life, and natural beauty found in tropical regions around the globe.",
+    coverImage: getCoverImagePath("tropical-nature"),
+    tags: ["Tropical", "Nature", "Flora", "Color"],
     featured: false,
-    photos: getCollectionImages("iceland"),
+    photos: getCollectionImages("tropical-nature"),
   },
   {
     id: "5",
-    slug: "morocco",
-    title: "Colors of Morocco",
-    description: "Vibrant markets, architecture, and desert landscapes",
+    slug: "animals-wildlife",
+    title: "Animals & Wildlife",
+    description: "Captivating wildlife and animal photography",
     fullDescription:
-      "Morocco is a feast for the senses, with its vibrant colors, intricate patterns, and diverse landscapes. This collection explores the bustling medinas, ancient kasbahs, vast Sahara dunes, and the rich cultural tapestry that makes Morocco so visually captivating.",
-    coverImage: getCoverImagePath("Morocco"),
-    tags: ["Culture", "Desert", "Architecture"],
+      "From domestic companions to wild creatures, this collection celebrates the diversity and beauty of the animal kingdom. Each photograph captures a moment of natural behavior and animal character.",
+    coverImage: getCoverImagePath("animals-wildlife"),
+    tags: ["Animals", "Wildlife", "Nature", "Pets"],
     featured: false,
-    photos: getCollectionImages("morocco"),
+    photos: getCollectionImages("animals-wildlife"),
   },
   {
     id: "6",
-    slug: "urban-portraits",
-    title: "Urban Portraits",
-    description: "Street photography and urban life around the world",
+    slug: "water-seascapes",
+    title: "Water & Seascapes",
+    description: "The dynamic beauty of water in all its forms",
     fullDescription:
-      "This collection focuses on the human element within urban environments. Through candid street photography and environmental portraits, it captures the diversity, energy, and stories of city dwellers across different cultures and metropolises around the world.",
-    coverImage: getCoverImagePath("Urban Portraits"),
-    tags: ["Urban", "People", "Street"],
+      "Water in all its forms - from tranquil lakes to crashing ocean waves - provides endless photographic opportunities. This collection captures the dynamic, serene, and powerful aspects of aquatic environments.",
+    coverImage: getCoverImagePath("water-seascapes"),
+    tags: ["Water", "Ocean", "Seascape", "Nature"],
     featured: false,
-    photos: getCollectionImages("urban-portraits"),
+    photos: getCollectionImages("water-seascapes"),
   },
 ]
 
