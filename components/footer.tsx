@@ -112,7 +112,7 @@ export default function Footer() {
             <a href="mailto:contact@hcjk.org"><li>heather@hcjk.org</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
-            <li>39.1569° S, 175.6321° E</li>
+            <li>42.9704° N, 85.6722° W</li>
           </ul>
         </motion.div>
       </div>
