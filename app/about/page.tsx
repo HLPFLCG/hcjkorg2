@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/newwebsiteimages/big-rock-1.webp?height=800&width=1920"
+          src="/newwebsiteimages/big-rock-1.webp?height=1200&width=1920"
           alt="Big Rock Image"
           fill
           priority
@@ -41,7 +41,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <Image
-              src="/Iceland/iceland-12.jpg?height=1200&width=800"
+              src="/newwebsiteimages/costa-rica-bungalow.webp?height=1200&width=800"
               alt="Photographer portrait"
               fill
               className="object-cover"
