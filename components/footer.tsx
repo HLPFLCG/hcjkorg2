@@ -38,7 +38,7 @@ export default function Footer() {
           </p>
           <div className="flex space-x-4 items-center">
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://instagram.com/hcjk_collection"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -49,18 +49,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
-              href="https://github.com/lilxyzz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Twitter size={20} />
-              <span className="sr-only">Twitter</span>
-            </motion.a>
-            <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://facebook.com/hcjk_collection"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -71,38 +60,16 @@ export default function Footer() {
               <span className="sr-only">Facebook</span>
             </motion.a>
               <motion.a
-                href="https://github.com/lilxyzz"
+                href="https://pinterest.com/hcjk_collection"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Youtube size={20} />
-                <span className="sr-only">Youtube</span>
+                <Pinterest size={20} />
+                <span className="sr-only">Pinterest</span>
             </motion.a>
-             {/* <motion.a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Linkedin size={20} />
-                <span className="sr-only">Linkedin</span>
-            </motion.a> */}
-             <motion.a
-                href="https://github.com/lilxyzz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Github size={20} />
-                <span className="sr-only">Github</span>
-              </motion.a> 
             <ThemeToggle />
           </div>
         </motion.div>
