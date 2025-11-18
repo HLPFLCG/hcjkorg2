@@ -34,6 +34,6 @@
 - [x] Test responsive behavior
 
 ## Phase 7: Build and Deploy
-- [ ] Build and test all changes
-- [ ] Deploy to GitHub Pages
-- [ ] Verify live site functionality
+- [x] Build and test all changes
+- [x] Deploy to GitHub Pages
+- [x] Verify live site functionality
