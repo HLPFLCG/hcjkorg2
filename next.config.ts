@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static export for Cloudflare Pages
+  // Enable static export for GitHub Pages
   output: 'export',
+  
+  // Base path for GitHub Pages deployment
+  basePath: process.env.NODE_ENV === 'production' ? '/hcjkorg2' : '',
+  
+  // Asset prefix for GitHub Pages
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/hcjkorg2' : '',
   
   // Image configuration for static export
   images: {
