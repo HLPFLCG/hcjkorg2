@@ -1,177 +1,101 @@
-# HCJK Collection Photography Website
+# Next.js Photography Portfolio | X100
 
-A luxury photography portfolio website built with Next.js 16, featuring elegant animations, comprehensive SEO, and a sophisticated user experience.
+![X100 - Next.js Photography Portfolio](https://github.com/lilxyzz/x100/blob/main/public/X100-cover.webp)
+
+A modern, responsive photography portfolio built with Next.js 15+, featuring dynamic collections, smooth animations, and a beautiful dark/light theme.
+
+I created this theme as I’ve been considering purchasing a camera recently, and it aligned with some ideas I wanted to explore. I may contribute further updates in the future, but can’t make any guarantees at this stage. Enjoy 🤙
 
 ## 🌟 Features
 
-- **Modern Stack**: Next.js 16 with React 19, TypeScript, Tailwind CSS
-- **Elegant Design**: Luxury aesthetic with smooth animations and transitions
-- **SEO Optimized**: Complete metadata, Open Graph, Twitter Cards, structured data
-- **PWA Ready**: Progressive Web App with manifest and service worker support
-- **Analytics**: Google Tag Manager integration
-- **Responsive**: Mobile-first design with elegant mobile menu
-- **Performance**: Optimized images, fonts, and lazy loading
-- **Accessibility**: WCAG compliant with proper ARIA labels and focus states
+- **Dynamic Photo Collections**: Automatically loads and displays photos from organized folders
+- **Responsive Design**: Fully responsive layout optimized for all devices
+- **Dark/Light Theme**: Elegant theme switching with smooth transitions
+- **Modern Animations**: Powered by Framer Motion for smooth interactions
 
-## 🚀 Getting Started
+## 🚀 Tech Stack
 
-### Prerequisites
+- **Framework**: Next.js 15 (App Router)
+- **React**: 19
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide Icons
+- **Formspree**: Contact Form
+- **React Photo Album**: [Masonry Layout](https://react-photo-album.com/examples/masonry)
 
-- Node.js 20.x or higher
-- npm, yarn, pnpm, or bun
+## 🛠️ Setup Instructions
 
-### Installation
+1. **Clone the repository**
 
-```bash
-# Install dependencies
-npm install
+   ```bash
+   git clone [https://github.com/lilxyzz/x100]
+   cd x100
+   ```
 
-# Run development server
-npm run dev
+2. **Install dependencies**
 
-# Build for production
-npm run build
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Start production server
-npm start
-```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Open http://localhost:3000 with your browser to see the result.
 
-## 📁 Project Structure
+## 📸 Photo Collections
 
-```
-hcjk-nextjs/
-├── app/                    # Next.js app directory
-│   ├── layout.tsx         # Root layout with SEO and GTM
-│   ├── page.tsx           # Homepage
-│   └── globals.css        # Global styles and animations
-├── components/            # React components
-│   ├── Header.tsx         # Navigation header
-│   ├── Hero.tsx           # Hero section
-│   ├── About.tsx          # About section
-│   ├── Services.tsx       # Services section
-│   ├── Portfolio.tsx      # Portfolio gallery
-│   ├── Contact.tsx        # Contact section
-│   ├── Footer.tsx         # Footer
-│   └── Loading.tsx        # Loading screen
-├── public/                # Static assets
-│   ├── images/            # Image assets
-│   │   ├── portfolio/     # Portfolio images
-│   │   ├── services/      # Service images
-│   │   ├── about/         # About section images
-│   │   ├── hero/          # Hero images
-│   │   └── gallery/       # Gallery images
-│   ├── favicon.ico        # Favicon
-│   └── site.webmanifest   # PWA manifest
-└── styles/                # Additional styles
-    └── variables.css      # CSS variables
-```
+The portfolio is organized into collections:
 
-## 🎨 Design System
+- Urban Portraits
+- Tokyo
+- New Zealand
+- Iceland
+- Bali
+- Morocco
+
+Each collection should be placed in its corresponding folder in the `public` directory. Update image Validation /scripts/validate-images.ts
+
+## 🎨 Theme Customization
 
 ### Colors
-- **Primary (Merlot)**: `#722f37`
-- **Background (Beige)**: `#F2EDE3`
-- **Text (Black)**: `#1a1a1a`
 
-### Typography
-- **Headings**: Playfair Display (serif)
-- **Body**: Lato (sans-serif)
-- **Script**: Great Vibes / Eyesome Script (cursive)
+The theme colors are defined in `globals.css` using CSS variables. Modify the root variables to customize the color scheme:
 
-### Spacing
-- Mobile: 24px container padding
-- Tablet: 80px container padding
-- Desktop: 96px container padding
-- Large screens: 128px container padding
-
-## 🔧 Configuration
-
-### Google Tag Manager
-Update the GTM ID in `app/layout.tsx`:
-```typescript
-// Replace GTM-XXXXXXX with your actual GTM ID
-'https://www.googletagmanager.com/gtm.js?id=GTM-XXXXXXX'
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  /* ... other color variables */
+}
 ```
 
-### Business Information
-Update structured data in `app/layout.tsx` with your:
-- Phone number
-- Physical address
-- Coordinates
-- Social media links
+## 🌓 Dark Mode
 
-### SEO Metadata
-Update `app/layout.tsx` with your:
-- Site URL
-- Social media handles
-- Google verification code
+The theme toggle is implemented using `next-themes` and includes:
 
-## 📦 Deployment
+- System preference detection
+- Smooth transitions
+- Persistent theme selection
 
-### Cloudflare Pages (Current)
-The site is automatically deployed to Cloudflare Pages on push to main branch.
+## 📱 Responsive Design
 
-**Live URL**: https://6fd64b1e.hcjkorg2.pages.dev
+The portfolio is fully responsive with breakpoints:
 
-### Build Commands
-```bash
-# Build command
-npm run build
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-# Output directory
-.next
-```
+## 📄 License
 
-## 🛠️ Development
-
-### Available Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm start            # Start production server
-npm run lint         # Run ESLint
-```
-
-### Code Style
-- TypeScript for type safety
-- ESLint for code quality
-- Prettier for formatting (recommended)
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🎯 Performance
-
-- Lighthouse Score: 95+ (Performance, Accessibility, Best Practices, SEO)
-- Core Web Vitals: All green
-- Image optimization with Next/Image
-- Font optimization with next/font
-- Code splitting and lazy loading
-
-## 📄 Documentation
-
-See [COMPREHENSIVE_UPDATES.md](./COMPREHENSIVE_UPDATES.md) for detailed information about all features and recent updates.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🤝 Contributing
 
-This is a private project for HCJK Collection Photography.
-
-## 📞 Support
-
-For questions or issues, contact HCJK Collection Photography.
-
-## 📝 License
-
-Copyright © 2024 HCJK Collection Photography. All rights reserved.
-
----
-
-Built with ❤️ using Next.js
+Contributions are welcome! Please feel free to submit a Pull Request.
