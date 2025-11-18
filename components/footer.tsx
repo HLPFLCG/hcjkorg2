@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github } from "lucide-react"
+import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github, Heart } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import { motion } from "framer-motion"
 import Logo from "./logo"
@@ -67,8 +67,8 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Pinterest size={20} />
-                <span className="sr-only">Pinterest</span>
+                <Heart size={20} />
+                <span className="sr-only">Favorites</span>
             </motion.a>
             <ThemeToggle />
           </div>
