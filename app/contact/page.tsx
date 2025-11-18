@@ -73,7 +73,7 @@ export default function ContactPage() {
                 {
                   icon: <MapPin className="text-primary mt-1" size={20} />,
                   title: "Location",
-                  content: "42.9704° N, 85.6722° W,
+                  content: "42.9704° N, 85.6722° W"
                 },
               ].map((item) => (
                 <motion.div
