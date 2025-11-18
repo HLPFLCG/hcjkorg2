@@ -10,7 +10,7 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ className }: ContactFormProps) {
-  const [state, handleSubmit] = useForm("xxxxxxxx") // Replace with your Formspree project ID
+  const [state, handleSubmit] = useForm("xblqjywk") // HCJK Collection Formspree endpoint
   const [success, setSuccess] = useState(false)
 
   const handleSuccess = () => {
@@ -19,8 +19,8 @@ export function ContactForm({ className }: ContactFormProps) {
 
   if (state.succeeded) {
     return (
-      <div className="rounded-md bg-green-50 p-4 text-sm text-green-700">
-        Thank you for your message! We will get back to you soon.
+      <div className="rounded-md bg-merlot/10 border border-merlot/20 p-6 text-sm text-merlot dark:bg-merlot/20 dark:border-merlot/30">
+        <div className="flex items-center gap-3"><div className="w-2 h-2 bg-merlot rounded-full"></div><p className="font-medium">Thank you for your message!</p></div><p className="mt-2 text-merlot/80">We'll get back to you soon.</p>
       </div>
     )
   }
@@ -28,7 +28,7 @@ export function ContactForm({ className }: ContactFormProps) {
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-6', className)}>
       {state.errors && Object.keys(state.errors).length > 0 && (
-        <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">
+        <div className="rounded-md bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4 text-sm text-red-700 dark:text-red-300">
           {Object.entries(state.errors).map(([field, error]) => (
             <p key={field}>{error}</p>
           ))}
@@ -43,7 +43,7 @@ export function ContactForm({ className }: ContactFormProps) {
           id="name"
           name="name"
           required
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
         />
       </div>
       <div>
@@ -55,7 +55,7 @@ export function ContactForm({ className }: ContactFormProps) {
           id="email"
           name="email"
           required
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
         />
         <ValidationError 
           prefix="Email" 
@@ -72,7 +72,7 @@ export function ContactForm({ className }: ContactFormProps) {
           name="message"
           required
           rows={4}
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
         />
         <ValidationError 
           prefix="Message" 
@@ -85,7 +85,7 @@ export function ContactForm({ className }: ContactFormProps) {
           type="submit"
           disabled={state.submitting}
           className={cn(
-            'w-full rounded-md bg-primary px-4 py-2 text-sm font-medium text-white dark:text-primary-foreground shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+            'w-full rounded-md bg-merlot px-4 py-2 text-sm font-medium text-off-white shadow-sm hover:bg-merlot/90 border border-merlot focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
             state.submitting && 'cursor-not-allowed opacity-50'
           )}
         >
