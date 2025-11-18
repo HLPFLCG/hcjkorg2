@@ -1,7 +1,0 @@
-# Cloudflare Pages Configuration
-pages_build_output_dir = "out"
-
-# Optional: For future Wrangler usage
-name = "hcjk-org"
-compatibility_date = "2024-11-18"
-compatibility_flags = ["nodejs_compat"]

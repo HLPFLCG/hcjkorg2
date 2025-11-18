@@ -32,7 +32,10 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: |
+        npm install --legacy-peer-deps
+        # Remove yarn.lock to force npm usage
+        rm -f yarn.lock
       
     - name: Build
       run: npm run build
