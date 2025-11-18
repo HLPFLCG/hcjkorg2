@@ -109,7 +109,7 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:contact@hcjk.org"><li>contact@hcjk.org</li></a> 
+            <a href="mailto:contact@hcjk.org"><li>heather@hcjk.org</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
             <li>39.1569° S, 175.6321° E</li>
@@ -125,8 +125,8 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          © {new Date().getFullYear()} <Link href="https://travislord.xyz" target="_blank"
-                rel="noopener noreferrer" className="hover:text-primary transition-colors">TL</Link>. All rights reserved. 🕸️
+          © {new Date().getFullYear()} <Link href="https://hlpfl.dev" target="_blank"
+                rel="noopener noreferrer" className="hover:text-primary transition-colors">HLPFL</Link>. All rights reserved. 🕸️
         </motion.p>
       </div>
     </motion.footer>
