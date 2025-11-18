@@ -77,7 +77,7 @@ export default function Header() {
               }`}
             >
               <img
-                src="/images/logo/hcjkstacked.svg"
+                src="/images/logo/hcjk-background.svg"
                 alt="HCJK Collection"
                 className="h-8 w-auto"
               />
