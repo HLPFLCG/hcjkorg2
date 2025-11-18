@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import { motion } from "framer-motion"
-import Image from "next/image"
+import Logo from "./logo"
 import useDisableRightClick from './useDisableRightClick'; // Adjust the import path as necessary
 
 export default function Footer() {
@@ -27,22 +27,18 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <Link href="/" className="text-2xl font-bold inline-block text-foreground">
-              <Image
-                src="/images/logo/hcjkstacked.svg"
-                alt="HCJK Collection"
-                width={120}
-                height={40}
-                className="w-24 h-8"
-              />
+            {/* <Logo /> */}
+            <Link href="/" className="font-old-london text-2xl font-bold inline-block text-foreground">
+              X100
             </Link>
           </div>
           <p className="text-muted-foreground max-w-md mb-6 max-w-xs">
-            Professional photography services specializing in portraits, events, and artistic visual storytelling. Capturing life's most precious moments with creativity and passion.
+            Capturing moments and telling stories through the lens. Professional photography services for all your
+            needs.
           </p>
           <div className="flex space-x-4 items-center">
             <motion.a
-              href="https://instagram.com"
+              href="https://github.com/lilxyzz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -53,7 +49,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
-              href="https://twitter.com"
+              href="https://github.com/lilxyzz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -64,7 +60,7 @@ export default function Footer() {
               <span className="sr-only">Twitter</span>
             </motion.a>
             <motion.a
-              href="https://facebook.com"
+              href="https://github.com/lilxyzz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -75,7 +71,7 @@ export default function Footer() {
               <span className="sr-only">Facebook</span>
             </motion.a>
               <motion.a
-                href="https://youtube.com"
+                href="https://github.com/lilxyzz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -84,8 +80,8 @@ export default function Footer() {
               >
                 <Youtube size={20} />
                 <span className="sr-only">Youtube</span>
-              </motion.a>
-               <motion.a
+            </motion.a>
+             {/* <motion.a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -95,7 +91,18 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
                 <span className="sr-only">Linkedin</span>
-              </motion.a>
+            </motion.a> */}
+             <motion.a
+                href="https://github.com/lilxyzz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-colors"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github size={20} />
+                <span className="sr-only">Github</span>
+              </motion.a> 
             <ThemeToggle />
           </div>
         </motion.div>
@@ -110,12 +117,12 @@ export default function Footer() {
           <ul className="space-y-2">
             <li>
               <Link href="/showcase" className="text-muted-foreground hover:text-primary transition-colors">
-                Portfolio
+                Showcase
               </Link>
             </li>
             <li>
               <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                Services
+                About
               </Link>
             </li>
             <li>
@@ -135,9 +142,10 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:hello@hcjk.org"><li>hello@hcjk.org</li></a> 
+            <a href="mailto:contact@x100.com"><li>contact@x100.com</li></a> 
+            {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
-            <li>Serving clients worldwide</li>
+            <li>39.1569° S, 175.6321° E</li>
           </ul>
         </motion.div>
       </div>
@@ -150,7 +158,8 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          © {new Date().getFullYear()} HCJK Collection. All rights reserved. 📸
+          © {new Date().getFullYear()} <Link href="https://travislord.xyz" target="_blank"
+                rel="noopener noreferrer" className="hover:text-primary transition-colors">TL</Link>. All rights reserved. 🕸️
         </motion.p>
       </div>
     </motion.footer>

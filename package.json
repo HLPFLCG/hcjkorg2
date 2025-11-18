@@ -7,7 +7,6 @@
     "validate-images": "ts-node scripts/validate-images.ts",
     "dev": "npm run validate-images --dry-run && next dev",
     "build": "npm run validate-images --dry-run && next build",
-      "export": "npm run build && next export",
     "start": "next start",
     "lint": "next lint",
     "predev": "ts-node scripts/validate-images.ts",

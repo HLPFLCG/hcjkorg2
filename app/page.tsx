@@ -19,6 +19,9 @@ export default function Home() {
       {/* Hero Section with Slider */}
       <HeroGalleryScroll />
 
+      {/* Hero Section with Slider 
+      <HeroSlider />*/}
+
       {/* Introduction */}
       <section id="introduction" className="mt-32 mb-20 sm:py-0 py-20 px-4 md:px-8 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -30,13 +33,14 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl mb-6">The Art of Visual Storytelling</h2>
             <p className="text-primary-secondary mb-6">
-              HCJK Collection specializes in capturing moments and telling stories through the lens. Our work focuses on finding beauty in both grand landscapes and subtle details of life.
+              HCJK Collection specializes in capturing moments and telling stories through the lens. Our work focuses on
+              finding beauty in both grand landscapes and subtle details.
             </p>
             <p className="text-primary-secondary mb-8">
               Explore our diverse portfolio of photography services, from professional portraits to event coverage and artistic compositions.
             </p>
             <AnimatedButton href="/about" variant="outline" icon={<ArrowRight size={16} />}>
-              Learn More About Our Services
+              Learn More About The Journey
             </AnimatedButton>
           </motion.div>
           <motion.div
@@ -47,14 +51,17 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/logo/hcjk-background.svg"
-              alt="HCJK Collection Photography"
+              src="/Morocco/morocco-9.webp?height=1000&width=800"
+              alt="Photographer at work"
               fill
               className="object-cover"
             />
           </motion.div>
         </div>
       </section>
+
+      {/* Dynamic Frame Section 
+      <DynamicFrame />*/}
 
       {/* Layout Grid Section */}
       <LayoutGridDemo />
@@ -68,9 +75,9 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-primary text-3xl md:text-4xl mb-6">Ready to Create Something Beautiful?</h2>
+          <h2 className="text-primary text-3xl md:text-4xl mb-6">Collaborate?</h2>
           <p className="text-primary max-w-2xl mx-auto mb-8">
-            Whether you're looking for professional photography services, prints, or custom projects, we'd love to collaborate with you.
+            Whether you're looking for prints, licensing, or a custom photography project, feel free to get in touch.
           </p>
           <AnimatedButton href="/contact" variant="primary" icon={<ArrowRight size={18} />}>
             Get in Touch
@@ -88,9 +95,9 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-primary text-3xl md:text-4xl mb-4">Featured Work</h2>
+            <h2 className="text-primary text-3xl md:text-4xl mb-4">Featured Collections</h2>
             <p className="text-primary max-w-2xl mx-auto">
-              Explore some of our most recent photography projects and collections
+              Explore some of my most popular photography collections from around the world
             </p>
           </motion.div>
           <FeaturedCollections />
@@ -102,7 +109,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <AnimatedButton href="/showcase" variant="primary" icon={<ArrowRight size={18} />}>
-              View Full Portfolio
+              View All Collections
             </AnimatedButton>
           </motion.div>
         </div>
