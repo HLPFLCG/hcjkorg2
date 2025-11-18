@@ -51,7 +51,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <Image
-              src="/newwebsiteimages/window-with-cutain.webp?height=1000&width=800"
+              src="/newwebsiteimages/window-with-curtain.webp?height=1000&width=800"
               alt="Photographer at work"
               fill
               className="object-cover"
