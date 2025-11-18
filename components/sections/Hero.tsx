@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Array of hero images - add your best images here
 const heroImages = [
@@ -15,20 +15,18 @@ const heroImages = [
 ];
 
 export default function Hero() {
-  const [currentImage, setCurrentImage] = useState('');
-
-  useEffect(() => {
+  const [currentImage] = useState(() => {
     // Get day of year to rotate image daily
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
     const diff = now.getTime() - start.getTime();
     const oneDay = 1000 * 60 * 60 * 24;
     const dayOfYear = Math.floor(diff / oneDay);
-    
+
     // Select image based on day of year
     const imageIndex = dayOfYear % heroImages.length;
-    setCurrentImage(heroImages[imageIndex]);
-  }, []);
+    return heroImages[imageIndex];
+  });
 
   return (
     <section
@@ -49,12 +47,12 @@ export default function Hero() {
         <h1 className="font-playfair text-7xl md:text-8xl lg:text-9xl font-bold text-white mb-8 drop-shadow-2xl tracking-tight">
           HCJK Collection
         </h1>
-        
+
         {/* Eyesome Script Font for "Photography" */}
         <p className="font-eyesome text-7xl md:text-8xl lg:text-9xl text-merlot mb-20 drop-shadow-2xl italic font-light tracking-wide">
           Photography
         </p>
-        
+
         <div className="max-w-5xl mx-auto mb-24">
           <p className="font-lato text-2xl md:text-3xl lg:text-4xl text-white drop-shadow-lg leading-relaxed">
             Capturing life&apos;s most precious moments with artistry, passion, and authenticity.

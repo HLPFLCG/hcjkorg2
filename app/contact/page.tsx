@@ -126,7 +126,7 @@ export default function ContactPage() {
                 Send Me a Message
               </h2>
               <p className="text-2xl text-gray-700 leading-relaxed">
-                Fill out the form below and I'll get back to you within 24 hours
+                Fill out the form below and I&apos;ll get back to you within 24 hours
               </p>
             </div>
 

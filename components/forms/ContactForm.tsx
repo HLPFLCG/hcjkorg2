@@ -28,7 +28,7 @@ export default function ContactForm() {
       } else {
         setFormStatus('error');
       }
-    } catch (error) {
+    } catch {
       setFormStatus('error');
     }
   };

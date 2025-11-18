@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 
 // Page-specific image sets
 const pageImageSets = {
@@ -24,10 +23,7 @@ export default function EnhancedPageHero({
   pageType = 'default',
   customImagePath 
 }: EnhancedPageHeroProps) {
-  const [currentImage, setCurrentImage] = useState('');
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
+  const [currentImage] = useState(() => {
     // Get day of year to rotate image daily
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
@@ -36,15 +32,12 @@ export default function EnhancedPageHero({
     const dayOfYear = Math.floor(diff / oneDay);
 
     // Select image based on day of year and page type
-    let images = customImagePath ? [customImagePath] : pageImageSets[pageType];
+    const images = customImagePath ? [customImagePath] : pageImageSets[pageType];
     const imageIndex = dayOfYear % images.length;
-    setSelectedImage(images[imageIndex]);
-  }, [pageType, customImagePath]);
-
-  const setSelectedImage = (imagePath: string) => {
-    setCurrentImage(imagePath);
-    setIsLoaded(true);
-  };
+    
+    return images[imageIndex];
+  });
+  const [isLoaded] = useState(true);
 
   return (
     <section
