@@ -27,10 +27,10 @@ export function ContactForm({ className }: ContactFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-6', className)}>
-      {state.errors && state.errors.length > 0 && (
+      {state.errors && Object.keys(state.errors).length > 0 && (
         <div className="rounded-md bg-red-50 p-4 text-sm text-red-700">
-          {state.errors.map((error) => (
-            <p key={error.field}>{error.message}</p>
+          {Object.entries(state.errors).map(([field, error]) => (
+            <p key={field}>{error}</p>
           ))}
         </div>
       )}

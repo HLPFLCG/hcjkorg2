@@ -1,10 +1,12 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'X100 Photographer Portfolio',
-    short_name: 'X100',
-    description: 'A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.',
+    name: 'HCJK Collection Photography',
+    short_name: 'HCJK',
+    description: 'Professional photography portfolio showcasing collections from around the world.',
     start_url: '/',
     display: 'standalone',
     background_color: '#000000',

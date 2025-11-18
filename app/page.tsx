@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import HeroSlider from "@/components/hero-slider"
 import Image from "next/image"
 import { HeroGalleryScroll } from "@/components/hero-gallery-scroll"
-import { DynamicFrame } from "@/components/dynamic-frame"
+// import { DynamicFrame } from "@/components/dynamic-frame"
 import { LayoutGridDemo } from "@/components/layout-image-grid"
 
 export default function Home() {
@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* Dynamic Frame Section 
-      <DynamicFrame />*/}
+      {/* <DynamicFrame /> */}
 
       {/* Layout Grid Section */}
       <LayoutGridDemo />
