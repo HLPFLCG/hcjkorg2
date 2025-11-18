@@ -11,8 +11,8 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/Iceland/iceland-7.jpg?height=800&width=1920"
-          alt="About X100"
+          src="/newwebsiteimages/big-rock-1.webp?height=800&width=1920"
+          alt="Big Rock Image"
           fill
           priority
           className="object-cover"
