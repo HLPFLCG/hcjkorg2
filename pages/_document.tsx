@@ -1,3 +1,4 @@
+// pages/_document.tsx - Same as before
 import { Html, Head, Main, NextScript } from 'next/document';
 import { GTM_ID } from '../lib/gtm';
 
