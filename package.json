@@ -10,7 +10,10 @@
     "start": "next start",
     "lint": "next lint",
     "predev": "ts-node scripts/validate-images.ts",
-    "prebuild": "ts-node scripts/validate-images.ts"
+    "prebuild": "ts-node scripts/validate-images.ts",
+    "deploy:local": "node scripts/deploy.js",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy ./out --project-name=hcjk-org",
+    "build:cf": "npm install --legacy-peer-deps && npm run build:cloudflare"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -47,19 +50,19 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-    "date-fns": "4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "8.5.1",
     "exif-js": "^2.3.0",
-    "framer-motion": "latest",
+    "framer-motion": "^11.0.0",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "15.2.4",
+    "next": "^15.5.6",
     "next-themes": "latest",
-    "react": "^19",
-    "react-day-picker": "8.10.1",
-    "react-dom": "^19",
+    "react": "^18.2.0",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.2.0",
+    "react-gtm-module": "^2.0.11",
     "react-hook-form": "^7.54.1",
-    "react-motion": "^0.5.2",
     "react-photo-album": "latest",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
@@ -72,11 +75,22 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.17",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-gtm-module": "^2.0.4",
     "postcss": "^8",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^3.4.18",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "date-fns": "^3.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

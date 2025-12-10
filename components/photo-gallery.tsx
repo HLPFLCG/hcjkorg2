@@ -294,11 +294,13 @@ export function PhotoGallery({ photos, className }: PhotoGalleryProps) {
             photos={photoAlbumPhotos}
             layout="masonry"
             columns={(containerWidth) => {
-              if (containerWidth < 768) return 1;
-              return 3;
+              if (containerWidth < 640) return 1;
+                 if (containerWidth < 1024) return 2;
+                 if (containerWidth < 1536) return 4;
+              return 4;
             }}
-            padding={8}
-            spacing={8}
+            padding={4}
+            spacing={4}
             onClick={({ index }) => openLightbox(index)}
             renderPhoto={NextJsImageComponent as any}
             // Using "any" type to avoid TypeScript errors with third-party library

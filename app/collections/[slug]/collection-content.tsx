@@ -58,7 +58,7 @@ export function CollectionContent({ collection }: Props) {
       </motion.section>
 
       {/* Photo Gallery */}
-      <section className="py-8 px-4 md:px-8 max-w-[90%] mx-auto mb-20">
+      <section className="py-8 px-2 md:px-4 max-w-[95%] mx-auto mb-20">
         <PhotoGallery photos={collection.photos} />
       </section>
 

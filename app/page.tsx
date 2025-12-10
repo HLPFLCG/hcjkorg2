@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import HeroSlider from "@/components/hero-slider"
 import Image from "next/image"
 import { HeroGalleryScroll } from "@/components/hero-gallery-scroll"
-import { DynamicFrame } from "@/components/dynamic-frame"
+// import { DynamicFrame } from "@/components/dynamic-frame"
 import { LayoutGridDemo } from "@/components/layout-image-grid"
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
               Explore our diverse portfolio of photography services, from professional portraits to event coverage and artistic compositions.
             </p>
             <AnimatedButton href="/about" variant="outline" icon={<ArrowRight size={16} />}>
-              Learn More About Our Services
+              Learn More About The Journey
             </AnimatedButton>
           </motion.div>
           <motion.div
@@ -67,7 +67,7 @@ export default function Home() {
       <LayoutGridDemo />
 
        {/* Call to Action */}
-      <section className="z-10 min-w-[90%] justify-self-center mr-4 ml-4 py-20 lg:my-20 sm:mt-0 sm:mb-20 px-4 md:px-8 px-2 rounded-3xl border-[1px] border-border">
+      <section className="z-10 min-w-[90%] justify-self-center mr-4 ml-4 py-20 lg:my-20 sm:mt-0 sm:mb-20 px-4 md:px-8 px-2 rounded-3xl border-2 border-merlot bg-gradient-to-br from-background to-merlot/5 dark:from-black dark:to-merlot/10">
         <motion.div
           className="max-w-7xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -75,9 +75,9 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-primary text-3xl md:text-4xl mb-6">Ready to Create Something Beautiful?</h2>
+          <h2 className="text-primary text-3xl md:text-4xl mb-6">Collaborate?</h2>
           <p className="text-primary max-w-2xl mx-auto mb-8">
-            Whether you're looking for professional photography services, prints, or custom projects, we'd love to collaborate with you.
+            Whether you're looking for prints, licensing, or a custom photography project, feel free to get in touch.
           </p>
           <AnimatedButton href="/contact" variant="primary" icon={<ArrowRight size={18} />}>
             Get in Touch

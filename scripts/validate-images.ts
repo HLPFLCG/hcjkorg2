@@ -1,65 +1,61 @@
 const fs = require('fs');
 const path = require('path');
 
-// Collection image counts and formats
-const collectionImages: Record<string, { count: number; formats: string[] }> = {
-  'bali': { 
-    count: 16,
-    formats: ['jpeg', 'jpg']  // Bali has images in both formats
-  },
-  'morocco': { 
-    count: 21,  // Updated count based on actual files
-    formats: ['webp']
-  },
-  'tokyo': { 
-    count: 20,  // Updated count based on actual files
-    formats: ['jpg']
-  },
-  'new-zealand': { 
-    count: 18,
-    formats: ['jpg']
-  },
-  'iceland': { 
-    count: 14,
-    formats: ['jpg']
-  },
-  'urban-portraits': { 
-    count: 16,
-    formats: ['jpg']
-  }
-}
-
-// Collection format mapping for cover images
-const collectionFormats: Record<string, string> = {
-  'bali': 'jpeg',
-  'morocco': 'webp',
-  'tokyo': 'jpg',
-  'new-zealand': 'jpg',
-  'iceland': 'jpg',
-  'urban-portraits': 'jpg'
-}
-
-// Collection folder name mapping (for case sensitivity)
-const collectionFolders: Record<string, string> = {
-  'bali': 'Bali',
-  'morocco': 'Morocco',
-  'tokyo': 'Tokyo',
-  'new-zealand': 'new zealand',
-  'iceland': 'Iceland',
-  'urban-portraits': 'Urban Portraits'
-}
+// New website collections mapping
+const newWebsiteCollections = {
+  'landscapes': [
+    'big-mountain.webp', 'mountains1.webp', 'mountains2.webp', 'trees-1.webp',
+    'trees-and-mountains.webp', 'willow-tree-i-think.webp', 'overview-waterfall.webp',
+    'waterfall-1.webp', 'waterfall-closer.webp', 'waterfall-full-image.webp',
+    'big-rock-full.webp', 'big-rock-left.webp', 'bigrock1.webp',
+    'coastal1.webp', 'nightime-peninsula.webp', 'nightime-peninsula-2.webp'
+  ],
+  'urban-architecture': [
+    'church.webp', 'clay-roof-house-panoramic.webp', 'top-of-cool-building.webp',
+    'flags.webp', 'hispanic-street-market-with-flags.webp', 'red-bike-house-road.webp',
+    'road1.webp', 'street-food.webp', 'vespa-road-hispanic.webp',
+    'wall-graffiti-flower.webp', 'sepia-public-house.webp', 'public-house-2nd-floor.webp'
+  ],
+  'tropical-nature': [
+    'jungle1.webp', 'jungle2.webp', 'river-rainforest-tropical.webp',
+    'tropical-tops-of-trees.webp', 'fall-leaves.webp', 'green-plant-closeup.webp',
+    'moss.webp', 'palm-tree-bw.webp', 'palm-trees-with-colors-and-paper.webp',
+    'flower-close-up.webp', 'flower-close-up-2.webp', 'flower-close-up-3.webp',
+    'flower-close-up-4.webp', 'flower-closeup-bw.webp', 'pink-flowers-closeup.webp',
+    'purple-flowers.webp', 'red-flowers.webp', 'white-flowers.webp'
+  ],
+  'portraits': [
+    'emma-child1.webp', 'emma-child2.webp', 'emma-child3.webp', 'emma-child4.webp',
+    'emma-child5.webp', 'emma-child6.webp', 'emma-child7.webp', 'emma-child8.webp',
+    'emma-child9.webp', 'emma-child10.webp', 'emma-child11.webp', 'emma-child12.webp',
+    'brother1.webp', 'brother3bw.webp', 'brother4bw.webp', 'brother5bw.webp',
+    'brother7.webp', 'brother8.webp', 'brother9.webp', 'brother21bw.webp',
+    'brother22.webp', 'brother28.webp', 'brother29.webp', 'brother30.webp'
+  ],
+  'animals-wildlife': [
+    'cat.webp', 'cat2.webp', 'dog-bw.webp', 'cow.webp',
+    'animal?.webp', 'animal?2.webp', 'lizard.webp', 'swampape.webp',
+    'spider-in-spiderweb.webp', 'spider-in-web2.webp'
+  ],
+  'water-seascapes': [
+    'big-rock-boat-2-i-think.webp', 'big-rock-ocean-boat.webp', 'big-rock-ocean3.webp',
+    'back-of-boat.webp', 'boat-closeup.webp', 'boat.webp', 'full-fock-and-boat.webp',
+    'trail-into-ocean.webp', 'two-rocks.webp', 'friend-lake.webp',
+    'pretty-waterfall.webp', 'panoramic-river-mountains-wow-this-is-gorgeous.webp'
+  ]
+} as const;
 
 interface ValidationResult {
-  hasErrors: boolean
-  hasWarnings: boolean
-  totalImages: number
-  validatedImages: number
-  errors: string[]
-  warnings: string[]
+  hasErrors: boolean;
+  hasWarnings: boolean;
+  totalImages: number;
+  validatedImages: number;
+  errors: string[];
+  warnings: string[];
 }
 
 function validateImages(dryRun: boolean = false): ValidationResult {
-  const publicDir = path.join(process.cwd(), 'public')
+  const publicDir = path.join(process.cwd(), 'public');
   const result: ValidationResult = {
     hasErrors: false,
     hasWarnings: false,
@@ -67,117 +63,99 @@ function validateImages(dryRun: boolean = false): ValidationResult {
     validatedImages: 0,
     errors: [],
     warnings: []
+  };
+
+  console.log('\ud83d\udd0d Starting image validation...');
+  if (dryRun) {
+    console.log('\u26a0\ufe0f  Running in dry-run mode - will not fail the build\n');
   }
 
-  console.log('🔍 Starting image validation...')
-  if (dryRun) {
-    console.log('⚠️  Running in dry-run mode - will not fail the build\n')
+  // Check newwebsiteimages directory
+  const newWebsiteDir = path.join(publicDir, 'newwebsiteimages');
+  if (!fs.existsSync(newWebsiteDir)) {
+    const error = 'newwebsiteimages directory missing';
+    result.errors.push(error);
+    console.error(`\u274c ${error}`);
+    result.hasErrors = true;
+    return result;
   }
+
+  console.log('\n\ud83d\udcc1 Checking newwebsiteimages collections...');
 
   // Check each collection
-  Object.entries(collectionImages).forEach(([slug, info]) => {
-    const folderName = collectionFolders[slug]
-    console.log(`\n📁 Checking collection: ${folderName}`)
-    
-    const collectionDir = path.join(publicDir, folderName)
-    
-    // Check if collection directory exists
-    if (!fs.existsSync(collectionDir)) {
-      const error = `Collection directory missing: ${folderName}`
-      result.errors.push(error)
-      console.error(`❌ ${error}`)
-      result.hasErrors = true
-      return
-    }
+  Object.entries(newWebsiteCollections).forEach(([slug, images]) => {
+    console.log(`\n\ud83d\udcc1 Checking collection: ${slug}`);
 
-    // Check cover image
-    const coverFormat = collectionFormats[slug]
-    const coverPath = path.join(collectionDir, `cover.${coverFormat}`)
-    if (!fs.existsSync(coverPath)) {
-      const error = `Cover image missing: ${folderName}/cover.${coverFormat}`
-      result.errors.push(error)
-      console.error(`❌ ${error}`)
-      result.hasErrors = true
-    } else {
-      console.log(`✅ Cover image found: ${folderName}/cover.${coverFormat}`)
-      result.validatedImages++
-    }
-
-    // Check collection images
-    for (let i = 1; i <= info.count; i++) {
-      result.totalImages++
-      let imageExists = false
-      let foundFormat = ''
+    // Check if collection images exist
+    images.forEach(imageName => {
+      result.totalImages++;
+      const imagePath = path.join(newWebsiteDir, imageName);
       
-      // For Bali, check both formats
-      if (slug === 'bali') {
-        const format = (i >= 10 && i <= 15) ? 'jpg' : 'jpeg'
-        const imagePath = path.join(collectionDir, `${slug}-${i}.${format}`)
-        if (fs.existsSync(imagePath)) {
-          imageExists = true
-          foundFormat = format
-        }
+      if (!fs.existsSync(imagePath)) {
+        const error = `Image missing: newwebsiteimages/${imageName}`;
+        result.errors.push(error);
+        console.error(`\u274c ${error}`);
+        result.hasErrors = true;
       } else {
-        // For other collections, check their format
-        for (const format of info.formats) {
-          const imagePath = path.join(collectionDir, `${slug}-${i}.${format}`)
-          if (fs.existsSync(imagePath)) {
-            imageExists = true
-            foundFormat = format
-            break
-          }
-        }
+        result.validatedImages++;
       }
+    });
+  });
 
-      if (!imageExists) {
-        const error = `Image missing: ${folderName}/${slug}-${i}.${info.formats[0]}`
-        result.errors.push(error)
-        console.error(`❌ ${error}`)
-        result.hasErrors = true
-      } else {
-        result.validatedImages++
-        // Add warning for non-standard format
-        if (slug === 'bali' && foundFormat !== 'jpeg' && i < 10) {
-          const warning = `Warning: ${folderName}/${slug}-${i}.${foundFormat} uses non-standard format`
-          result.warnings.push(warning)
-          console.warn(`⚠️  ${warning}`)
-          result.hasWarnings = true
-        }
-      }
+  // Check favicon files
+  console.log('\n\ud83d\udcc1 Checking favicon files...');
+  const faviconFiles = [
+    'favicon.ico',
+    'favicon-16x16.png',
+    'favicon-32x32.png',
+    'apple-touch-icon.png'
+  ];
+
+  faviconFiles.forEach(faviconFile => {
+    const faviconPath = path.join(publicDir, faviconFile);
+    if (!fs.existsSync(faviconPath)) {
+      const warning = `Favicon file missing: ${faviconFile}`;
+      result.warnings.push(warning);
+      console.warn(`\u26a0\ufe0f  ${warning}`);
+      result.hasWarnings = true;
+    } else {
+      console.log(`\u2705 Favicon found: ${faviconFile}`);
+      result.validatedImages++;
     }
-  })
+    result.totalImages++;
+  });
 
   // Print summary
-  console.log('\n📊 Validation Summary:')
-  console.log(`Total images checked: ${result.totalImages}`)
-  console.log(`Images validated: ${result.validatedImages}`)
-  console.log(`Missing images: ${result.totalImages - result.validatedImages}`)
-  
+  console.log('\n\ud83d\udcca Validation Summary:');
+  console.log(`Total images checked: ${result.totalImages}`);
+  console.log(`Images validated: ${result.validatedImages}`);
+  console.log(`Missing images: ${result.totalImages - result.validatedImages}`);
+
   if (result.hasWarnings) {
-    console.log(`\n⚠️  Warnings: ${result.warnings.length}`)
-    result.warnings.forEach(warning => console.log(`  - ${warning}`))
+    console.log(`\n\u26a0\ufe0f  Warnings: ${result.warnings.length}`);
+    result.warnings.forEach(warning => console.log(`  - ${warning}`));
   }
 
   if (result.hasErrors) {
-    console.log(`\n❌ Errors: ${result.errors.length}`)
-    result.errors.forEach(error => console.log(`  - ${error}`))
-    
+    console.log(`\n\u274c Errors: ${result.errors.length}`);
+    result.errors.forEach(error => console.log(`  - ${error}`));
+
     if (!dryRun) {
-      console.error('\n❌ Image validation failed. Please fix the missing images before deploying.')
-      process.exit(1)
+      console.error('\n\u274c Image validation failed. Please fix the missing images before deploying.');
+      process.exit(1);
     } else {
-      console.log('\n⚠️  Dry run completed with errors. Build will continue.')
+      console.log('\n\u26a0\ufe0f  Dry run completed with errors. Build will continue.');
     }
   } else {
-    console.log('\n✅ All images validated successfully!')
+    console.log('\n\u2705 All images validated successfully!');
   }
 
-  return result
+  return result;
 }
 
 // Parse command line arguments
-const args = process.argv.slice(2)
-const dryRun = args.includes('--dry-run')
+const args = process.argv.slice(2);
+const dryRun = args.includes('--dry-run');
 
 // Run the validation
-validateImages(dryRun) 
+validateImages(dryRun);

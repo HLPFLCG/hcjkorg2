@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github } from "lucide-react"
+import { Instagram, Twitter, Facebook, Youtube, Linkedin, Github, Heart } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import { motion } from "framer-motion"
 import Logo from "./logo"
@@ -49,7 +49,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </motion.a>
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://instagram.com/hcjk_collection"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -57,10 +57,10 @@ export default function Footer() {
               whileTap={{ scale: 0.95 }}
             >
               <Twitter size={20} />
-              <span className="sr-only">Twitter</span>
+              <span className="sr-only">Pinterest</span>
             </motion.a>
             <motion.a
-              href="https://github.com/lilxyzz"
+              href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pinterest.com/hcjk_collection/&ved=2ahUKEwjX-cGOh7SRAxWKpIkEHYcxGtYQFnoECBYQAQ&usg=AOvVaw0TTLdT7EMyl3piclJBfyOV"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
@@ -71,7 +71,7 @@ export default function Footer() {
               <span className="sr-only">Facebook</span>
             </motion.a>
               <motion.a
-                href="https://github.com/lilxyzz"
+                href="https://https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/61583315834840/&ved=2ahUKEwjX-cGOh7SRAxWKpIkEHYcxGtYQFnoECBwQAQ&usg=AOvVaw0iCswUye306CXKx34QfzVU"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors"
@@ -142,7 +142,7 @@ export default function Footer() {
           <h3 className="section-title text-2xl mb-4">Contact</h3>
           <ul className="space-y-2 text-muted-foreground">
             <h4 className="text-primary">Email</h4>
-            <a href="mailto:contact@x100.com"><li>contact@x100.com</li></a> 
+            <a href="mailto:heather@hcjk.org"><li>contact@x100.com</li></a> 
             {/* <li>Phone: +1 (555) 123-4567</li> */}
             <h4 className="text-primary">Location</h4>
             <li>39.1569° S, 175.6321° E</li>
