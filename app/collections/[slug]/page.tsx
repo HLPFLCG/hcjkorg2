@@ -8,21 +8,6 @@ interface Props {
   }>
 }
 
-export async function generateStaticParams() {
-  const collections = [
-    'bali',
-    'iceland', 
-    'morocco',
-    'tokyo',
-    'urban-portraits',
-    'new-zealand'
-  ]
-  
-  return collections.map((slug) => ({
-    slug,
-  }))
-}
-
 export default async function CollectionPage({ params }: Props) {
   // Ensure params is properly awaited
   const resolvedParams = await params

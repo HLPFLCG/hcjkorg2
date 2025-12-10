@@ -11,8 +11,8 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[50vh] w-full">
         <Image
-          src="/newwebsiteimages/big-rock-1.webp?height=1200&width=1920"
-          alt="Big Rock Image"
+          src="/Iceland/iceland-7.jpg?height=800&width=1920"
+          alt="About X100"
           fill
           priority
           className="object-cover"
@@ -41,7 +41,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <Image
-              src="/newwebsiteimages/costa-rica-bungalow.webp?height=1200&width=800"
+              src="/Iceland/iceland-12.jpg?height=1200&width=800"
               alt="Photographer portrait"
               fill
               className="object-cover"
@@ -55,12 +55,12 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl mb-6">The Journey</h2>
             <p className="text-primary mb-4">
-              I'm a professional photographer with over 5 years of experience capturing moments around the world. My
+              I'm a professional photographer with over 10 years of experience capturing moments around the world. My
               passion for photography began during a backpacking trip through Southeast Asia, where I discovered the
               power of visual storytelling.
             </p>
             <p className="text-primary mb-4">
-              Since then, I've traveled to over 10 countries, documenting landscapes, cultures, and urban environments.
+              Since then, I've traveled to over 30 countries, documenting landscapes, cultures, and urban environments.
               My work has been featured in publications like National Geographic, Condé Nast Traveler, and Vogue.
             </p>
             <p className="text-primary mb-6">
@@ -70,11 +70,11 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2">
                 <Camera size={20} className="text-primary" />
-                <span className="text-primary">Fujifilm x100vi, iPhone 17 Pro, &Leica M10</span>
+                <span className="text-primary">Fujifilm x100vi & Leica M10</span>
               </div>
               <div className="flex items-center gap-2">
                 <Globe size={20} className="text-primary" />
-                <span className="text-primary">10+ Countries</span>
+                <span className="text-primary">30+ Countries</span>
               </div>
               <div className="flex items-center gap-2">
                 <Award size={20} className="text-primary" />

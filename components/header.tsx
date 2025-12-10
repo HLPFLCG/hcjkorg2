@@ -72,15 +72,11 @@ export default function Header() {
             {/* <Logo /> */}
             <Link
               href="/"
-              className={`p-3 flex items-center justify-center rounded-full bg-background/90 transition-all duration-300 ${
-                isScrolled || pathname !== "/" ? "hover:bg-background" : "hover:bg-background/95"
+              className={`font-old-london p-3 text-2xl  duration-300w-10 h-10 flex items-center justify-center rounded-full bg-background/90 text-primary transition-colors ${
+                isScrolled || pathname !== "/" ? "text-primary" : "text-primary"
               }`}
             >
-              <img
-                src="/images/logo/hcjkstacked.svg"
-                alt="HCJK Collection"
-                className="h-8 w-auto"
-              />
+              X100
             </Link>
           </div>
         
