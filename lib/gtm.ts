@@ -20,7 +20,7 @@ export interface GTMEvent {
 
 export const trackEvent = (event: GTMEvent): void => {
   if (typeof window !== 'undefined') {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(event);
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    (window as any).dataLayer.push(event);
   }
 };
