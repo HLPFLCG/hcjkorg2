@@ -11,7 +11,7 @@ export default function TagFilters() {
   const tags = getAllTags()
 
   const handleTagClick = (tag: string) => {
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams(searchParams?.toString() || "")
 
     if (currentTag === tag) {
       params.delete("tag")

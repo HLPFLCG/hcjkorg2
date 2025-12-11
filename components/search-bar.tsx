@@ -14,7 +14,7 @@ export default function SearchBar() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const params = new URLSearchParams(searchParams.toString())
+    const params = new URLSearchParams(searchParams?.toString() || "")
 
     if (searchQuery) {
       params.set("q", searchQuery)
