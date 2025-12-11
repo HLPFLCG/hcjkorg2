@@ -7,6 +7,7 @@
     "validate-images": "ts-node scripts/validate-images.ts",
     "dev": "yarn validate-images --dry-run && next dev",
     "build": "npm run validate-images --dry-run && next build",
+    "build:cloudflare": "npm run build",
     "start": "next start",
     "lint": "next lint",
     "predev": "ts-node scripts/validate-images.ts",
