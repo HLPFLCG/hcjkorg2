@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 export default function TagFilters() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const currentTag = searchParams.get("tag") || ""
+  const currentTag = searchParams?.get("tag") || ""
   const tags = getAllTags()
 
   const handleTagClick = (tag: string) => {

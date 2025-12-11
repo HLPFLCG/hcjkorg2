@@ -9,7 +9,7 @@ import { Search } from "lucide-react"
 export default function SearchBar() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [searchQuery, setSearchQuery] = useState(searchParams.get("q") || "")
+  const [searchQuery, setSearchQuery] = useState(searchParams?.get("q") || "")
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
