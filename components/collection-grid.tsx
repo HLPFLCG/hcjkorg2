@@ -12,8 +12,8 @@ import { useShutterSound } from "./sound-effects"
 export default function CollectionGrid() {
   const collections = getAllCollections()
   const searchParams = useSearchParams()
-  const searchQuery = searchParams.get("q") || ""
-  const tagFilter = searchParams.get("tag") || ""
+  const searchQuery = searchParams?.get("q") || ""
+  const tagFilter = searchParams?.get("tag") || ""
   const { playShutterSound } = useShutterSound()
 
   const [filteredCollections, setFilteredCollections] = useState(collections)
