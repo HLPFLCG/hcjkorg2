@@ -47,6 +47,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        merlot: {
+          DEFAULT: "hsl(350, 45%, 25%)",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
       },
     },
   },
