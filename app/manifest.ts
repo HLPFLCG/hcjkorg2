@@ -4,8 +4,8 @@ export const dynamic = 'force-static'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'X100 Photographer Portfolio',
-    short_name: 'X100',
+    name: 'HCJK Collection',
+    short_name: 'HCJK',
     description: 'A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.',
     start_url: '/',
     display: 'standalone',

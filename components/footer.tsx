@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-4">
             {/* <Logo /> */}
             <Link href="/" className="font-old-london text-2xl font-bold inline-block text-foreground">
-              X100
+              HCJK
             </Link>
           </div>
           <p className="text-muted-foreground max-w-md mb-6 max-w-xs">

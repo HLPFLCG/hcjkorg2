@@ -23,8 +23,8 @@ const openSans = Open_Sans({
 
 
 export const metadata: Metadata = {
-  title: "X100 | Next.js Theme for Photographers",
-  description: "A Next.js portfolio for professional photographers, designed to flawlessly showcase powerful visual stories.",
+  title: "HCJK Collection | Professional Photography",
+  description: "A professional photography portfolio showcasing visual stories and creative moments.",
   // Set initial theme-color meta tag for iOS Safari
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#f2ede3' },

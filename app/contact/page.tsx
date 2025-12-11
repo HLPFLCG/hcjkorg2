@@ -19,7 +19,7 @@ export default function ContactPage() {
       <section className="relative h-[50vh] w-full">
         <Image
           src="/new zealand/new-zealand-17.jpg?height=800&width=1920"
-          alt="Contact X100"
+          alt="Contact HCJK Collection"
           fill
           priority
           className="object-cover"
