@@ -1,8 +1,6 @@
 "use client"
 
-import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
-import { ContactFormData } from '@/lib/types'
 import { cn } from '@/lib/utils'
 
 interface ContactFormProps {
@@ -10,32 +8,25 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ className }: ContactFormProps) {
-  const [state, handleSubmit] = useForm("xblqjywk") // HCJK Collection Formspree endpoint
-  const [success, setSuccess] = useState(false)
-
-  const handleSuccess = () => {
-    setSuccess(true)
-  }
+  const [state, handleSubmit] = useForm("xblqjywk")
 
   if (state.succeeded) {
     return (
-      <div className="rounded-md bg-merlot/10 border border-merlot/20 p-6 text-sm text-merlot dark:bg-merlot/20 dark:border-merlot/30">
-        <div className="flex items-center gap-3"><div className="w-2 h-2 bg-merlot rounded-full"></div><p className="font-medium">Thank you for your message!</p></div><p className="mt-2 text-merlot/80">We'll get back to you soon.</p>
+      <div className="py-12 text-center">
+        <p className="font-serif text-2xl font-light text-foreground mb-2">
+          Thank you.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          Your message has been sent. I&apos;ll be in touch soon.
+        </p>
       </div>
     )
   }
 
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-6', className)}>
-      {state.errors && Object.keys(state.errors).length > 0 && (
-        <div className="rounded-md bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4 text-sm text-red-700 dark:text-red-300">
-          {Object.entries(state.errors).map(([field, error]) => (
-            <p key={field}>{error}</p>
-          ))}
-        </div>
-      )}
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-primary">
+        <label htmlFor="name" className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">
           Name
         </label>
         <input
@@ -43,11 +34,12 @@ export function ContactForm({ className }: ContactFormProps) {
           id="name"
           name="name"
           required
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
+          className="w-full bg-transparent border-b border-border px-0 py-2 text-foreground text-sm focus:border-accent focus:outline-none transition-colors"
         />
       </div>
+
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-primary">
+        <label htmlFor="email" className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">
           Email
         </label>
         <input
@@ -55,41 +47,35 @@ export function ContactForm({ className }: ContactFormProps) {
           id="email"
           name="email"
           required
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
+          className="w-full bg-transparent border-b border-border px-0 py-2 text-foreground text-sm focus:border-accent focus:outline-none transition-colors"
         />
-        <ValidationError 
-          prefix="Email" 
-          field="email"
-          errors={state.errors}
-        />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
+
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-primary">
+        <label htmlFor="message" className="block text-xs tracking-widest uppercase text-muted-foreground mb-2">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           required
-          rows={4}
-          className="mt-1 block w-full rounded-md border border-border px-3 py-2 shadow-sm focus:border-[1px] focus:border-merlot focus:outline-none focus:ring-1 focus:ring-merlot"
+          rows={5}
+          className="w-full bg-transparent border-b border-border px-0 py-2 text-foreground text-sm focus:border-accent focus:outline-none transition-colors resize-none"
         />
-        <ValidationError 
-          prefix="Message" 
-          field="message"
-          errors={state.errors}
-        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} />
       </div>
-      <div>
+
+      <div className="pt-4">
         <button
           type="submit"
           disabled={state.submitting}
           className={cn(
-            'w-full rounded-md bg-merlot px-4 py-2 text-sm font-medium text-off-white shadow-sm hover:bg-merlot/90 border border-merlot focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
-            state.submitting && 'cursor-not-allowed opacity-50'
+            'w-full py-3 text-xs tracking-widest-xl uppercase border border-foreground text-foreground hover:bg-foreground hover:text-primary-foreground transition-colors',
+            state.submitting && 'opacity-50 cursor-not-allowed'
           )}
         >
-          {state.submitting ? 'Sending...' : 'Send Message'}
+          {state.submitting ? 'Sending...' : 'Send'}
         </button>
       </div>
     </form>

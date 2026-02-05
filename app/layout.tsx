@@ -1,35 +1,11 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Open_Sans } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import SoundEffects from "@/components/sound-effects"
-import SafariThemeColor from "@/components/safari-theme-color"
-import { ErrorBoundary } from "@/components/error-boundary"
-
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
-})
-
-const openSans = Open_Sans({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"], 
-  variable: "--font-opensans",
-})
-
 
 export const metadata: Metadata = {
-  title: "HCJK Collection | Professional Photography",
-  description: "A professional photography portfolio showcasing visual stories and creative moments.",
-  // Set initial theme-color meta tag for iOS Safari
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f2ede3' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' },
-  ],
+  title: "HCJK Collection | Heather Krystecki",
+  description: "I See You, I See Me — a poetry collection by Heather Krystecki. Words that find you exactly where you are.",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -40,22 +16,21 @@ export const metadata: Metadata = {
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ]
   },
-  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${openSans.variable}`} suppressHydrationWarning>
+    <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <ErrorBoundary>
-          <SafariThemeColor />
-          <SoundEffects />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-            </ErrorBoundary>
-        </ThemeProvider>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

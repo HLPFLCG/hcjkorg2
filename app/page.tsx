@@ -1,118 +1,151 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
-import FeaturedCollections from "@/components/featured-collections"
-import AnimatedButton from "@/components/animated-button"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import HeroSlider from "@/components/hero-slider"
-import Image from "next/image"
-import { HeroGalleryScroll } from "@/components/hero-gallery-scroll"
-// import { DynamicFrame } from "@/components/dynamic-frame"
-import { LayoutGridDemo } from "@/components/layout-image-grid"
+import { ArrowRight, Instagram } from "lucide-react"
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, delay: i * 0.15, ease: [0.25, 0.4, 0.25, 1] },
+  }),
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Spacer for header */}
-      <div className="header-height"></div>
-
-      {/* Hero Section with Slider */}
-      <HeroGalleryScroll />
-
-      {/* Hero Section with Slider 
-      <HeroSlider />*/}
-
-      {/* Introduction */}
-      <section id="introduction" className="mt-32 mb-20 sm:py-0 py-20 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl mb-6">The Art of Visual Storytelling</h2>
-            <p className="text-primary-secondary mb-6">
-              HCJK Collection specializes in capturing moments and telling stories through the lens. Our work focuses on
-              finding beauty in both grand landscapes and subtle details.
-            </p>
-            <p className="text-primary-secondary mb-8">
-              Explore our diverse portfolio of photography services, from professional portraits to event coverage and artistic compositions.
-            </p>
-            <AnimatedButton href="/about" variant="outline" icon={<ArrowRight size={16} />}>
-              Learn More About The Journey
-            </AnimatedButton>
-          </motion.div>
-          <motion.div
-            className="relative h-[500px] rounded-2xl overflow-hidden"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/Morocco/morocco-9.webp?height=1000&width=800"
-              alt="Photographer at work"
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Dynamic Frame Section 
-      <DynamicFrame />*/}
-
-      {/* Layout Grid Section */}
-      <LayoutGridDemo />
-
-       {/* Call to Action */}
-      <section className="z-10 min-w-[90%] justify-self-center mr-4 ml-4 py-20 lg:my-20 sm:mt-0 sm:mb-20 px-4 md:px-8 px-2 rounded-3xl border-2 border-merlot bg-gradient-to-br from-background to-merlot/5 dark:from-black dark:to-merlot/10">
+    <div className="flex flex-col">
+      {/* Hero */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <motion.div
-          className="max-w-7xl mx-auto text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          className="max-w-2xl"
+          initial="hidden"
+          animate="visible"
         >
-          <h2 className="text-primary text-3xl md:text-4xl mb-6">Collaborate?</h2>
-          <p className="text-primary max-w-2xl mx-auto mb-8">
-            Whether you're looking for prints, licensing, or a custom photography project, feel free to get in touch.
-          </p>
-          <AnimatedButton href="/contact" variant="primary" icon={<ArrowRight size={18} />}>
-            Get in Touch
-          </AnimatedButton>
+          <motion.p
+            custom={0}
+            variants={fadeUp}
+            className="text-xs tracking-widest-2xl uppercase text-muted-foreground mb-8"
+          >
+            A poetry collection
+          </motion.p>
+
+          <motion.h1
+            custom={1}
+            variants={fadeUp}
+            className="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] tracking-tight text-foreground"
+          >
+            I See You,
+            <br />
+            I See Me
+          </motion.h1>
+
+          <motion.div
+            custom={2}
+            variants={fadeUp}
+            className="w-12 h-px bg-accent mx-auto my-8"
+          />
+
+          <motion.p
+            custom={3}
+            variants={fadeUp}
+            className="font-serif text-xl md:text-2xl text-muted-foreground font-light italic"
+          >
+            by Heather Krystecki
+          </motion.p>
+
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            className="mt-12"
+          >
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-2 text-xs tracking-widest-xl uppercase text-foreground border-b border-foreground pb-1 hover:text-accent hover:border-accent transition-colors"
+            >
+              Order Now
+              <ArrowRight size={14} />
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* Featured Collections */}
-      <section className="lg:mt-32 mb-32 px-4 md:px-8 z-10 mt-20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+      {/* Poem Excerpt */}
+      <section className="py-24 md:py-32 px-6">
+        <motion.div
+          className="max-w-lg mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+          viewport={{ once: true }}
+        >
+          <div className="font-serif text-xl md:text-2xl leading-relaxed text-foreground font-light italic space-y-2">
+            <p>in the quiet between us</p>
+            <p>i found the words</p>
+            <p>i had been searching for &mdash;</p>
+            <p>the ones that sound</p>
+            <p>like home</p>
+          </div>
+          <div className="w-8 h-px bg-accent mx-auto mt-8 mb-4" />
+          <p className="text-xs tracking-widest uppercase text-muted-foreground">
+            from I See You, I See Me
+          </p>
+        </motion.div>
+      </section>
+
+      {/* About Teaser */}
+      <section className="py-24 md:py-32 px-6 bg-card">
+        <motion.div
+          className="max-w-2xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+          viewport={{ once: true }}
+        >
+          <p className="text-xs tracking-widest-2xl uppercase text-muted-foreground mb-6">
+            About the poet
+          </p>
+          <p className="font-serif text-2xl md:text-3xl font-light leading-relaxed text-foreground mb-8">
+            Heather Krystecki writes about the spaces between people &mdash;
+            the tender, unspoken moments where we truly see one another.
+          </p>
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-2 text-xs tracking-widest-xl uppercase text-foreground border-b border-foreground pb-1 hover:text-accent hover:border-accent transition-colors"
           >
-            <h2 className="text-primary text-3xl md:text-4xl mb-4">Featured Collections</h2>
-            <p className="text-primary max-w-2xl mx-auto">
-              Explore some of our most recent photography projects and collections
-            </p>
-          </motion.div>
-          <FeaturedCollections />
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
+            Read More
+            <ArrowRight size={14} />
+          </Link>
+        </motion.div>
+      </section>
+
+      {/* Instagram CTA */}
+      <section className="py-24 md:py-32 px-6">
+        <motion.div
+          className="max-w-md mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+          viewport={{ once: true }}
+        >
+          <Instagram size={24} className="mx-auto text-muted-foreground mb-6" />
+          <p className="font-serif text-xl md:text-2xl font-light text-foreground mb-2">
+            Follow along
+          </p>
+          <p className="text-sm text-muted-foreground mb-6">
+            New poems, reflections, and behind-the-scenes on Instagram.
+          </p>
+          <a
+            href="https://www.instagram.com/hcjk_collection/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs tracking-widest-xl uppercase text-foreground border-b border-foreground pb-1 hover:text-accent hover:border-accent transition-colors"
           >
-            <AnimatedButton href="/showcase" variant="primary" icon={<ArrowRight size={18} />}>
-              View All Collections
-            </AnimatedButton>
-          </motion.div>
-        </div>
+            @hcjk_collection
+            <ArrowRight size={14} />
+          </a>
+        </motion.div>
       </section>
     </div>
   )
