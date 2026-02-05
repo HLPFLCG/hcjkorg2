@@ -1,7 +1,7 @@
 {
-  "name": "HCJK Collection - Professional Photography",
+  "name": "HCJK Collection - Poetry by Heather Krystecki",
   "short_name": "HCJK",
-  "description": "Professional photography portfolio showcasing stunning visual stories from around the world",
+  "description": "I See You, I See Me — a poetry collection by Heather Krystecki",
   "icons": [
     {
       "src": "/favicon-16x16.png",
@@ -19,8 +19,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#631025",
-  "background_color": "#f2ede3",
+  "theme_color": "#FFFBF7",
+  "background_color": "#FFFBF7",
   "display": "standalone",
   "start_url": "/",
   "scope": "/"
