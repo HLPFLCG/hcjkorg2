@@ -2,16 +2,14 @@ import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
-        oldLondon: ["var(--font-old-london)"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-opensans)", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -47,10 +45,10 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        merlot: {
-          DEFAULT: "hsl(350, 45%, 25%)",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
+      },
+      letterSpacing: {
+        'widest-xl': '0.2em',
+        'widest-2xl': '0.3em',
       },
     },
   },

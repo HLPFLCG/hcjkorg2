@@ -2,74 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font imports for Cormorant Garamond and Open Sans */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
 :root {
-  /* Font Variables */
   --font-cormorant: "Cormorant Garamond", serif;
   --font-opensans: "Open Sans", sans-serif;
-  
-  /* HCJK Color Palette - Light Mode */
-  --background: 45 28% 88%; /* Darker off-white/beige matching logo better */
-  --foreground: 0 0% 18%; /* Darker text for contrast */
-  --card: 45 30% 91%; /* Slightly lighter beige */
-  --card-foreground: 0 0% 18%;
-  --popover: 45 28% 88%;
-  --popover-foreground: 0 0% 18%;
-  --primary: 0 0% 18%; /* Dark text for primary */
-  --primary-foreground: 45 28% 88%; /* Beige background */
-  --secondary: 350 45% 15%; /* Merlot accent color */
-  --secondary-foreground: 45 28% 88%; /* Light beige text on merlot */
-  --muted: 45 25% 82%;
-  --muted-foreground: 0 0% 35%;
-  --accent: 350 45% 20%; /* Darker merlot for accents */
-  --accent-foreground: 45 28% 88%; /* Light beige text */
-  --destructive: 350 45% 35%; /* Merlot for destructive */
-  --destructive-foreground: 0 0% 100%;
-  --border: 45 25% 75%;
-  --input: 45 25% 75%;
-  --ring: 350 45% 25%; /* Merlot ring color */
-  --radius: 0.5rem;
-}
 
-.dark {
-  /* Dark Mode Colors */
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 100%;
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 0 0% 15%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 63% 31%;
+  --background: 30 100% 98%;
+  --foreground: 26 8% 16%;
+  --card: 25 100% 96%;
+  --card-foreground: 26 8% 16%;
+  --popover: 30 100% 98%;
+  --popover-foreground: 26 8% 16%;
+  --primary: 26 8% 16%;
+  --primary-foreground: 30 100% 98%;
+  --secondary: 30 15% 93%;
+  --secondary-foreground: 26 8% 30%;
+  --muted: 30 15% 93%;
+  --muted-foreground: 29 9% 46%;
+  --accent: 348 25% 61%;
+  --accent-foreground: 30 100% 98%;
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --border: 0 0% 15%;
-  --input: 0 0% 15%;
-  --ring: 0 0% 100%;
+  --border: 30 25% 88%;
+  --input: 30 25% 88%;
+  --ring: 348 25% 61%;
+  --radius: 0.375rem;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
-  
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: var(--font-opensans);
-    @apply text-base antialiased bg-background text-foreground transition-colors duration-300;
+    @apply text-base antialiased bg-background text-foreground;
     overflow-x: hidden;
-    font-size: 1.125rem;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cormorant);
+  }
+
+  ::selection {
+    background-color: hsl(348 25% 61% / 0.2);
+    color: hsl(26 8% 16%);
   }
 }
 
@@ -77,238 +57,10 @@
   .text-balance {
     text-wrap: balance;
   }
-
-  /* Hide scrollbar utilities */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-
-  .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  /* Animation utilities */
-  .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Transition utilities */
-  .transition-theme {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  }
-
-  /* Shadow utilities */
-  .shadow-soft {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  }
-
-  .dark .shadow-soft {
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
-  }
-
-  /* Button hover icon animation */
-  .btn-icon {
-    opacity: 0;
-    transform: translateX(-10px);
-    width: 0;
-    transition: all 0.3s ease;
-  }
-
-  .btn:hover .btn-icon {
-    opacity: 1;
-    transform: translateX(0);
-    width: auto;
-    margin-left: 0.5rem;
-  }
-
-  /* Focus utilities */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
-  }
-
-  /* Merlot color utilities */
-  .text-merlot {
-    color: #631025;
-  }
-
-  .bg-merlot {
-    background-color: #631025;
-  }
-
-  .border-merlot {
-    border-color: #631025;
-  }
-
-  .ring-merlot {
-    --tw-ring-color: #631025;
-  }
-
-  .hover\:bg-merlot:hover {
-    background-color: #631025;
-  }
-
-  .hover\:text-merlot:hover {
-    color: #631025;
-  }
-
-  .hover\:border-merlot:hover {
-    border-color: #631025;
-  }
 }
 
 @layer components {
-  /* Layout styles */
   main {
     padding-top: 0;
   }
-
-  .header-height {
-    height: 60px;
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-  }
-
-  /* Component styles */
-  .card {
-    @apply bg-card text-card-foreground rounded-lg shadow-soft;
-  }
-
-  .btn {
-    @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors;
-  }
-
-  .input {
-    @apply bg-background border border-input text-foreground;
-  }
-
-  /* Photo album styles */
-  .react-photo-album--image {
-    border-radius: 20px !important;
-    object-fit: cover !important;
-  }
-}
-
-/* Responsive utilities */
-@media (max-width: 768px) {
-  .dynamic-frame-layout {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
-  
-  .toggle-container {
-    display: none !important;
-  }
-  
-  #introduction {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    margin-bottom: 0px !important;
-  }
-}
-
-/* Sound muting utility */
-body.sounds-muted a {
-  pointer-events: auto;
-}
-
-/* Theme scheme */
-@media (prefers-color-scheme: dark) {
-  html[data-theme="dark"] {
-    color-scheme: dark;
-  }
-}
-  /* Merlot color utilities */
-  .text-merlot {
-    color: hsl(350, 45%, 20%);
-  }
-  
-  .bg-merlot {
-    background-color: hsl(350, 45%, 20%);
-  }
-  
-  .hover\:bg-merlot:hover {
-    background-color: hsl(350, 45%, 25%);
-  }
-  
-  .border-merlot {
-    border-color: hsl(350, 45%, 20%);
-  }
-  
-  .ring-merlot {
-    --tw-ring-color: hsl(350, 45%, 25%);
-  }
-  
-  .text-off-white {
-    color: hsl(45, 28%, 88%);
-  }
-  
-  .bg-off-white {
-    background-color: hsl(45, 28%, 88%);
-  }
-  
-  .dark .text-merlot {
-    color: hsl(350, 45%, 25%);
-  }
-  
-  .dark .bg-merlot {
-    background-color: hsl(350, 45%, 20%);
-  }
-  
-  .dark .hover\:bg-merlot:hover {
-    background-color: hsl(350, 45%, 30%);
-  }
-  
-  .dark .border-merlot {
-    border-color: hsl(350, 45%, 25%);
-  }
-  
-  .dark .ring-merlot {
-    --tw-ring-color: hsl(350, 45%, 30%);
-  }
-  
-  .dark .text-off-white {
-    color: hsl(45, 28%, 88%);
-  }
-  
-  .dark .bg-off-white {
-    background-color: hsl(45, 28%, 88%);
-  }
-
-  /* Missing utility classes for HCJK theme */
-  .text-primary-secondary {
-    color: hsl(var(--muted-foreground));
-  }
-
-  .bg-primary-secondary {
-    background-color: hsl(var(--muted));
-  }
-
-  .border-merlot {
-    border-color: hsl(350, 45%, 25%);
-  }
-
-  .ring-merlot {
-    --tw-ring-color: hsl(350, 45%, 25%);
-  }
-
-  .hover\:bg-merlot:hover {
-    background-color: hsl(350, 45%, 30%);
-  }
-
-/* Header spacer for fixed header */
-.header-height {
-  height: 80px;
 }
