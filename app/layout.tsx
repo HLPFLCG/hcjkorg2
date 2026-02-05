@@ -3,17 +3,19 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
+const basePath = process.env.NODE_ENV === 'production' ? '/hcjkorg2' : ''
+
 export const metadata: Metadata = {
   title: "HCJK Collection | Heather Krystecki",
   description: "I See You, I See Me — a poetry collection by Heather Krystecki. Words that find you exactly where you are.",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' }
+      { url: `${basePath}/favicon.ico`, sizes: 'any' },
+      { url: `${basePath}/favicon-32x32.png`, sizes: '32x32', type: 'image/png' },
+      { url: `${basePath}/favicon-16x16.png`, sizes: '16x16', type: 'image/png' }
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+      { url: `${basePath}/apple-touch-icon.png`, sizes: '180x180', type: 'image/png' }
     ]
   },
 }
