@@ -1,0 +1,181 @@
+# Editing Page Content
+
+This guide walks through how to change text on each page of your site.
+
+---
+
+## General Tips
+
+- All page files end in `.tsx` — don't worry about the extension, you're just editing the text inside
+- Text is wrapped in HTML-like tags: `<p>your text here</p>`, `<h1>heading</h1>`, etc.
+- **Don't delete the tags** — only change the words between them
+- Special characters:
+  - `&mdash;` = em dash (—)
+  - `&apos;` = apostrophe (')
+  - `&ldquo;` / `&rdquo;` = curly quotes (" ")
+  - `<br />` = line break (new line within a poem)
+
+---
+
+## Home Page
+
+**File:** `app/page.tsx`
+
+### Hero Section (the big title area)
+Look for this near the top:
+```
+A Poetry Collection by Heather Krystecki
+```
+and
+```
+I See You,
+I See Me
+```
+and the subtitle:
+```
+A journey through love, loss, and the quiet courage of being truly seen.
+```
+
+### Featured Poems
+There are two poems on the home page. Search for `blockquote` tags — poems live inside them:
+```html
+<blockquote>
+  in the quiet between us
+  <br />
+  i found the words
+  ...
+</blockquote>
+```
+Each line of the poem is separated by `<br />` (line break). To change a poem, just swap the words — keep the `<br />` between lines.
+
+### About Teaser
+The short bio blurb on the home page:
+```
+Heather writes about the spaces between people...
+```
+
+### Instagram Section
+```
+New poems weekly
+```
+and
+```
+Follow along on Instagram for new poetry, behind-the-scenes moments...
+```
+
+### Final Call-to-Action
+```
+Let the words find you.
+```
+
+---
+
+## About Page
+
+**File:** `app/about/page.tsx`
+
+### Your Bio
+The main bio text starts with:
+```
+Heather Krystecki is a poet and writer whose work explores the intimate
+geography of human connection...
+```
+This is the largest block of text on the site. It's broken into several `<p>` paragraphs. Edit the text inside each `<p>...</p>` tag.
+
+### Pull Quote (the indented poem)
+```
+i write because
+some things are too true
+to say out loud—
+so i give them
+to the page instead
+```
+This appears in a styled box with a blush-colored left border.
+
+### "On Writing" Section
+Your philosophy on writing — two paragraphs starting with:
+```
+Poetry, for Heather, is an act of translation...
+```
+
+---
+
+## Shop Page
+
+**File:** `app/shop/page.tsx`
+
+### Book Title & Author
+```
+I See You, I See Me
+by Heather Krystecki
+```
+
+### Book Description
+Two paragraphs:
+```
+A poetry collection about the act of truly seeing—others,
+ourselves, and the quiet revelations...
+```
+
+### Book Details Grid
+Near the bottom of the book section, there's a grid with:
+- **Format:** Paperback
+- **Genre:** Poetry
+- **Publisher:** Self-published
+- **Availability:** Available now
+
+Change any of these by finding the corresponding text.
+
+### "Who is this book for?" Section
+Three columns of text describing your ideal reader. Each starts after a `<div className="w-8 h-px bg-blush" />` line.
+
+### Featured Poem
+Same format as the home page — inside a `<blockquote>` tag.
+
+---
+
+## Contact Page
+
+**File:** `app/contact/page.tsx`
+
+### Intro Text
+```
+For readings, collaborations, press inquiries,
+or just to say hello—I'd love to hear from you.
+```
+
+### Email Address
+```
+heather@hcjk.org
+```
+(This appears as both text and a `mailto:` link — update both if your email changes.)
+
+### Bottom Quote
+```
+Every message is read, every word matters.
+```
+
+---
+
+## Header & Footer
+
+### Header (Navigation)
+**File:** `components/header.tsx`
+
+The site name in the header:
+```
+Heather Krystecki
+```
+
+### Footer
+**File:** `components/footer.tsx`
+
+The footer tagline:
+```
+Poet, author, and believer in the beauty of quiet moments.
+```
+
+And the bottom-right italic text:
+```
+I See You, I See Me
+```
