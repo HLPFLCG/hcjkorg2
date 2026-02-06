@@ -76,9 +76,20 @@ export default function Footer() {
           <p className="text-xs text-cream/30">
             &copy; {new Date().getFullYear()} Heather Krystecki. All rights reserved.
           </p>
-          <p className="text-xs text-cream/30">
-            <em className="font-serif text-sm text-cream/40">I See You, I See Me</em>
-          </p>
+          <div className="flex items-center gap-3">
+            <p className="text-xs text-cream/30">
+              <em className="font-serif text-sm text-cream/40">I See You, I See Me</em>
+            </p>
+            <span className="text-cream/15">|</span>
+            <a
+              href="https://hlpfl.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-cream/25 hover:text-cream/50 transition-colors duration-300"
+            >
+              Built with HLPFL
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,9 +1,22 @@
 import Link from "next/link"
+import type { Metadata } from "next"
+import { getBookSchema } from "@/lib/structured-data"
+
+export const metadata: Metadata = {
+  title: 'Shop — Buy I See You, I See Me',
+  description:
+    'Order I See You, I See Me by Heather Krystecki — a raw, emotional poetry collection about love, loss, healing, mental health, and self-discovery. Available on Barnes & Noble, Amazon, and direct from the author.',
+  alternates: { canonical: 'https://hcjk.org/shop/' },
+}
 
 export default function ShopPage() {
   return (
-    <div>
-      {/* Spacer for fixed header */}
+    <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBookSchema()) }}
+      />
+
       <div className="h-24" />
 
       {/* Hero */}
@@ -17,16 +30,13 @@ export default function ShopPage() {
         <div className="divider mx-auto mt-10 animate-fade-up-delay-2" />
       </section>
 
-      {/* Book Feature - Main showcase */}
+      {/* Book Feature */}
       <section className="pb-30 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
-          {/* Book Cover - Premium presentation */}
+          {/* Book Cover */}
           <div className="relative flex justify-center">
             <div className="relative">
-              {/* Book shadow */}
               <div className="absolute -bottom-6 left-6 right-6 h-12 bg-charcoal/10 blur-2xl" />
-
-              {/* Main book */}
               <div className="w-72 md:w-80 aspect-[2/3] bg-gradient-to-b from-linen to-cream border border-stone/10 relative shadow-xl">
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-10">
                   <p className="text-[9px] tracking-super-wide uppercase text-stone/40 mb-8">
@@ -42,7 +52,6 @@ export default function ShopPage() {
                     Heather Krystecki
                   </p>
                 </div>
-                {/* Inner border */}
                 <div className="absolute inset-5 border border-blush/15" />
               </div>
             </div>
@@ -82,44 +91,71 @@ export default function ShopPage() {
 
             {/* Purchase Section */}
             <div className="space-y-4 pt-2">
+              <p className="text-[10px] tracking-super-wide uppercase text-stone/40 mb-2">
+                Where to Buy
+              </p>
+
+              {/* Buy Direct — Primary CTA */}
+              <a
+                href="#"
+                className="btn-primary block text-center w-full"
+                aria-label="Buy direct from the author (coming soon via Stripe)"
+              >
+                Buy Direct from Author
+              </a>
+
+              {/* Barnes & Noble */}
               <a
                 href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary block text-center w-full"
+                className="btn-outline"
               >
                 Buy on Barnes & Noble
               </a>
+
+              {/* Amazon */}
+              <a
+                href="#"
+                className="btn-outline"
+                aria-label="Buy on Amazon (coming soon)"
+              >
+                Buy on Amazon
+              </a>
+
+              <p className="text-xs text-stone/40 text-center mt-4 italic">
+                Buy direct to support the author at the best price
+              </p>
             </div>
 
-            {/* Book details list */}
+            {/* Book details */}
             <div className="pt-6 border-t border-stone/10">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+              <dl className="grid grid-cols-2 gap-y-4 gap-x-8">
                 <div>
-                  <p className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
+                  <dt className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
                     Format
-                  </p>
-                  <p className="text-sm text-charcoal">Paperback</p>
+                  </dt>
+                  <dd className="text-sm text-charcoal">Paperback</dd>
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
+                  <dt className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
                     Genre
-                  </p>
-                  <p className="text-sm text-charcoal">Poetry</p>
+                  </dt>
+                  <dd className="text-sm text-charcoal">Poetry</dd>
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
+                  <dt className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
                     Publisher
-                  </p>
-                  <p className="text-sm text-charcoal">Self-published</p>
+                  </dt>
+                  <dd className="text-sm text-charcoal">Self-published</dd>
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
+                  <dt className="text-[10px] tracking-widest-plus uppercase text-stone/40 mb-1">
                     Availability
-                  </p>
-                  <p className="text-sm text-charcoal">Available now</p>
+                  </dt>
+                  <dd className="text-sm text-charcoal">Available now</dd>
                 </div>
-              </div>
+              </dl>
             </div>
           </div>
         </div>
@@ -146,7 +182,7 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* What Readers Say / Praise section */}
+      {/* Who is this book for */}
       <section className="py-30 md:py-40 px-8">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-12">
@@ -188,18 +224,16 @@ export default function ShopPage() {
             Begin the journey
           </p>
           <p className="text-sm text-cream/50 mb-10">
-            Available now on Barnes & Noble
+            Available on Barnes & Noble, Amazon, and direct from the author
           </p>
-          <a
-            href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/shop"
             className="inline-block py-4 px-12 text-[11px] tracking-super-wide uppercase border border-cream/30 text-cream hover:bg-cream hover:text-charcoal transition-all duration-400"
           >
             Order Your Copy
-          </a>
+          </Link>
         </div>
       </section>
-    </div>
+    </article>
   )
 }

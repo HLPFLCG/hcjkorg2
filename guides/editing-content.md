@@ -6,13 +6,13 @@ This guide walks through how to change text on each page of your site.
 
 ## General Tips
 
-- All page files end in `.tsx` — don't worry about the extension, you're just editing the text inside
+- All page files end in `.tsx` -- don't worry about the extension, you're just editing the text inside
 - Text is wrapped in HTML-like tags: `<p>your text here</p>`, `<h1>heading</h1>`, etc.
-- **Don't delete the tags** — only change the words between them
+- **Don't delete the tags** -- only change the words between them
 - Special characters:
-  - `&mdash;` = em dash (—)
+  - `&mdash;` = em dash (-)
   - `&apos;` = apostrophe (')
-  - `&ldquo;` / `&rdquo;` = curly quotes (" ")
+  - `&ldquo;` / `&rdquo;` = curly quotes
   - `<br />` = line break (new line within a poem)
 
 ---
@@ -37,7 +37,7 @@ A journey through love, loss, and the quiet courage of being truly seen.
 ```
 
 ### Featured Poems
-There are two poems on the home page. Search for `blockquote` tags — poems live inside them:
+There are two poems on the home page. Search for `blockquote` tags -- poems live inside them:
 ```html
 <blockquote>
   in the quiet between us
@@ -46,7 +46,7 @@ There are two poems on the home page. Search for `blockquote` tags — poems liv
   ...
 </blockquote>
 ```
-Each line of the poem is separated by `<br />` (line break). To change a poem, just swap the words — keep the `<br />` between lines.
+Each line of the poem is separated by `<br />` (line break). To change a poem, just swap the words -- keep the `<br />` between lines.
 
 ### About Teaser
 The short bio blurb on the home page:
@@ -61,6 +61,16 @@ New poems weekly
 and
 ```
 Follow along on Instagram for new poetry, behind-the-scenes moments...
+```
+The actual embedded posts are controlled by the `InstagramEmbed` component -- see the [Updating Links](./updating-links.md#instagram-embedded-posts) guide for how to change which posts appear.
+
+### Newsletter Section
+```
+New words, delivered
+```
+and
+```
+Join the mailing list for new poems, updates on upcoming projects...
 ```
 
 ### Final Call-to-Action
@@ -86,17 +96,28 @@ This is the largest block of text on the site. It's broken into several `<p>` pa
 ```
 i write because
 some things are too true
-to say out loud—
+to say out loud-
 so i give them
 to the page instead
 ```
 This appears in a styled box with a blush-colored left border.
 
 ### "On Writing" Section
-Your philosophy on writing — two paragraphs starting with:
+Your philosophy on writing -- two paragraphs starting with:
 ```
 Poetry, for Heather, is an act of translation...
 ```
+
+### HLPFL Partnership
+This section credits HLPFL. The text reads:
+```
+This book and everything around it was made possible through a partnership
+with HLPFL...
+```
+The HLPFL link points to `https://hlpfl.org`. To change it, update the `href` in this section.
+
+### Press & Media
+Currently has three "Coming soon" placeholder boxes. When you get press coverage, replace the placeholders with logos or text. See the file for the section labeled `{/* Press */}`.
 
 ---
 
@@ -113,9 +134,17 @@ by Heather Krystecki
 ### Book Description
 Two paragraphs:
 ```
-A poetry collection about the act of truly seeing—others,
+A poetry collection about the act of truly seeing-others,
 ourselves, and the quiet revelations...
 ```
+
+### Purchase Buttons
+Three buttons in the "Where to Buy" section:
+1. **Buy Direct from Author** -- currently links to `#` (placeholder for Stripe)
+2. **Buy on Barnes & Noble** -- links to B&N page
+3. **Buy on Amazon** -- currently links to `#` (placeholder)
+
+To update these links, see the [Updating Links](./updating-links.md#purchase-links) guide.
 
 ### Book Details Grid
 Near the bottom of the book section, there's a grid with:
@@ -130,7 +159,7 @@ Change any of these by finding the corresponding text.
 Three columns of text describing your ideal reader. Each starts after a `<div className="w-8 h-px bg-blush" />` line.
 
 ### Featured Poem
-Same format as the home page — inside a `<blockquote>` tag.
+Same format as the home page -- inside a `<blockquote>` tag.
 
 ---
 
@@ -141,14 +170,14 @@ Same format as the home page — inside a `<blockquote>` tag.
 ### Intro Text
 ```
 For readings, collaborations, press inquiries,
-or just to say hello—I'd love to hear from you.
+or just to say hello-I'd love to hear from you.
 ```
 
 ### Email Address
 ```
 heather@hcjk.org
 ```
-(This appears as both text and a `mailto:` link — update both if your email changes.)
+(This appears as both text and a `mailto:` link -- update both if your email changes.)
 
 ### Bottom Quote
 ```
@@ -175,7 +204,31 @@ The footer tagline:
 Poet, author, and believer in the beauty of quiet moments.
 ```
 
-And the bottom-right italic text:
+The bottom bar has:
+- The book title: *I See You, I See Me*
+- "Built with HLPFL" link (points to hlpfl.org)
+
+---
+
+## Loading Screen
+
+**File:** `app/layout.tsx`
+
+The loading screen shows:
 ```
-I See You, I See Me
+Heather Krystecki
+Poet & Author
 ```
+with an animated loading bar. To change the text, look for `loading-logo` and `loading-subtitle` in the layout file.
+
+---
+
+## SEO Metadata
+
+Each page has its own `metadata` export at the top of the file that controls:
+- **title** -- What shows in the browser tab and search results
+- **description** -- The snippet under the title in search results
+
+To change a page's SEO title or description, edit the `metadata` object at the top of that page file.
+
+For site-wide SEO constants (keywords, author name, etc.), edit `lib/metadata.ts`.
