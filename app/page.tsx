@@ -1,11 +1,20 @@
 import Link from "next/link"
+import type { Metadata } from "next"
+import { InstagramEmbed } from "@/components/instagram-embed"
+import { NewsletterSignup } from "@/components/newsletter-signup"
+
+export const metadata: Metadata = {
+  title: 'Heather Krystecki — Raw Poetry About Love, Loss & Self-Discovery',
+  description:
+    'Discover the emotional, healing poetry of Heather Krystecki. Read poems from I See You, I See Me — a modern poetry collection exploring mental health, love, and the courage of being truly seen.',
+  alternates: { canonical: 'https://hcjk.org/' },
+}
 
 export default function Home() {
   return (
-    <div>
+    <article>
       {/* Hero - Full viewport cinematic intro */}
       <section className="min-h-screen flex flex-col items-center justify-center px-8 text-center relative">
-        {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-8 md:left-16 w-px h-32 bg-gradient-to-b from-transparent via-blush/30 to-transparent" />
           <div className="absolute bottom-1/4 right-8 md:right-16 w-px h-32 bg-gradient-to-b from-transparent via-blush/30 to-transparent" />
@@ -37,7 +46,6 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-fade-in-slow">
           <div className="flex flex-col items-center gap-3">
             <span className="text-[9px] tracking-super-wide uppercase text-stone/40">
@@ -68,10 +76,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About the Poet - Editorial Split */}
+      {/* About the Poet */}
       <section className="py-30 md:py-40 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          {/* Left - Visual element */}
           <div className="relative">
             <div className="aspect-[3/4] bg-linen relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
@@ -85,12 +92,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              {/* Decorative border */}
               <div className="absolute inset-4 border border-blush/20" />
             </div>
           </div>
 
-          {/* Right - Text */}
           <div>
             <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
               About the Poet
@@ -100,13 +105,13 @@ export default function Home() {
             </h2>
             <p className="text-base text-stone leading-relaxed mb-6">
               Heather writes about the spaces between people&mdash;the tender,
-              unspoken moments where we truly see one another. Her words trace
-              the contours of love, vulnerability, and the quiet revelations
-              that emerge when we let ourselves be known.
+              unspoken moments where we truly see one another. Her raw, emotional
+              poetry traces the contours of love, vulnerability, mental health,
+              and the quiet revelations that emerge when we let ourselves be known.
             </p>
             <p className="text-base text-stone leading-relaxed mb-10">
               Through spare, honest language, she invites readers into the
-              intimate geography of human connection.
+              intimate geography of human connection and self-discovery.
             </p>
             <Link href="/about" className="btn-secondary">
               Read Her Story
@@ -118,10 +123,8 @@ export default function Home() {
       {/* Book Showcase */}
       <section className="py-30 md:py-40 px-8 bg-charcoal text-cream">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
-          {/* Book visual */}
           <div className="relative flex items-center justify-center">
             <div className="w-64 md:w-72">
-              {/* Book cover representation */}
               <div className="aspect-[2/3] bg-gradient-to-b from-cream/8 to-cream/3 border border-cream/10 relative shadow-2xl">
                 <div className="absolute inset-0 flex flex-col items-center justify-center px-8">
                   <p className="text-[9px] tracking-super-wide uppercase text-cream/30 mb-6">
@@ -138,12 +141,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              {/* Book shadow effect */}
               <div className="absolute -bottom-4 left-4 right-4 h-8 bg-black/20 blur-xl" />
             </div>
           </div>
 
-          {/* Book info */}
           <div>
             <p className="text-[10px] tracking-super-wide uppercase text-cream/30 mb-8">
               The Debut Collection
@@ -191,27 +192,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instagram / Follow */}
+      {/* Instagram Feed */}
       <section className="py-26 md:py-30 px-8 bg-linen">
-        <div className="max-w-prose-narrow mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
             Follow the Journey
           </p>
-          <p className="font-serif text-display-sm text-charcoal font-light mb-6">
+          <h2 className="font-serif text-display-sm text-charcoal font-light mb-6">
             New poems weekly
-          </p>
-          <p className="text-base text-stone leading-relaxed mb-10">
+          </h2>
+          <p className="text-base text-stone leading-relaxed mb-12 max-w-prose-narrow mx-auto">
             Follow along on Instagram for new poetry, behind-the-scenes moments,
             and the words that didn&apos;t make it into the book.
           </p>
-          <a
-            href="https://www.instagram.com/hcjk_collection/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-          >
-            @hcjk_collection
-          </a>
+
+          {/* Instagram post embeds — replace URLs with actual post URLs from @hcjk_collection */}
+          <InstagramEmbed
+            postUrls={[
+              'https://www.instagram.com/hcjk_collection/',
+              'https://www.instagram.com/hcjk_collection/',
+              'https://www.instagram.com/hcjk_collection/',
+            ]}
+          />
+
+          {/* Elfsight full feed widget — uncomment and add your widget ID to use instead
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div className="elfsight-app-XXXXXXXX" data-elfsight-app-lazy></div>
+          */}
+
+          <div className="mt-12">
+            <a
+              href="https://www.instagram.com/hcjk_collection/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              @hcjk_collection on Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-26 md:py-30 px-8">
+        <div className="max-w-prose-narrow mx-auto text-center">
+          <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+            Stay Connected
+          </p>
+          <h2 className="font-serif text-display-sm text-charcoal font-light mb-6">
+            New words, delivered
+          </h2>
+          <p className="text-base text-stone leading-relaxed mb-10">
+            Join the mailing list for new poems, updates on upcoming projects,
+            and the occasional letter from Heather.
+          </p>
+          <NewsletterSignup />
         </div>
       </section>
 
@@ -227,6 +262,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </div>
+    </article>
   )
 }

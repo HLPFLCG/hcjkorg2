@@ -1,9 +1,16 @@
+import type { Metadata } from "next"
 import { ContactForm } from "@/components/contact-form"
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Reach out to poet Heather Krystecki for readings, collaborations, press inquiries, or to connect about her poetry collection I See You, I See Me.',
+  alternates: { canonical: 'https://hcjk.org/contact/' },
+}
 
 export default function ContactPage() {
   return (
-    <div>
-      {/* Spacer for fixed header */}
+    <article>
       <div className="h-24" />
 
       {/* Hero */}
@@ -17,7 +24,7 @@ export default function ContactPage() {
         <div className="divider mx-auto mt-10 animate-fade-up-delay-2" />
       </section>
 
-      {/* Contact Section - Two column */}
+      {/* Contact Section */}
       <section className="pb-30 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-16 md:gap-20">
           {/* Left - Info */}
@@ -59,7 +66,6 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {/* Decorative element */}
               <div className="hidden md:block pt-8">
                 <div className="aspect-square w-48 bg-linen relative">
                   <div className="absolute inset-0 flex items-center justify-center px-6">
@@ -88,6 +94,6 @@ export default function ContactPage() {
           Every message is read, every word matters.
         </p>
       </section>
-    </div>
+    </article>
   )
 }

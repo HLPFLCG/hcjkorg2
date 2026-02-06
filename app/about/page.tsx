@@ -1,9 +1,16 @@
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Meet Heather Krystecki — poet, author, and voice behind I See You, I See Me. Her raw, emotional poetry explores self-discovery, mental health, and the quiet courage of human connection.',
+  alternates: { canonical: 'https://hcjk.org/about/' },
+}
 
 export default function AboutPage() {
   return (
-    <div>
-      {/* Spacer for fixed header */}
+    <article>
       <div className="h-24" />
 
       {/* Hero */}
@@ -17,10 +24,10 @@ export default function AboutPage() {
         <div className="divider mx-auto mt-10 animate-fade-up-delay-2" />
       </section>
 
-      {/* Bio - Editorial layout */}
+      {/* Bio */}
       <section className="pb-30 px-8">
         <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-16 md:gap-20">
-          {/* Sidebar - Decorative quote */}
+          {/* Sidebar */}
           <div className="md:col-span-2 relative">
             <div className="sticky top-32">
               <div className="aspect-[3/4] bg-linen relative overflow-hidden mb-8">
@@ -74,7 +81,7 @@ export default function AboutPage() {
 
               <div className="py-8">
                 <div className="border-l-2 border-blush/40 pl-8 py-4">
-                  <p className="font-serif text-2xl text-charcoal font-light italic leading-relaxed">
+                  <blockquote className="font-serif text-2xl text-charcoal font-light italic leading-relaxed">
                     i write because
                     <br />
                     some things are too true
@@ -84,7 +91,7 @@ export default function AboutPage() {
                     so i give them
                     <br />
                     to the page instead
-                  </p>
+                  </blockquote>
                 </div>
               </div>
 
@@ -103,7 +110,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Philosophy section */}
+            {/* Philosophy */}
             <div className="mt-20 pt-16 border-t border-stone/10">
               <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
                 Philosophy
@@ -127,6 +134,57 @@ export default function AboutPage() {
               </div>
             </div>
 
+            {/* HLPFL Partnership */}
+            <div className="mt-20 pt-16 border-t border-stone/10">
+              <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+                Made Possible By
+              </p>
+              <p className="text-base text-stone leading-[1.9] mb-6">
+                This book and everything around it was made possible through a partnership
+                with{' '}
+                <a
+                  href="https://hlpfl.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-charcoal border-b border-blush/40 hover:border-blush transition-colors duration-300"
+                >
+                  HLPFL
+                </a>
+                {' '}&mdash; a team that handles branding, web, legal, and strategy
+                for independent creators. They helped turn a dream into something real.
+              </p>
+            </div>
+
+            {/* Press */}
+            <div className="mt-20 pt-16 border-t border-stone/10">
+              <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+                Press & Media
+              </p>
+              <h2 className="font-serif text-display-sm text-charcoal font-light mb-8">
+                As Seen In
+              </h2>
+              <p className="text-base text-stone leading-[1.9] mb-8">
+                For press inquiries, interview requests, or review copies, please{' '}
+                <Link
+                  href="/contact"
+                  className="text-charcoal border-b border-blush/40 hover:border-blush transition-colors duration-300"
+                >
+                  get in touch
+                </Link>.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div className="h-16 bg-linen flex items-center justify-center">
+                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                </div>
+                <div className="h-16 bg-linen flex items-center justify-center">
+                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                </div>
+                <div className="h-16 bg-linen flex items-center justify-center">
+                  <p className="text-xs text-stone/30 italic">Coming soon</p>
+                </div>
+              </div>
+            </div>
+
             {/* CTA */}
             <div className="mt-20 pt-16 border-t border-stone/10 text-center md:text-left">
               <p className="font-serif text-2xl text-charcoal font-light mb-8">
@@ -139,6 +197,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
+    </article>
   )
 }
