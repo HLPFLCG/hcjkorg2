@@ -6,8 +6,8 @@ import Footer from "@/components/footer"
 const basePath = process.env.NODE_ENV === 'production' ? '/hcjkorg2' : ''
 
 export const metadata: Metadata = {
-  title: "HCJK Collection | Heather Krystecki",
-  description: "I See You, I See Me — a poetry collection by Heather Krystecki. Words that find you exactly where you are.",
+  title: "HCJK | Heather Krystecki",
+  description: "I See You, I See Me — a poetry collection by Heather Krystecki",
   icons: {
     icon: [
       { url: `${basePath}/favicon.ico`, sizes: 'any' },
@@ -23,12 +23,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Open+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>
         <Header />
         <main>{children}</main>
