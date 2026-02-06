@@ -2,36 +2,84 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="py-16 px-6 border-t border-gray-100">
-      <div className="max-w-4xl mx-auto text-center">
-        <Link href="/" className="font-serif text-lg text-charcoal">
-          HCJK
-        </Link>
+    <footer className="bg-charcoal text-cream">
+      <div className="max-w-6xl mx-auto px-8 md:px-12">
+        {/* Top section */}
+        <div className="py-20 md:py-26 grid md:grid-cols-3 gap-16 md:gap-8">
+          {/* Brand */}
+          <div>
+            <p className="font-serif text-3xl font-light mb-6">
+              Heather Krystecki
+            </p>
+            <p className="text-sm text-cream/50 leading-relaxed max-w-xs">
+              Poet, author, and believer in the beauty of quiet moments.
+            </p>
+          </div>
 
-        <nav className="flex justify-center gap-8 mt-6 mb-8">
-          <Link href="/about" className="text-xs tracking-super-wide uppercase text-stone hover:text-charcoal transition-colors">
-            About
-          </Link>
-          <Link href="/shop" className="text-xs tracking-super-wide uppercase text-stone hover:text-charcoal transition-colors">
-            Shop
-          </Link>
-          <Link href="/contact" className="text-xs tracking-super-wide uppercase text-stone hover:text-charcoal transition-colors">
-            Contact
-          </Link>
-        </nav>
+          {/* Navigation */}
+          <div>
+            <p className="text-[10px] tracking-super-wide uppercase text-cream/30 mb-6">
+              Navigate
+            </p>
+            <nav className="flex flex-col gap-4">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About" },
+                { href: "/shop", label: "Shop" },
+                { href: "/contact", label: "Contact" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-        <a
-          href="https://www.instagram.com/hcjk_collection/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-stone hover:text-charcoal transition-colors"
-        >
-          Instagram
-        </a>
+          {/* Connect */}
+          <div>
+            <p className="text-[10px] tracking-super-wide uppercase text-cream/30 mb-6">
+              Connect
+            </p>
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://www.instagram.com/hcjk_collection/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
+              >
+                Instagram
+              </a>
+              <a
+                href="mailto:heather@hcjk.org"
+                className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
+              >
+                heather@hcjk.org
+              </a>
+              <a
+                href="https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-cream/60 hover:text-cream transition-colors duration-300"
+              >
+                Barnes & Noble
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <p className="text-xs text-stone mt-8">
-          © {new Date().getFullYear()} Heather Krystecki
-        </p>
+        {/* Bottom bar */}
+        <div className="border-t border-cream/10 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-cream/30">
+            &copy; {new Date().getFullYear()} Heather Krystecki. All rights reserved.
+          </p>
+          <p className="text-xs text-cream/30">
+            <em className="font-serif text-sm text-cream/40">I See You, I See Me</em>
+          </p>
+        </div>
       </div>
     </footer>
   )
