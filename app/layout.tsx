@@ -3,7 +3,7 @@ import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-const basePath = process.env.NODE_ENV === 'production' ? '/hcjkorg2' : ''
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
 export const metadata: Metadata = {
   title: "Heather Krystecki — Poet & Author",
