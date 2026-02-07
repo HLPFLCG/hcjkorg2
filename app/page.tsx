@@ -133,7 +133,7 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -bottom-4 left-4 right-4 h-8 bg-black/20 blur-xl" />
               <img
-                src={`${basePath}/images/book-cover-front.svg`}
+                src={`${basePath}/images/Image.jpeg`}
                 alt="I See You, I See Me by Heather Krystecki — front cover"
                 className="w-64 md:w-72 shadow-2xl"
                 width={288}
