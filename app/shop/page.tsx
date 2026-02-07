@@ -56,7 +56,7 @@ export default function ShopPage() {
             <div className="relative">
               <div className="absolute -bottom-6 left-6 right-6 h-12 bg-charcoal/10 blur-2xl" />
               <img
-                src={`${basePath}/images/book-cover-front.svg`}
+                src={`${basePath}/images/Image.jpeg`}
                 alt="I See You, I See Me by Heather Krystecki — front cover featuring butterfly with lips artwork"
                 className="w-72 md:w-80 shadow-xl"
                 width={320}
@@ -67,7 +67,7 @@ export default function ShopPage() {
             <div className="relative">
               <div className="absolute -bottom-6 left-6 right-6 h-12 bg-charcoal/10 blur-2xl" />
               <img
-                src={`${basePath}/images/book-cover-back.svg`}
+                src={`${basePath}/images/Image 1.jpeg`} 
                 alt="I See You, I See Me — back cover with poem about the mental health journey"
                 className="w-72 md:w-80 shadow-xl"
                 width={320}
