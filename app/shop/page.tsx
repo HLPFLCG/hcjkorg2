@@ -115,9 +115,9 @@ export default function ShopPage() {
               </p>
 
               <a
-                href="#"
+                href="https://shop.ingramspark.com/b/084?params=kBRanDfjtJKc122qtFtur05F8OXdx9W6V9fExyG0QHw"
                 className="btn-primary block text-center w-full"
-                aria-label="Buy direct from the author (coming soon via Stripe)"
+                aria-label="Buy direct from the author"
               >
                 Buy Direct from Author
               </a>
