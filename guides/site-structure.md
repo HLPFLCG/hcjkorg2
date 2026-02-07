@@ -57,8 +57,7 @@ hcjkorg2/
 │   ├── poems.ts                  <- Poems system (read/parse markdown poems)
 │   ├── metadata.ts               <- SEO constants (site URL, author name, ISBN, keywords)
 │   ├── structured-data.ts        <- JSON-LD schemas (Person, Book, Website, BlogPosting)
-│   ├── types.ts                  <- TypeScript type definitions
-│   └── utils.ts                  <- Utility functions (cn class merger)
+│   └── types.ts                  <- TypeScript type definitions
 │
 ├── public/                       <- Static files
 │   ├── images/
