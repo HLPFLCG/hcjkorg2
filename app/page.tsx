@@ -2,6 +2,8 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import { InstagramEmbed } from "@/components/instagram-embed"
 import { NewsletterSignup } from "@/components/newsletter-signup"
+import { getFeaturedBlogPosts } from "@/lib/blog"
+import { BlogCard } from "@/components/blog-card"
 
 export const metadata: Metadata = {
   title: 'Heather Krystecki — Raw Poetry About Love, Loss & Self-Discovery',
@@ -10,7 +12,11 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://hcjk.org/' },
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export default function Home() {
+  const recentPosts = getFeaturedBlogPosts(2)
+
   return (
     <article>
       {/* Hero - Full viewport cinematic intro */}
@@ -120,28 +126,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Book Showcase */}
+      {/* Book Showcase - with real cover */}
       <section className="py-30 md:py-40 px-8 bg-charcoal text-cream">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           <div className="relative flex items-center justify-center">
-            <div className="w-64 md:w-72">
-              <div className="aspect-[2/3] bg-gradient-to-b from-cream/8 to-cream/3 border border-cream/10 relative shadow-2xl">
-                <div className="absolute inset-0 flex flex-col items-center justify-center px-8">
-                  <p className="text-[9px] tracking-super-wide uppercase text-cream/30 mb-6">
-                    Poetry
-                  </p>
-                  <p className="font-serif text-3xl md:text-4xl font-light text-cream/90 text-center leading-tight">
-                    I See You,
-                    <br />
-                    <em className="italic">I See Me</em>
-                  </p>
-                  <div className="w-8 h-px bg-blush/50 my-6" />
-                  <p className="font-serif text-sm text-cream/50 italic">
-                    Heather Krystecki
-                  </p>
-                </div>
-              </div>
+            <div className="relative">
               <div className="absolute -bottom-4 left-4 right-4 h-8 bg-black/20 blur-xl" />
+              <img
+                src={`${basePath}/images/book-cover-front.svg`}
+                alt="I See You, I See Me by Heather Krystecki — front cover"
+                className="w-64 md:w-72 shadow-2xl"
+                width={288}
+                height={432}
+              />
             </div>
           </div>
 
@@ -192,6 +189,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Read the Poems */}
+      <section className="py-26 md:py-30 px-8 bg-linen text-center">
+        <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+          The Archive
+        </p>
+        <h2 className="font-serif text-display-sm text-charcoal font-light mb-6">
+          Read the poems
+        </h2>
+        <p className="text-base text-stone leading-relaxed mb-10 max-w-prose-narrow mx-auto">
+          Explore a growing collection of poems — from the pages of the book and beyond.
+        </p>
+        <Link href="/poems" className="btn-primary">
+          Browse Poems
+        </Link>
+      </section>
+
+      {/* Latest from the Journal */}
+      {recentPosts.length > 0 && (
+        <section className="py-26 md:py-30 px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-[10px] tracking-super-wide uppercase text-stone/50 mb-8">
+              From the Journal
+            </p>
+            <h2 className="font-serif text-display-sm text-charcoal font-light mb-16">
+              Recent reflections
+            </h2>
+            <div className="grid md:grid-cols-2 gap-16 text-left">
+              {recentPosts.map((post) => (
+                <BlogCard key={post.slug} post={post} />
+              ))}
+            </div>
+            <div className="mt-16">
+              <Link href="/blog" className="btn-secondary">
+                Read the Journal
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Instagram Feed */}
       <section className="py-26 md:py-30 px-8 bg-linen">
         <div className="max-w-5xl mx-auto text-center">
@@ -206,7 +243,6 @@ export default function Home() {
             and the words that didn&apos;t make it into the book.
           </p>
 
-          {/* Instagram post embeds — replace URLs with actual post URLs from @hcjk_collection */}
           <InstagramEmbed
             postUrls={[
               'https://www.instagram.com/hcjk_collection/',
@@ -214,11 +250,6 @@ export default function Home() {
               'https://www.instagram.com/hcjk_collection/',
             ]}
           />
-
-          {/* Elfsight full feed widget — uncomment and add your widget ID to use instead
-          <script src="https://static.elfsight.com/platform/platform.js" async></script>
-          <div className="elfsight-app-XXXXXXXX" data-elfsight-app-lazy></div>
-          */}
 
           <div className="mt-12">
             <a

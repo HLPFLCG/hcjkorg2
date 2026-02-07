@@ -5,6 +5,7 @@ import {
   INSTAGRAM_URL,
   EMAIL,
   BN_URL,
+  ISBN,
 } from './metadata'
 
 export function getPersonSchema() {
@@ -30,6 +31,8 @@ export function getBookSchema() {
       '@type': 'Person',
       name: AUTHOR_NAME,
     },
+    isbn: ISBN,
+    image: `${SITE_URL}/images/book-cover-front.jpg`,
     bookFormat: 'https://schema.org/Paperback',
     genre: ['Poetry', 'Mental Health', 'Self-Discovery'],
     url: `${SITE_URL}/shop/`,
@@ -55,5 +58,23 @@ export function getWebsiteSchema() {
       '@type': 'Person',
       name: AUTHOR_NAME,
     },
+  }
+}
+
+export function getBlogPostSchema(post: {
+  title: string
+  date: string
+  excerpt: string
+  slug: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    datePublished: post.date,
+    author: { '@type': 'Person', name: AUTHOR_NAME },
+    description: post.excerpt,
+    url: `${SITE_URL}/blog/${post.slug}/`,
+    publisher: { '@type': 'Person', name: AUTHOR_NAME },
   }
 }

@@ -7,6 +7,8 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/hcjk_collection/'
 export const EMAIL = 'heather@hcjk.org'
 export const BN_URL = 'https://www.barnesandnoble.com/w/i-see-you-i-see-me-heather-krystecki/1149164117'
 export const HLPFL_URL = 'https://hlpfl.org'
+export const ISBN = '979-8-2954-8091-1'
+export const FORMSPREE_ID = 'xblqjywk'
 
 export const SEO_KEYWORDS = [
   'raw poetry',
@@ -19,6 +21,12 @@ export const SEO_KEYWORDS = [
   'Instagram poetry',
   'self-published poetry',
   'poetry collection',
+  'poetry blog',
+  'poet journal',
+  'poetry readings',
+  'book club discussion guide',
+  'contemporary poetry',
+  'indie poetry',
   'Heather Krystecki',
   'I See You I See Me',
 ]

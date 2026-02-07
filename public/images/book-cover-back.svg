@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8c4c4"/>
+      <stop offset="40%" stop-color="#d4ddd8"/>
+      <stop offset="70%" stop-color="#c8ccc8"/>
+      <stop offset="100%" stop-color="#8a9c98"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#bg2)"/>
+  <text x="200" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#2a2a2a">This book holds the journey</text>
+  <text x="200" y="135" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#2a2a2a">Through my own mental health crisis</text>
+  <text x="200" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#2a2a2a">It's being shared</text>
+  <text x="200" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#2a2a2a">So that no one feels alone</text>
+  <text x="200" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#2a2a2a">You're not alone</text>
+  <text x="200" y="380" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2a2a2a">~ Heather Krystecki</text>
+  <text x="200" y="540" text-anchor="middle" font-family="monospace" font-size="11" fill="#444">ISBN 979-8-2954-8091-1</text>
+  <text x="200" y="320" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666" letter-spacing="3">REPLACE WITH ACTUAL COVER IMAGE</text>
+</svg>

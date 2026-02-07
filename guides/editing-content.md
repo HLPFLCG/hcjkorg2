@@ -54,6 +54,21 @@ The short bio blurb on the home page:
 Heather writes about the spaces between people...
 ```
 
+### Book Showcase
+The dark charcoal section shows the real book cover image. The cover image is at `public/images/book-cover-front.svg`. See the [README](./README.md#book-cover-images) for how to replace with a real image.
+
+### Read the Poems
+```
+Read the poems
+```
+and
+```
+Explore a growing collection of poems — from the pages of the book and beyond.
+```
+
+### Latest from the Journal
+The 2 most recent featured blog posts appear here automatically. To control which posts show, set `featured: true` in the blog post's frontmatter. See [Writing Blog Posts](./writing-blog-posts.md).
+
 ### Instagram Section
 ```
 New poems weekly
@@ -125,6 +140,9 @@ Currently has three "Coming soon" placeholder boxes. When you get press coverage
 
 **File:** `app/shop/page.tsx`
 
+### Book Covers
+Front and back cover images are displayed. The images are at `public/images/book-cover-front.svg` and `public/images/book-cover-back.svg`. See the [README](./README.md#book-cover-images) for how to replace with real images.
+
 ### Book Title & Author
 ```
 I See You, I See Me
@@ -146,20 +164,69 @@ Three buttons in the "Where to Buy" section:
 
 To update these links, see the [Updating Links](./updating-links.md#purchase-links) guide.
 
+### Reader Praise
+The "What Readers Are Saying" section has 3 testimonials. These are defined in the `praise` array near the top of the file:
+```typescript
+const praise = [
+  { quote: 'A collection that wraps around you...', source: 'Early Reader' },
+  ...
+]
+```
+Edit the `quote` and `source` values to change testimonials.
+
 ### Book Details Grid
 Near the bottom of the book section, there's a grid with:
 - **Format:** Paperback
 - **Genre:** Poetry
 - **Publisher:** Self-published
-- **Availability:** Available now
+- **ISBN:** 979-8-2954-8091-1
 
 Change any of these by finding the corresponding text.
 
 ### "Who is this book for?" Section
 Three columns of text describing your ideal reader. Each starts after a `<div className="w-8 h-px bg-blush" />` line.
 
+### Book Club CTA
+Links to the `/book-club` discussion guide page.
+
 ### Featured Poem
 Same format as the home page -- inside a `<blockquote>` tag.
+
+---
+
+## Events Page
+
+**File:** `app/events/page.tsx`
+
+Events are managed as a data array in this file. See [Managing Events](./managing-events.md) for full instructions.
+
+---
+
+## Book Club Guide
+
+**File:** `app/book-club/page.tsx`
+
+### Discussion Questions
+12 questions in an ordered list. Edit the text inside each `<li>` tag.
+
+### Themes to Explore
+4 theme cards. Each has a title and description.
+
+---
+
+## Blog Posts
+
+**Directory:** `content/blog/`
+
+Blog posts are markdown files. See [Writing Blog Posts](./writing-blog-posts.md) for full instructions.
+
+---
+
+## Poems
+
+**Directory:** `content/poems/`
+
+Poems are markdown files. See [Managing Poems](./managing-poems.md) for full instructions.
 
 ---
 
@@ -196,6 +263,8 @@ The site name in the header:
 Heather Krystecki
 ```
 
+Navigation links: Home, About, Poems, Journal, Shop, Events, Contact
+
 ### Footer
 **File:** `components/footer.tsx`
 
@@ -203,6 +272,8 @@ The footer tagline:
 ```
 Poet, author, and believer in the beauty of quiet moments.
 ```
+
+Navigation includes all pages plus Book Club Guide.
 
 The bottom bar has:
 - The book title: *I See You, I See Me*
@@ -231,4 +302,4 @@ Each page has its own `metadata` export at the top of the file that controls:
 
 To change a page's SEO title or description, edit the `metadata` object at the top of that page file.
 
-For site-wide SEO constants (keywords, author name, etc.), edit `lib/metadata.ts`.
+For site-wide SEO constants (keywords, author name, ISBN, etc.), edit `lib/metadata.ts`.

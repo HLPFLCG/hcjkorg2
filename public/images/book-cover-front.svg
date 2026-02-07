@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8c4c4"/>
+      <stop offset="40%" stop-color="#d4ddd8"/>
+      <stop offset="70%" stop-color="#c8ccc8"/>
+      <stop offset="100%" stop-color="#8a9c98"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#bg)"/>
+  <text x="200" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-style="italic" fill="#2a2a2a" letter-spacing="1">I See You; I</text>
+  <text x="200" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-style="italic" fill="#2a2a2a" letter-spacing="1">See Me</text>
+  <text x="200" y="480" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2a2a2a">Heather Krystecki</text>
+  <text x="200" y="320" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#666" letter-spacing="3" text-transform="uppercase">REPLACE WITH ACTUAL COVER IMAGE</text>
+</svg>
