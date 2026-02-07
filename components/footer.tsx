@@ -25,7 +25,11 @@ export default function Footer() {
               {[
                 { href: "/", label: "Home" },
                 { href: "/about", label: "About" },
+                { href: "/poems", label: "Poems" },
+                { href: "/blog", label: "Journal" },
                 { href: "/shop", label: "Shop" },
+                { href: "/events", label: "Events" },
+                { href: "/book-club", label: "Book Club Guide" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <Link

@@ -3,6 +3,16 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/poems", label: "Poems" },
+  { href: "/blog", label: "Journal" },
+  { href: "/shop", label: "Shop" },
+  { href: "/events", label: "Events" },
+  { href: "/contact", label: "Contact" },
+]
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -31,13 +41,8 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-12">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/shop", label: "Shop" },
-              { href: "/contact", label: "Contact" },
-            ].map((link) => (
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -72,17 +77,12 @@ export default function Header() {
       {/* Mobile Nav */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="bg-cream/98 backdrop-blur-md px-8 pb-10 pt-4">
           <div className="flex flex-col items-center gap-8">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/about", label: "About" },
-              { href: "/shop", label: "Shop" },
-              { href: "/contact", label: "Contact" },
-            ].map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

@@ -4,9 +4,26 @@ Your poems are one of the most important parts of the site. Here's how to add, c
 
 ---
 
-## Where Poems Live
+## Poems Live in Two Places
 
-Poems appear in several places across the site:
+### 1. Markdown Files (Poems Archive)
+
+The poems archive at `/poems` is powered by markdown files in `content/poems/`:
+
+```
+content/poems/
+├── in-the-quiet-between-us.md
+├── what-i-was-looking-for.md
+├── too-true-to-say-out-loud.md
+├── not-alone.md
+└── every-word-is-a-bridge.md
+```
+
+Each file becomes its own page at `/poems/filename/` and appears in the poems index grid.
+
+### 2. Inline in Page Files
+
+Poems also appear inline on several pages (as decorative quotes or featured excerpts):
 
 | Location | File | Description |
 |---|---|---|
@@ -20,9 +37,71 @@ Poems appear in several places across the site:
 
 ---
 
-## How Poems Are Formatted
+## Adding a Poem to the Archive
 
-Poems use this structure:
+1. Create a new `.md` file in `content/poems/`
+2. Add the frontmatter and poem content
+3. Commit and push
+
+### Template
+
+```markdown
+---
+title: "your poem title"
+collection: "I See You, I See Me"
+order: 6
+featured: true
+---
+
+first line of your poem
+second line
+third line
+
+a blank line creates a stanza break
+next stanza starts here
+```
+
+**Fields:**
+
+| Field | Required | Description |
+|---|---|---|
+| `title` | Yes | The poem title |
+| `collection` | Yes | Which collection it's from (usually "I See You, I See Me") |
+| `order` | Yes | Display order on the poems index (lower = first) |
+| `featured` | No | Set to `true` to potentially feature this poem elsewhere |
+
+### How Line Breaks Work
+
+In the markdown files, each new line becomes a line break in the rendered poem. This is different from normal markdown where you need two spaces or a blank line:
+
+```markdown
+this is line one
+this is line two
+this is line three
+```
+
+Renders as:
+> this is line one<br>
+> this is line two<br>
+> this is line three
+
+A blank line creates a stanza break (extra space between groups of lines).
+
+---
+
+## Editing a Poem in the Archive
+
+1. Open the file in `content/poems/`
+2. Change the lines of the poem
+3. Commit and push
+
+If you change the filename, the URL changes too -- old links will break.
+
+---
+
+## Changing Inline Poems (on Pages)
+
+Inline poems on pages use this structure:
 
 ```html
 <blockquote className="font-serif text-2xl md:text-3xl text-charcoal font-light italic leading-relaxed poetry-text">
@@ -42,40 +121,12 @@ Poems use this structure:
 - Apostrophes are written as `&apos;`
 - Don't change the `className="..."` part -- that controls the styling
 
----
-
-## Changing an Existing Poem
+### Steps to Change an Inline Poem
 
 1. Open the file on GitHub (click the pencil icon)
 2. Find the poem you want to change (search for a few words from it)
 3. Replace the text between `<br />` tags with your new lines
 4. Commit the change
-
-**Example -- changing the home page first poem:**
-
-Before:
-```html
-in the quiet between us
-<br />
-i found the words
-<br />
-i had been searching for&mdash;
-<br />
-the ones that sound like home
-```
-
-After:
-```html
-your new first line here
-<br />
-your new second line here
-<br />
-your new third line here
-<br />
-your new fourth line here
-```
-
-You can have more or fewer lines -- just add or remove `<br />` between them.
 
 ---
 
@@ -97,7 +148,7 @@ The decorative quotes in the sidebar boxes are simpler. They look like this:
 
 ---
 
-## Adding a Poem to the Home Page
+## Adding an Inline Poem to the Home Page
 
 If you want to add another poem section to the home page, copy this entire block and paste it where you'd like it to appear:
 
@@ -139,6 +190,8 @@ For dark sections, change `text-charcoal` to `text-cream` in the blockquote.
 ## Tips
 
 - Keep poems lowercase if that's your style -- the site is designed for it
-- Shorter poems (3-5 lines) tend to look best in the featured spots
+- Shorter poems (3-5 lines) tend to look best in the featured/inline spots
 - The decorative sidebar quotes work best at 2-3 lines
+- For the poems archive, longer poems work great -- each gets a full page
+- Filenames become URLs, so use lowercase with hyphens: `my-new-poem.md` -> `/poems/my-new-poem/`
 - Always preview after making changes -- the site redeploys in about 2 minutes

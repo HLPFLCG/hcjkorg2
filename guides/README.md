@@ -7,7 +7,9 @@ Welcome! This guide will help you make changes to your website. Everything is or
 | What you want to do | Guide |
 |---|---|
 | Change text on any page | [Editing Page Content](./editing-content.md) |
+| Write a blog post | [Writing Blog Posts](./writing-blog-posts.md) |
 | Add or change poems | [Managing Poems](./managing-poems.md) |
+| Add or edit events | [Managing Events](./managing-events.md) |
 | Update your bio or about info | [Editing Content](./editing-content.md#about-page) |
 | Change links (B&N, Instagram, email, Amazon) | [Updating Links](./updating-links.md) |
 | Update Instagram embed posts | [Updating Links](./updating-links.md#instagram-embedded-posts) |
@@ -19,13 +21,24 @@ Welcome! This guide will help you make changes to your website. Everything is or
 
 Your website is built with **Next.js** and **Tailwind CSS**. It gets deployed automatically to **Cloudflare Pages** every time changes are pushed to the `main` branch on GitHub.
 
-The actual content you'll want to edit lives in a handful of files:
+Content lives in two places:
 
+**Markdown files** (for blog posts and poems):
+```
+content/blog/welcome.md           <- Blog posts (add new .md files here)
+content/blog/on-writing-daily.md
+content/poems/in-the-quiet-between-us.md  <- Poems (add new .md files here)
+content/poems/what-i-was-looking-for.md
+```
+
+**Page files** (for everything else):
 ```
 app/page.tsx          <- Home page
 app/about/page.tsx    <- About page
 app/shop/page.tsx     <- Shop page
 app/contact/page.tsx  <- Contact page
+app/events/page.tsx   <- Events page
+app/book-club/page.tsx <- Book Club Guide
 ```
 
 You can edit these files directly on GitHub (no coding software needed) -- just click the pencil icon on any file.
@@ -42,9 +55,24 @@ You can edit these files directly on GitHub (no coding software needed) -- just 
 ## What's on the Site
 
 Your site includes:
-- **Home** -- Full-screen hero, featured poems, about teaser, book showcase, Instagram feed, newsletter signup
+- **Home** -- Full-screen hero, featured poems, about teaser, book showcase, poem archive teaser, journal teaser, Instagram feed, newsletter signup
 - **About** -- Your full bio, "On Writing" philosophy, HLPFL partnership, Press section
-- **Shop** -- Book details, 3 purchase buttons (Buy Direct, Barnes & Noble, Amazon), featured poem, reader descriptions
+- **Poems** -- Archive of all poems, each with its own shareable page
+- **Journal (Blog)** -- Blog posts written in markdown, newest first
+- **Shop** -- Book covers (front & back), purchase buttons, reader praise, ISBN details, book club CTA
+- **Events** -- Upcoming and past readings/events, "Invite Heather" section
+- **Book Club Guide** -- 12 discussion questions, themes to explore, sharing CTA
 - **Contact** -- Contact info, email, Instagram, and a contact form
 
-Plus behind the scenes: SEO metadata, JSON-LD structured data, a sitemap, a loading screen, and security headers.
+Plus behind the scenes: SEO metadata, JSON-LD structured data, a dynamic sitemap, a loading screen, and security headers.
+
+## Book Cover Images
+
+The site includes placeholder SVG images for the book covers. To use the real cover images:
+
+1. Save your front cover image as `public/images/book-cover-front.jpg` (or `.png`)
+2. Save your back cover image as `public/images/book-cover-back.jpg` (or `.png`)
+3. Update the image references in `app/page.tsx` and `app/shop/page.tsx` — change `.svg` to `.jpg` (or `.png`)
+4. Commit and push
+
+The covers appear on the Home page (book showcase section) and the Shop page (both front and back).
