@@ -62,3 +62,9 @@ export function getFeaturedBlogPosts(limit: number = 3): BlogPost[] {
   if (featured.length >= limit) return featured.slice(0, limit)
   return posts.slice(0, limit)
 }
+
+export function getReadingTime(content: string): number {
+  const wordsPerMinute = 200
+  const wordCount = content.trim().split(/\s+/).length
+  return Math.max(1, Math.ceil(wordCount / wordsPerMinute))
+}

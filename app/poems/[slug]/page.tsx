@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllPoemSlugs, getPoemBySlug } from '@/lib/poems'
+import { getAllPoemSlugs, getPoemBySlug, getAdjacentPoems } from '@/lib/poems'
+import { getPoemSchema, getBreadcrumbSchema } from '@/lib/structured-data'
+import { ShareButtons } from '@/components/share-buttons'
 
 export async function generateStaticParams() {
   const slugs = getAllPoemSlugs()
@@ -34,9 +36,26 @@ export default async function PoemPage({
 }) {
   const { slug } = await params
   const poem = getPoemBySlug(slug)
+  const { prev, next } = getAdjacentPoems(slug)
+  const firstLine = poem.content.split('\n').find((l) => l.trim()) || poem.title
 
   return (
     <article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getPoemSchema(poem)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Poems', url: '/poems/' },
+            { name: poem.title, url: `/poems/${slug}/` },
+          ])),
+        }}
+      />
+
       <div className="h-24" />
 
       {/* Poem */}
@@ -51,10 +70,51 @@ export default async function PoemPage({
 
         <div className="divider mx-auto mt-16 mb-8" />
 
-        <p className="font-serif text-base text-stone italic">
+        <p className="font-serif text-base text-stone italic mb-10">
           Heather Krystecki
         </p>
+
+        {/* Share */}
+        <ShareButtons
+          title={poem.title}
+          url={`/poems/${slug}/`}
+          text={firstLine}
+        />
       </section>
+
+      {/* Prev / Next Navigation */}
+      {(prev || next) && (
+        <section className="pb-10 px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="border-t border-stone/10 pt-10 grid grid-cols-2 gap-8">
+              <div className="text-left">
+                {prev && (
+                  <Link href={`/poems/${prev.slug}/`} className="group block">
+                    <span className="text-[9px] tracking-super-wide uppercase text-stone/40 block mb-2">
+                      Previous
+                    </span>
+                    <span className="font-serif text-lg text-charcoal font-light italic group-hover:text-blush transition-colors duration-300">
+                      {prev.title}
+                    </span>
+                  </Link>
+                )}
+              </div>
+              <div className="text-right">
+                {next && (
+                  <Link href={`/poems/${next.slug}/`} className="group block">
+                    <span className="text-[9px] tracking-super-wide uppercase text-stone/40 block mb-2">
+                      Next
+                    </span>
+                    <span className="font-serif text-lg text-charcoal font-light italic group-hover:text-blush transition-colors duration-300">
+                      {next.title}
+                    </span>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Navigation */}
       <section className="pb-30 px-8 text-center">

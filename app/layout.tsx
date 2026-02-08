@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { ReadingProgress } from "@/components/reading-progress"
+import { BackToTop } from "@/components/back-to-top"
 import { getPersonSchema, getWebsiteSchema } from "@/lib/structured-data"
 import { SEO_KEYWORDS } from "@/lib/metadata"
 
@@ -81,6 +83,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-cream">
+        {/* Skip to content - accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-charcoal focus:text-cream focus:text-sm focus:rounded"
+        >
+          Skip to content
+        </a>
+
         {/* Loading Screen */}
         <div id="loading-screen" className="loading-screen">
           <div className="loading-content">
@@ -92,9 +102,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </div>
 
+        <ReadingProgress />
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+        <BackToTop />
 
         {/* Inline script to hide loading screen once page is ready */}
         <script
