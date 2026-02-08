@@ -78,3 +78,40 @@ export function getBlogPostSchema(post: {
     publisher: { '@type': 'Person', name: AUTHOR_NAME },
   }
 }
+
+export function getPoemSchema(poem: {
+  title: string
+  collection: string
+  slug: string
+  content: string
+}) {
+  const preview = poem.content.split('\n').filter((l: string) => l.trim()).slice(0, 3).join(' / ')
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: poem.title,
+    author: { '@type': 'Person', name: AUTHOR_NAME },
+    isPartOf: {
+      '@type': 'Book',
+      name: BOOK_TITLE,
+      isbn: ISBN,
+    },
+    genre: 'Poetry',
+    text: preview,
+    url: `${SITE_URL}/poems/${poem.slug}/`,
+    inLanguage: 'en',
+  }
+}
+
+export function getBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.url}`,
+    })),
+  }
+}

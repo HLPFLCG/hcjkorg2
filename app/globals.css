@@ -358,3 +358,203 @@ a {
 .blog-content em {
   font-style: italic;
 }
+
+/* ========================================
+   Enhanced Button Hover Effects
+   ======================================== */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: #2a2a2a;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.btn-primary:hover::after {
+  width: 100%;
+}
+
+.btn-secondary {
+  position: relative;
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #c4a7a3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ========================================
+   Decorative Floating Elements
+   ======================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+/* ========================================
+   Image Hover Effects
+   ======================================== */
+
+.book-cover-hover {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-cover-hover:hover {
+  transform: translateY(-8px) rotateY(-3deg);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Focus Styles for Accessibility
+   ======================================== */
+
+*:focus-visible {
+  outline: 2px solid #c4a7a3;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #c4a7a3;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Reduced Motion
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .loading-screen {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   Print Styles — for poems and blog posts
+   ======================================== */
+
+@media print {
+  /* Hide non-content elements */
+  header,
+  footer,
+  nav,
+  .loading-screen,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline,
+  button,
+  [role="progressbar"] {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.8;
+  }
+
+  /* Poems print beautifully */
+  .poetry-text {
+    font-size: 14pt;
+    line-height: 2.2;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    font-size: 14pt;
+    border: none !important;
+    padding: 0 !important;
+    margin: 2em auto !important;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .divider {
+    background: black !important;
+    height: 0.5px !important;
+    margin: 2em auto !important;
+  }
+
+  /* Author attribution */
+  .font-serif {
+    font-family: Georgia, 'Times New Roman', serif !important;
+  }
+
+  /* Ensure links show their URLs */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Page breaks */
+  article {
+    page-break-after: always;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Add site attribution in print */
+  main::after {
+    content: "hcjk.org — Heather Krystecki";
+    display: block;
+    text-align: center;
+    font-size: 9pt;
+    color: #999;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 0.5px solid #ccc;
+  }
+}

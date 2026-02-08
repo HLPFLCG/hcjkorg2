@@ -51,6 +51,15 @@ export function getFeaturedPoems(limit: number = 3): PoemEntry[] {
   return poems.slice(0, limit)
 }
 
+export function getAdjacentPoems(slug: string): { prev: PoemEntry | null; next: PoemEntry | null } {
+  const poems = getAllPoems()
+  const index = poems.findIndex((p) => p.slug === slug)
+  return {
+    prev: index > 0 ? poems[index - 1] : null,
+    next: index < poems.length - 1 ? poems[index + 1] : null,
+  }
+}
+
 function renderPoemHtml(content: string): string {
   return content
     .split('\n')
